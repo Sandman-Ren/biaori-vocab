@@ -6,6 +6,9 @@ on:
       - release
     tags:
       - release-*
+  release:
+    types:
+      - created
 
 jobs:
   build:
