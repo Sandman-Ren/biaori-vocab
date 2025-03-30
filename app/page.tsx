@@ -1,5 +1,11 @@
-import {VocabularyDataTable} from "@/app/components/VocabularyDataTable";
+'use client';
+import dynamic from 'next/dynamic';
 
+const VocabularyDataTable = dynamic(
+    () => import('@/app/components/VocabularyDataTable').then((mod) => mod.VocabularyDataTable),
+    { ssr: false }
+  );
+  
 export default function Home() {
     return <div
         className="
