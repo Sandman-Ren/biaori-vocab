@@ -1,8 +1,17 @@
-import {VOCABULARY} from "@/app/data/vocabulary";
+import {VocabularyDataTable} from "@/app/components/VocabularyDataTable";
 
 export default function Home() {
-    return <div>
-        <h1>biaori works!</h1>
-        <pre>{JSON.stringify(VOCABULARY.slice(0, 10), null, 2)}</pre>
+    return <div
+        className="
+            h-full w-full max-h-full max-w-full
+            px-4
+        flex flex-col items-center justify-center
+        "
+    >
+        <div
+            className="flex-auto"
+        >
+            <VocabularyDataTable/>
+        </div>
     </div>;
 }
