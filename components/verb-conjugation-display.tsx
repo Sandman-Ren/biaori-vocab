@@ -31,7 +31,7 @@ export default function VerbConjugationDisplay({
     return (
       <div className="bg-gray-50 border-t p-4 text-center">
         <span className="text-sm text-gray-500">
-          No conjugation forms selected. Choose forms in the filter panel to display.
+          未选择动词变位形式。请在筛选面板中选择要显示的形式。
         </span>
       </div>
     );
@@ -57,8 +57,8 @@ export default function VerbConjugationDisplay({
             {form.description}
           </Badge>
         </div>
-        <div className="text-xs text-gray-400 capitalize">
-          {form.category}
+        <div className="text-xs text-gray-400">
+          {form.category === 'basic' ? '基础' : form.category === 'intermediate' ? '中级' : '高级'}
         </div>
       </div>
     );
@@ -69,10 +69,10 @@ export default function VerbConjugationDisplay({
       <div className="px-4 py-2 bg-gray-100 border-b">
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium text-gray-700">
-            Conjugations ({formsToShow.length} forms)
+            动词变位 ({formsToShow.length} 个形式)
           </span>
           <Badge variant="outline" className="text-xs">
-            Group {verbGroup} Verb
+            {verbGroup}类动词
           </Badge>
         </div>
       </div>

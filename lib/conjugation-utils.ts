@@ -9,25 +9,25 @@ export interface ConjugationForm {
 
 export const CONJUGATION_FORMS: ConjugationForm[] = [
   // Basic forms (Beginner level)
-  { key: 'polite_present', label: 'Present (Polite)', description: 'ます form', category: 'basic' },
-  { key: 'casual_present', label: 'Present (Casual)', description: 'Dictionary form', category: 'basic' },
-  { key: 'polite_past', label: 'Past (Polite)', description: 'ました form', category: 'basic' },
-  { key: 'casual_past', label: 'Past (Casual)', description: 'た form', category: 'basic' },
-  { key: 'polite_negative', label: 'Negative (Polite)', description: 'ません form', category: 'basic' },
-  { key: 'casual_negative', label: 'Negative (Casual)', description: 'ない form', category: 'basic' },
+  { key: 'polite_present', label: '现在时（敬语）', description: 'ます形', category: 'basic' },
+  { key: 'casual_present', label: '现在时（简体）', description: '辞书形', category: 'basic' },
+  { key: 'polite_past', label: '过去时（敬语）', description: 'ました形', category: 'basic' },
+  { key: 'casual_past', label: '过去时（简体）', description: 'た形', category: 'basic' },
+  { key: 'polite_negative', label: '否定（敬语）', description: 'ません形', category: 'basic' },
+  { key: 'casual_negative', label: '否定（简体）', description: 'ない形', category: 'basic' },
   
   // Intermediate forms
-  { key: 'polite_past_negative', label: 'Past Negative (Polite)', description: 'ませんでした form', category: 'intermediate' },
-  { key: 'casual_past_negative', label: 'Past Negative (Casual)', description: 'なかった form', category: 'intermediate' },
-  { key: 'te_form', label: 'Te-form', description: 'Connecting form', category: 'intermediate' },
-  { key: 'potential', label: 'Potential', description: 'Can do', category: 'intermediate' },
+  { key: 'polite_past_negative', label: '过去否定（敬语）', description: 'ませんでした形', category: 'intermediate' },
+  { key: 'casual_past_negative', label: '过去否定（简体）', description: 'なかった形', category: 'intermediate' },
+  { key: 'te_form', label: 'Te形', description: '连接形', category: 'intermediate' },
+  { key: 'potential', label: '可能形', description: '能够...', category: 'intermediate' },
   
   // Advanced forms
-  { key: 'passive', label: 'Passive', description: 'Is done to', category: 'advanced' },
-  { key: 'causative', label: 'Causative', description: 'Make/let someone do', category: 'advanced' },
-  { key: 'imperative', label: 'Imperative', description: 'Command form', category: 'advanced' },
-  { key: 'conditional', label: 'Conditional', description: 'If/when', category: 'advanced' },
-  { key: 'volitional', label: 'Volitional', description: "Let's do", category: 'advanced' },
+  { key: 'passive', label: '被动形', description: '被...', category: 'advanced' },
+  { key: 'causative', label: '使役形', description: '让/使某人...', category: 'advanced' },
+  { key: 'imperative', label: '命令形', description: '命令形', category: 'advanced' },
+  { key: 'conditional', label: '条件形', description: '如果/当...', category: 'advanced' },
+  { key: 'volitional', label: '意志形', description: '我们...吧', category: 'advanced' },
 ];
 
 export function getConjugationsByLevel(level: ConjugationLevel): (keyof VerbConjugations)[] {

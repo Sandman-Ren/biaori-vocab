@@ -449,7 +449,7 @@ export default function FilterPanel({
               
               {/* Basic Forms */}
               <div className="space-y-3">
-                <div className="text-xs font-medium text-blue-600">Basic Forms</div>
+                <div className="text-xs font-medium text-blue-600">基础形式</div>
                 <div className="space-y-3">
                   {CONJUGATION_FORMS.filter(form => form.category === 'basic').map(form => (
                     <div key={`conjugation-${form.key}`} className="flex items-start space-x-3 ml-2">
@@ -475,7 +475,7 @@ export default function FilterPanel({
 
               {/* Intermediate Forms */}
               <div className="space-y-3">
-                <div className="text-xs font-medium text-orange-600">Intermediate Forms</div>
+                <div className="text-xs font-medium text-orange-600">中级形式</div>
                 <div className="space-y-3">
                   {CONJUGATION_FORMS.filter(form => form.category === 'intermediate').map(form => (
                     <div key={`conjugation-${form.key}`} className="flex items-start space-x-3 ml-2">
@@ -501,7 +501,7 @@ export default function FilterPanel({
 
               {/* Advanced Forms */}
               <div className="space-y-3">
-                <div className="text-xs font-medium text-red-600">Advanced Forms</div>
+                <div className="text-xs font-medium text-red-600">高级形式</div>
                 <div className="space-y-3">
                   {CONJUGATION_FORMS.filter(form => form.category === 'advanced').map(form => (
                     <div key={`conjugation-${form.key}`} className="flex items-start space-x-3 ml-2">

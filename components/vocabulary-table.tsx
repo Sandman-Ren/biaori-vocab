@@ -109,7 +109,7 @@ export default function VocabularyTable({
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
-                  Japanese {getSortIcon('japanese')}
+                  日语 {getSortIcon('japanese')}
                 </button>
                 <button
                   onClick={() => handleSort('reading')}
@@ -119,7 +119,7 @@ export default function VocabularyTable({
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
-                  Reading {getSortIcon('reading')}
+                  读音 {getSortIcon('reading')}
                 </button>
                 <button
                   onClick={() => handleSort('meaning')}
@@ -129,7 +129,7 @@ export default function VocabularyTable({
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
-                  Meaning {getSortIcon('meaning')}
+                  含义 {getSortIcon('meaning')}
                 </button>
               </div>
             </div>
@@ -198,7 +198,7 @@ export default function VocabularyTable({
                     
                     {item.example_sentences.length > 0 && (
                       <div className="text-xs text-gray-400">
-                        {item.example_sentences.length} example{item.example_sentences.length !== 1 ? 's' : ''}
+                        {item.example_sentences.length} 个例句
                       </div>
                     )}
                   </div>
@@ -351,7 +351,7 @@ export default function VocabularyTable({
                           size="sm"
                           className="text-gray-600 hover:text-gray-900 px-2"
                         >
-                          View
+                          查看
                         </Button>
                         <Button
                           variant="ghost"
