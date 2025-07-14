@@ -99,7 +99,7 @@ export default function VocabularyTable({
           {/* Mobile Sort Header */}
           <div className="px-4 py-3 border-b border-gray-100 bg-gray-50">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-gray-700">Sort by:</span>
+              <span className="text-sm font-medium text-gray-700">排序：</span>
               <div className="flex items-center space-x-4">
                 <button
                   onClick={() => handleSort('japanese')}
@@ -225,7 +225,7 @@ export default function VocabularyTable({
                 onClick={() => handleSort('japanese')}
               >
                 <div className="flex items-center space-x-1">
-                  <span>Japanese</span>
+                  <span>日语</span>
                   {getSortIcon('japanese')}
                 </div>
               </TableHead>
@@ -234,7 +234,7 @@ export default function VocabularyTable({
                 onClick={() => handleSort('reading')}
               >
                 <div className="flex items-center space-x-1">
-                  <span>Reading</span>
+                  <span>读音</span>
                   {getSortIcon('reading')}
                 </div>
               </TableHead>
@@ -243,7 +243,7 @@ export default function VocabularyTable({
                 onClick={() => handleSort('meaning')}
               >
                 <div className="flex items-center space-x-1">
-                  <span>Meaning</span>
+                  <span>含义</span>
                   {getSortIcon('meaning')}
                 </div>
               </TableHead>
@@ -252,7 +252,7 @@ export default function VocabularyTable({
                 onClick={() => handleSort('part_of_speech')}
               >
                 <div className="flex items-center space-x-1">
-                  <span>Type</span>
+                  <span>词性</span>
                   {getSortIcon('part_of_speech')}
                 </div>
               </TableHead>
@@ -261,7 +261,7 @@ export default function VocabularyTable({
                 onClick={() => handleSort('lesson')}
               >
                 <div className="flex items-center space-x-1">
-                  <span>Lesson</span>
+                  <span>课程</span>
                   {getSortIcon('lesson')}
                 </div>
               </TableHead>
@@ -270,7 +270,7 @@ export default function VocabularyTable({
                 onClick={() => handleSort('examples')}
               >
                 <div className="flex items-center space-x-1">
-                  <span>Examples</span>
+                  <span>例句</span>
                   {getSortIcon('examples')}
                 </div>
               </TableHead>

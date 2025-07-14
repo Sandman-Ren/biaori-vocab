@@ -52,20 +52,20 @@ export default function Pagination({
         {totalItems > 0 ? (
           <>
             {isMobile ? (
-              <>{totalItems.toLocaleString()} items</>
+              <>{totalItems.toLocaleString()} 项</>
             ) : (
-              <>{startItem}–{endItem} of {totalItems.toLocaleString()}</>
+              <>第 {startItem}–{endItem} 项，共 {totalItems.toLocaleString()} 项</>
             )}
           </>
         ) : (
-          'No results'
+          '无结果'
         )}
       </div>
 
       <div className={`flex items-center space-x-4 order-1 sm:order-2 ${isMobile ? 'w-full justify-between' : ''}`}>
         {/* Page size selector */}
         <div className="flex items-center space-x-2 text-sm text-gray-500">
-          <span className={isMobile ? 'hidden' : ''}>Rows:</span>
+          <span className={isMobile ? 'hidden' : ''}>每页：</span>
           <Select value={pageSize.toString()} onValueChange={(value) => onPageSizeChange(parseInt(value))}>
             <SelectTrigger className="w-20 h-8">
               <SelectValue />
@@ -108,7 +108,7 @@ export default function Pagination({
                     min={1}
                     max={totalPages}
                   />
-                  <span className="text-gray-400">of {totalPages}</span>
+                  <span className="text-gray-400">共 {totalPages} 页</span>
                 </>
               )}
             </div>

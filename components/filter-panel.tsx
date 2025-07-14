@@ -166,13 +166,13 @@ export default function FilterPanel({
       {/* Header - Mobile only */}
       <div className="lg:hidden mb-6 pb-4 border-b border-gray-100">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-gray-900">Filters</h2>
+          <h2 className="text-lg font-medium text-gray-900">筛选器</h2>
           {hasActiveFilters && (
             <button
               onClick={clearAllFilters}
               className="text-sm text-blue-600 hover:text-blue-700"
             >
-              Clear all
+              清除全部
             </button>
           )}
         </div>
@@ -186,7 +186,7 @@ export default function FilterPanel({
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
           <Label className="text-sm font-medium text-gray-900">
-            Books {selectedBooks.length > 0 && `(${selectedBooks.length})`}
+            教材 {selectedBooks.length > 0 && `(${selectedBooks.length})`}
           </Label>
           {expandedSections.books ? (
             <ChevronDown className="w-4 h-4 text-gray-500" />
@@ -205,7 +205,7 @@ export default function FilterPanel({
                 className="text-xs flex-1"
                 disabled={selectedBooks.length === books.length}
               >
-                Select All ({books.length})
+                全选 ({books.length})
               </Button>
               <Button
                 variant="outline"
@@ -214,7 +214,7 @@ export default function FilterPanel({
                 className="text-xs flex-1"
                 disabled={selectedBooks.length === 0}
               >
-                Deselect All
+                全不选
               </Button>
             </div>
             
@@ -248,7 +248,7 @@ export default function FilterPanel({
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
           <Label className="text-sm font-medium text-gray-900">
-            Lessons {selectedLessons.length > 0 && `(${selectedLessons.length})`}
+            课程 {selectedLessons.length > 0 && `(${selectedLessons.length})`}
           </Label>
           {expandedSections.lessons ? (
             <ChevronDown className="w-4 h-4 text-gray-500" />
@@ -259,7 +259,7 @@ export default function FilterPanel({
         <CollapsibleContent className="mt-4">
           <Input
             type="text"
-            placeholder="Search lessons..."
+            placeholder="搜索课程..."
             value={lessonSearch}
             onChange={(e) => setLessonSearch(e.target.value)}
             className="mb-4 text-sm"
@@ -274,7 +274,7 @@ export default function FilterPanel({
               className="text-xs flex-1"
               disabled={selectedLessons.length === filteredLessons.length}
             >
-              Select All ({filteredLessons.length})
+              全选 ({filteredLessons.length})
             </Button>
             <Button
               variant="outline"
@@ -283,7 +283,7 @@ export default function FilterPanel({
               className="text-xs flex-1"
               disabled={selectedLessons.length === 0}
             >
-              Deselect All
+              全不选
             </Button>
           </div>
           
@@ -311,7 +311,7 @@ export default function FilterPanel({
                 onClick={() => setShowAllLessons(true)}
                 className="text-sm text-gray-500 hover:text-gray-700"
               >
-                Show more...
+                显示更多...
               </button>
             )}
           </div>
@@ -326,7 +326,7 @@ export default function FilterPanel({
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
           <Label className="text-sm font-medium text-gray-900">
-            Parts of Speech {selectedPartsOfSpeech.length > 0 && `(${selectedPartsOfSpeech.length})`}
+            词性 {selectedPartsOfSpeech.length > 0 && `(${selectedPartsOfSpeech.length})`}
           </Label>
           {expandedSections.partsOfSpeech ? (
             <ChevronDown className="w-4 h-4 text-gray-500" />
@@ -345,7 +345,7 @@ export default function FilterPanel({
                 className="text-xs flex-1"
                 disabled={selectedPartsOfSpeech.length === partsOfSpeech.length}
               >
-                Select All ({partsOfSpeech.length})
+                全选 ({partsOfSpeech.length})
               </Button>
               <Button
                 variant="outline"
@@ -354,7 +354,7 @@ export default function FilterPanel({
                 className="text-xs flex-1"
                 disabled={selectedPartsOfSpeech.length === 0}
               >
-                Deselect All
+                全不选
               </Button>
             </div>
             
@@ -388,7 +388,7 @@ export default function FilterPanel({
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
           <Label className="text-sm font-medium text-gray-900">
-            Verb Conjugations {selectedConjugations.length > 0 && `(${selectedConjugations.length} selected)`}
+            动词变位 {selectedConjugations.length > 0 && `(已选择 ${selectedConjugations.length} 个)`}
           </Label>
           {expandedSections.conjugations ? (
             <ChevronDown className="w-4 h-4 text-gray-500" />
@@ -400,13 +400,13 @@ export default function FilterPanel({
           <div className="space-y-4">
             {/* Preset Buttons */}
             <div className="space-y-2">
-              <Label className="text-xs text-gray-600">Quick Presets:</Label>
+              <Label className="text-xs text-gray-600">快速预设：</Label>
               <div className="flex flex-wrap gap-2">
                 {[
-                  { key: 'beginner', label: 'Beginner', count: 6 },
-                  { key: 'intermediate', label: 'Intermediate', count: 10 },
-                  { key: 'advanced', label: 'Advanced', count: 13 },
-                  { key: 'complete', label: 'All Forms', count: 15 },
+                  { key: 'beginner', label: '初级', count: 6 },
+                  { key: 'intermediate', label: '中级', count: 10 },
+                  { key: 'advanced', label: '高级', count: 13 },
+                  { key: 'complete', label: '全部形式', count: 15 },
                 ].map(preset => (
                   <Button
                     key={preset.key}
@@ -430,7 +430,7 @@ export default function FilterPanel({
                 className="text-xs flex-1"
                 disabled={selectedConjugations.length === CONJUGATION_FORMS.length}
               >
-                Select All ({CONJUGATION_FORMS.length})
+                全选 ({CONJUGATION_FORMS.length})
               </Button>
               <Button
                 variant="outline"
@@ -439,13 +439,13 @@ export default function FilterPanel({
                 className="text-xs flex-1"
                 disabled={selectedConjugations.length === 0}
               >
-                Deselect All
+                全不选
               </Button>
             </div>
 
             {/* Individual Form Checkboxes */}
             <div className="space-y-3">
-              <Label className="text-xs text-gray-600">Individual Forms:</Label>
+              <Label className="text-xs text-gray-600">单独形式：</Label>
               
               {/* Basic Forms */}
               <div className="space-y-3">
@@ -537,7 +537,7 @@ export default function FilterPanel({
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
           <Label className="text-sm font-medium text-gray-900">
-            Search {textSearch && '(active)'}
+            搜索 {textSearch && '(生效中)'}
           </Label>
           {expandedSections.search ? (
             <ChevronDown className="w-4 h-4 text-gray-500" />
@@ -548,14 +548,14 @@ export default function FilterPanel({
         <CollapsibleContent className="mt-4">
           <Input
             type="text"
-            placeholder="Japanese, reading, meaning..."
+            placeholder="日语、读音、含义..."
             value={textSearch}
             onChange={(e) => onTextSearchChange(e.target.value)}
             className="mb-4 text-sm"
           />
           <details className="text-sm text-gray-500">
             <summary className="cursor-pointer hover:text-gray-700 mb-2">
-              Search options
+              搜索选项
             </summary>
             
             {/* Select All/Deselect All for Search Fields */}
@@ -567,7 +567,7 @@ export default function FilterPanel({
                 className="text-xs flex-1"
                 disabled={searchFields.length === 4}
               >
-                Select All (4)
+                全选 (4)
               </Button>
               <Button
                 variant="outline"
@@ -576,16 +576,16 @@ export default function FilterPanel({
                 className="text-xs flex-1"
                 disabled={searchFields.length === 0}
               >
-                Deselect All
+                全不选
               </Button>
             </div>
             
             <div className="space-y-2 ml-1">
               {[
-                { id: 'japanese', label: 'Japanese' },
-                { id: 'reading', label: 'Reading' },
-                { id: 'meaning', label: 'Meaning' },
-                { id: 'examples', label: 'Examples' },
+                { id: 'japanese', label: '日语' },
+                { id: 'reading', label: '读音' },
+                { id: 'meaning', label: '含义' },
+                { id: 'examples', label: '例句' },
               ].map((field) => (
                 <div key={`filter-panel-search-field-${field.id}`} className="flex items-center space-x-2">
                   <Checkbox

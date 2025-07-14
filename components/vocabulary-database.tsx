@@ -183,7 +183,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   </SheetTrigger>
                   <SheetContent side="left" className="w-80 p-0">
                     <SheetHeader className="sr-only">
-                      <SheetTitle>Filter Vocabulary</SheetTitle>
+                      <SheetTitle>筛选词汇</SheetTitle>
                     </SheetHeader>
                     <FilterPanel
                       books={bookInfo}
@@ -207,14 +207,14 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               )}
               <h1 className="text-lg sm:text-xl font-medium text-gray-900">標準日本語</h1>
               <span className="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded">
-                Vocabulary
+                词汇
               </span>
             </div>
             
             <div className="flex items-center space-x-2 sm:space-x-4">
               <span className="text-sm text-gray-600 hidden sm:block">
                 <span className="font-medium">{filteredVocabulary.length.toLocaleString()}</span>
-                {' '}of{' '}
+                {' '}共{' '}
                 <span className="text-gray-400">{vocabulary.length.toLocaleString()}</span>
               </span>
               {filters.selectedRows.length > 0 && (
@@ -223,7 +223,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   size="sm"
                   className="bg-black text-white hover:bg-gray-800"
                 >
-                  <span className="hidden sm:inline">Practice</span>
+                  <span className="hidden sm:inline">练习</span>
                   <span className="sm:hidden">({filters.selectedRows.length})</span>
                   <span className="hidden sm:inline"> ({filters.selectedRows.length})</span>
                 </Button>
@@ -235,7 +235,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 disabled={filters.selectedRows.length === 0}
                 className="hidden sm:inline-flex"
               >
-                Export
+                导出
               </Button>
             </div>
           </div>
@@ -264,7 +264,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 <motion.button
                   onClick={() => setIsFilterPanelCollapsed(false)}
                   className="text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 rounded mt-4 mb-2 transition-colors duration-200"
-                  title="Show filters"
+                  title="显示筛选器"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -272,7 +272,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   <ChevronRight className="w-4 h-4" />
                 </motion.button>
                 <div className="writing-mode-vertical text-xs text-gray-400 mt-2 select-none">
-                  FILTERS
+                  筛选器
                 </div>
                 
                 {/* Visual indicator of active filters */}
@@ -284,11 +284,11 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               <div className="h-full flex flex-col">
                 {/* Filter Panel Header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-100">
-                  <h2 className="text-sm font-medium text-gray-900">Filters</h2>
+                  <h2 className="text-sm font-medium text-gray-900">筛选器</h2>
                   <motion.button
                     onClick={() => setIsFilterPanelCollapsed(true)}
                     className="text-gray-500 hover:text-gray-700 p-1 rounded transition-colors duration-200"
-                    title="Hide filters"
+                    title="隐藏筛选器"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -344,16 +344,16 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                       filters.selectedRows.includes(item._id)
                     )}
                   onCheckedChange={handleSelectAll}
-                  aria-label="Select all on page"
+                  aria-label="全选本页"
                 />
-                <Label className="text-sm text-gray-600 hidden sm:block">Select all</Label>
+                <Label className="text-sm text-gray-600 hidden sm:block">全选</Label>
               </div>
               {/* Always render selection controls but hide when no selection */}
               <div className={`flex items-center space-x-3 transition-opacity duration-200 ${
                 filters.selectedRows.length > 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'
               }`}>
                 <span className="text-sm text-gray-400 whitespace-nowrap">
-                  {filters.selectedRows.length} selected
+                  已选择 {filters.selectedRows.length} 项
                 </span>
                 <Button 
                   variant="ghost" 
@@ -362,14 +362,14 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   className="text-gray-500 hover:text-gray-700"
                   tabIndex={filters.selectedRows.length > 0 ? 0 : -1}
                 >
-                  Clear
+                  清除
                 </Button>
               </div>
             </div>
             {/* Mobile filter count indicator */}
             {isMobile && (filters.books.length > 0 || filters.lessons.length > 0 || filters.partsOfSpeech.length > 0 || filters.textSearch) && (
               <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                Filtered
+                已筛选
               </span>
             )}
           </div>
