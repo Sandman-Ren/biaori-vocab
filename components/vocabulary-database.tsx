@@ -13,7 +13,7 @@ import VocabularyTable from '@/components/vocabulary-table';
 import Pagination from '@/components/pagination';
 import { VocabularyItem, FilterState } from '@/lib/types';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Filter, ChevronLeft, ChevronRight, Download, Play } from 'lucide-react';
+import { Filter, ChevronLeft, ChevronRight, Download, Play, Info } from 'lucide-react';
 import { 
   getBookInfo, 
   getLessonInfo, 
@@ -22,6 +22,10 @@ import {
   sortVocabulary,
   paginateVocabulary
 } from '@/lib/vocabulary-utils';
+import { 
+  generateVerbConjugationWorksheet, 
+  generateVerbConjugationAnswerKey 
+} from '@/lib/pdf-utils';
 
 interface VocabularyDatabaseProps {
   vocabulary: VocabularyItem[];
@@ -45,7 +49,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
   const [bookmarkedRows, setBookmarkedRows] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isFilterPanelCollapsed, setIsFilterPanelCollapsed] = useState(false);
-  const [exportFormat, setExportFormat] = useState<'csv' | 'xlsx' | 'json'>('csv');
+  const [exportFormat, setExportFormat] = useState<'csv' | 'xlsx' | 'json' | 'pdf-practice' | 'pdf-answers'>('csv');
   const [isMobileFABExpanded, setIsMobileFABExpanded] = useState(false);
   const [isMobileExportDialogOpen, setIsMobileExportDialogOpen] = useState(false);
   const isMobile = useIsMobile();
@@ -162,32 +166,52 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
       filters.selectedRows.includes(item._id)
     );
     
-    let blob: Blob;
-    let filename: string;
-    
+    if (selectedItems.length === 0) {
+      alert('请先选择要导出的词汇。');
+      return;
+    }
+
     switch (exportFormat) {
+      case 'pdf-practice':
+        generateVerbConjugationWorksheet({
+          selectedVocabulary: selectedItems,
+          selectedConjugations: filters.selectedConjugations,
+          includeExamples: true,
+          includeAnswers: false
+        });
+        return;
+        
+      case 'pdf-answers':
+        generateVerbConjugationAnswerKey({
+          selectedVocabulary: selectedItems,
+          selectedConjugations: filters.selectedConjugations,
+          includeExamples: true,
+          includeAnswers: true
+        });
+        return;
+        
       case 'csv':
         const csvContent = convertToCSV(selectedItems);
-        blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        filename = 'selected-vocabulary.csv';
+        downloadFile(csvContent, 'selected-vocabulary.csv', 'text/csv;charset=utf-8;');
         break;
       
       case 'xlsx':
         // For now, we'll export as CSV and suggest using a converter
         // In a real app, you'd use a library like xlsx or exceljs
         const xlsxContent = convertToCSV(selectedItems);
-        blob = new Blob([xlsxContent], { type: 'text/csv;charset=utf-8;' });
-        filename = 'selected-vocabulary.csv'; // Note: keeping as CSV for now
+        downloadFile(xlsxContent, 'selected-vocabulary.csv', 'text/csv;charset=utf-8;');
         break;
       
       case 'json':
       default:
         const dataStr = JSON.stringify(selectedItems, null, 2);
-        blob = new Blob([dataStr], { type: 'application/json' });
-        filename = 'selected-vocabulary.json';
+        downloadFile(dataStr, 'selected-vocabulary.json', 'application/json');
         break;
     }
-    
+  };
+
+  const downloadFile = (content: string, filename: string, mimeType: string) => {
+    const blob = new Blob([content], { type: mimeType });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
@@ -296,7 +320,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                       <div className="space-y-4 pt-4">
                         <Select 
                           value={exportFormat} 
-                          onValueChange={(value: 'csv' | 'xlsx' | 'json') => setExportFormat(value)}
+                          onValueChange={(value: 'csv' | 'xlsx' | 'json' | 'pdf-practice' | 'pdf-answers') => setExportFormat(value)}
                         >
                           <SelectTrigger className="w-full">
                             <SelectValue />
@@ -305,8 +329,23 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                             <SelectItem value="csv">CSV - 逗号分隔值</SelectItem>
                             <SelectItem value="xlsx">XLSX - Excel 表格</SelectItem>
                             <SelectItem value="json">JSON - 数据格式</SelectItem>
+                            <SelectItem value="pdf-practice">PDF - 动词练习册 (打印)</SelectItem>
+                            <SelectItem value="pdf-answers">PDF - 动词答案册 (打印)</SelectItem>
                           </SelectContent>
                         </Select>
+                        
+                        {(exportFormat === 'pdf-practice' || exportFormat === 'pdf-answers') && (
+                          <div className="text-xs text-blue-600 bg-blue-50 p-3 rounded-lg border border-blue-200">
+                            <div className="font-medium mb-1">📚 动词变位练习册说明</div>
+                            <ul className="space-y-1 text-blue-700">
+                              <li>• 仅包含选中的动词（{vocabulary.filter(v => filters.selectedRows.includes(v._id) && v.part_of_speech.includes('动')).length} 个动词）</li>
+                              <li>• 使用当前选中的变位形式（{filters.selectedConjugations.length} 种形式）</li>
+                              <li>• 练习册：空白处供填写练习</li>
+                              <li>• 答案册：包含完整的变位答案</li>
+                              <li>• 点击导出后打开打印预览，选择&ldquo;保存为PDF&rdquo;</li>
+                            </ul>
+                          </div>
+                        )}
                         <div className="flex space-x-2 pt-2">
                           <Button 
                             variant="outline" 
@@ -334,16 +373,18 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               <div className="hidden sm:flex items-center space-x-2">
                 <Select 
                   value={exportFormat} 
-                  onValueChange={(value: 'csv' | 'xlsx' | 'json') => setExportFormat(value)}
+                  onValueChange={(value: 'csv' | 'xlsx' | 'json' | 'pdf-practice' | 'pdf-answers') => setExportFormat(value)}
                   disabled={filters.selectedRows.length === 0}
                 >
-                  <SelectTrigger className="w-20 h-8 text-xs">
+                  <SelectTrigger className="w-32 h-8 text-xs">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="csv">CSV</SelectItem>
                     <SelectItem value="xlsx">XLSX</SelectItem>
                     <SelectItem value="json">JSON</SelectItem>
+                    <SelectItem value="pdf-practice">PDF练习</SelectItem>
+                    <SelectItem value="pdf-answers">PDF答案</SelectItem>
                   </SelectContent>
                 </Select>
                 <Button 
@@ -452,6 +493,26 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
             duration: 0.15,
           }}
         >
+          {/* PDF Export Info Banner */}
+          {(exportFormat === 'pdf-practice' || exportFormat === 'pdf-answers') && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="px-4 sm:px-6 py-2 bg-blue-50 border-b border-blue-200"
+            >
+              <div className="flex items-center space-x-2 text-sm text-blue-700">
+                <Info className="w-4 h-4 text-blue-500" />
+                <span>
+                  PDF打印模式：将为选中的 <span className="font-medium">{vocabulary.filter(v => filters.selectedRows.includes(v._id) && v.part_of_speech.includes('动')).length} 个动词</span> 
+                  生成 <span className="font-medium">{exportFormat === 'pdf-practice' ? '练习册' : '答案册'}</span>，
+                  包含 <span className="font-medium">{filters.selectedConjugations.length} 种变位形式</span>。
+                  点击导出后将打开打印预览。
+                </span>
+              </div>
+            </motion.div>
+          )}
+          
           {/* Table Controls */}
           <div className="px-4 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between flex-shrink-0 min-h-[64px]">
             <div className="flex items-center space-x-4">
@@ -547,7 +608,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               <div className="text-xs text-gray-600 mb-2 font-medium">导出格式</div>
               <Select 
                 value={exportFormat} 
-                onValueChange={(value: 'csv' | 'xlsx' | 'json') => setExportFormat(value)}
+                onValueChange={(value: 'csv' | 'xlsx' | 'json' | 'pdf-practice' | 'pdf-answers') => setExportFormat(value)}
               >
                 <SelectTrigger className="w-full h-8 text-xs">
                   <SelectValue />
@@ -556,6 +617,8 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   <SelectItem value="csv">CSV</SelectItem>
                   <SelectItem value="xlsx">XLSX</SelectItem>
                   <SelectItem value="json">JSON</SelectItem>
+                  <SelectItem value="pdf-practice">PDF练习</SelectItem>
+                  <SelectItem value="pdf-answers">PDF答案</SelectItem>
                 </SelectContent>
               </Select>
             </div>

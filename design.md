@@ -252,7 +252,6 @@ interface AnimationTypes {
 ☐ 含义
 ☐ 例句
 ```
-```
 
 ### Main Table Structure (Desktop)
 
@@ -295,7 +294,9 @@ interface AnimationTypes {
 导出 ▼
 ├── CSV格式 (.csv)
 ├── Excel格式 (.xlsx) 
-└── JSON格式 (.json)
+├── JSON格式 (.json)
+├── PDF练习册 - 动词变位练习
+└── PDF答案册 - 动词变位答案
 ```
 
 #### Mobile Export Options
@@ -307,140 +308,77 @@ interface AnimationTypes {
          └── 🎯 快速操作
    ```
 
-### Table Features
+#### PDF Export Features
+- **Rich Formatting**: Professional layouts with proper typography
+- **Japanese Font Support**: Optimized for Japanese characters and conjugations
+- **Chinese Explanations**: All conjugation forms labeled in Simplified Chinese
+- **Practice Mode**: Blank worksheets for handwriting practice
+- **Answer Keys**: Complete conjugation references
+- **Multi-page Support**: Automatic pagination for large verb sets
+- **Print Optimization**: A4 format with proper margins and spacing
 
-#### 排序功能 (Sorting)
-- 点击列标题进行排序
-- 支持升序/降序
-- 排序列和方向的视觉指示器
+#### PDF Export Workflows
+- **单词练习册导出**:
+  1. 用户选择多个动词
+  2. 点击导出按钮，选择“PDF练习册”
+  3. 系统生成包含所选动词的练习册PDF
+  4. 用户下载或打印PDF进行书写练习
 
-#### 行选择 (Row Selection)  
-- 单行复选框选择
-- "全选"功能（当前筛选结果）
-- 选中行的批量操作
+- **答案册导出**:
+  1. 用户在练习后需要检查答案
+  2. 点击导出按钮，选择“PDF答案册”
+  3. 系统生成包含所选动词变位答案的PDF
+  4. 用户下载或打印PDF进行对照检查
 
-#### 动词展开 (Verb Expansion)
-- 动词行显示雪佛龙图标 (▷)
-- 点击展开显示选中的变位形式
-- 平滑的弹簧动画过渡
-- 移动端和桌面端均支持
-
-#### 分页控制 (Pagination)
-- 可配置页面大小 (25, 50, 100, 200 行)
-- 页面导航：首页/上一页/下一页/末页
-- 跳转到指定页面
-- 总结果数显示
-
-### 颜色编码系统 (Color Coding)
-
-#### 词性标签 (Parts of Speech)
-- 🟢 **名词**: 绿色标签
-- 🔵 **动1**: 蓝色标签（一类动词）
-- 🟣 **动2**: 紫色标签（二类动词）  
-- � **动3**: 红色标签（三类动词）
-- � **形容词**: 黄色标签
-- 🟠 **副词**: 橙色标签
-
-#### 行状态 (Row States)
-- **默认**: 白色背景
-- **悬停**: 浅灰色背景
-- **选中**: 浅蓝色背景，左侧蓝色边框
-- **已收藏**: 行中显示黄色星形图标
-
-## User Workflows
-
-### Scenario 1: Study Specific Lessons
-```
-1. User wants to review vocabulary from lessons 30-35
-2. In Lessons filter:
-   - Search for "30"
-   - Check: 新标初_30, 新标初_31, 新标初_32, 新标初_33, 新标初_34, 新标初_35
-3. Table updates to show only words from selected lessons
-4. User can further filter by part of speech if needed
-5. Select specific words and send to practice mode
-```
-
-### Scenario 2: Focus on Specific Word Types
-```
-1. User wants to practice all verbs across multiple books
-2. In Parts of Speech filter:
-   - Check: 动词 (Verb)
-3. In Books filter:
-   - Check: Book 7, Book 8
-4. Table shows all verbs from selected books
-5. Sort by lesson to see progression
-6. Practice conjugations for selected verbs
-```
-
-### Scenario 3: Search for Specific Topics
-```
-1. User wants to find all food-related vocabulary
-2. In Text Search:
-   - Enter "食" or "food"
-   - Enable search in: Japanese word, Chinese meaning, Example sentences
-3. Table shows all matching results across all lessons
-4. User can further refine by lesson or word type
-5. Create custom study set from results
-```
-
-### Scenario 4: Review Difficult Words
-```
-1. User has bookmarked difficult words during previous study
-2. Apply filter: "Bookmarked only"
-3. Table shows only previously marked difficult words
-4. Sort by "last practiced" to prioritize older words
-5. Practice selected words
-```
-
-## Technical Implementation
-
-### Data Loading Strategy
-- Load vocabulary JSON at build time for static generation
-- Create search indices for fast text searching
-- Pre-compute filter counts (words per lesson, per part of speech)
-
-### Filtering Logic
-- Client-side filtering for real-time responsiveness
-- Combine multiple filter types with AND logic
-- Text search uses fuzzy matching across multiple fields
-- URL state management for bookmarkable filter combinations
-
-### Performance Considerations
-- Virtual scrolling for large result sets
-- Debounced search input (300ms delay)
-- Lazy loading of example sentences in details view
-- Efficient re-rendering with React.memo or similar optimization
-
-### State Management
+### PDF Generation System
 ```typescript
-interface FilterState {
-  books: string[];           // Selected book IDs
-  lessons: string[];         // Selected lesson names
-  partsOfSpeech: string[];   // Selected parts of speech
-  textSearch: string;        // Search query
-  searchFields: string[];    // Which fields to search
-  sortColumn: string;        // Current sort column
-  sortDirection: 'asc' | 'desc';
-  selectedRows: string[];    // Selected vocabulary IDs
-  currentPage: number;
-  pageSize: number;
+interface PDFGenerationOptions {
+  selectedVocabulary: VocabularyItem[];
+  selectedConjugations: (keyof VerbConjugations)[];
+  includeExamples?: boolean;
+  includeAnswers?: boolean;
 }
+
+// Main PDF generation functions
+function generateVerbConjugationWorksheet(options): void; // Practice version
+function generateVerbConjugationAnswerKey(options): void;  // Answer version
 ```
 
-### URL Structure
+### PDF Document Structure
 ```
-/vocabulary?
-  books=7,8&
-  lessons=新标初_30,新标初_31&
-  pos=名词,动词&
-  search=食べる&
-  sort=japanese_word&
-  dir=asc&
-  page=2&
-  size=50
+┌─────────────────────────────────────────────┐
+│ 动词变位练习册                              │
+│ 共 X 个动词 | Y 种变位形式                  │
+│ 生成时间: YYYY-MM-DD                        │
+├─────────────────────────────────────────────┤
+│ 难度等级: 基础 | 中级 | 高级                │
+├─────────────────────────────────────────────┤
+│                                             │
+│ 1. 動詞 (どうし)                            │
+│    读音: どうし                             │
+│    含义: 动词                               │
+│    课程: 新标初_XX                          │
+│                                             │
+│    变位形式              难度    答案       │
+│    ─────────────────────────────────────    │
+│    • 现在时（敬语）      [基础]  ______     │
+│    • 现在时（简体）      [基础]  ______     │
+│    • 过去时（敬语）      [基础]  ______     │
+│                                             │
+│    例句:                                    │
+│    • 例句内容...                            │
+│                                             │
+└─────────────────────────────────────────────┘
 ```
 
 ## Features for Future Implementation
+
+### Advanced PDF Features
+- **Custom Templates**: Multiple PDF layout options and themes
+- **Font Selection**: Support for different Japanese fonts (mincho, gothic)
+- **Practice Modes**: Fill-in-the-blank, multiple choice, translation exercises
+- **Progress Tracking**: QR codes linking to digital progress tracking
+- **Batch Generation**: Generate practice sets for entire lessons or textbooks
 
 ### Study Integration
 - "Practice Selected" button in header
@@ -481,3 +419,52 @@ interface FilterState {
 - **Performance**: Sub-200ms filter application on 3000+ vocabulary items
 - **Discoverability**: Users naturally discover new filtering combinations
 - **Retention**: Users return to use different filter combinations over time
+
+## User Scenarios
+
+### Scenario 1: 新用户初次使用
+```
+1. 用户下载并安装应用
+2. 首次打开应用，看到欢迎界面和使用说明
+3. 进入主界面，看到中日交流标准日本语的标题和词汇统计
+4. 点击“开始学习”按钮，进入词汇学习界面
+```
+
+### Scenario 2: 词汇筛选与学习
+```
+1. 用户在主界面选择“词汇学习”
+2. 进入词汇学习界面，看到默认加载的词汇列表
+3. 用户点击“筛选”按钮，打开筛选面板
+4. 在筛选面板中，用户选择“新标初”教材和“名词”词性
+5. 用户点击“应用筛选”按钮，词汇列表更新为符合条件的词汇
+6. 用户点击某个词汇，查看词汇详情和例句
+```
+
+### Scenario 3: 动词变位学习
+```
+1. 用户在词汇列表中选择一个动词词汇
+2. 点击“动词变位”标签，查看该动词的所有变位形式
+3. 用户选择“高级形式”，查看该动词的被动形和使役形
+4. 用户点击“返回”按钮，回到词汇详情页
+```
+
+### Scenario 4: 导出词汇数据
+```
+1. 用户在词汇学习界面，点击右上角的“导出”按钮
+2. 选择导出格式为“CSV格式”
+3. 点击“导出当前词汇”选项
+4. 系统生成CSV文件并提供下载链接
+```
+
+### Scenario 5: Generate Practice Documents
+```
+1. User wants to create offline study materials for specific verbs
+2. Filter verbs by lesson or difficulty level
+3. Select target verbs using table checkboxes
+4. Configure conjugation forms (use preset levels or individual selection)
+5. Choose export format:
+   - PDF练习册: For handwriting practice with blank spaces
+   - PDF答案册: For reference with complete answers
+6. Download professionally formatted PDF document
+7. Print for offline study and repetition practice
+```

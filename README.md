@@ -37,7 +37,15 @@ A modernized Japanese vocabulary learning tool built with Next.js, featuring adv
 - **触摸友好**: Touch-friendly controls and gestures
 - **移动导出**: Export functionality accessible on mobile
 - **浮动按钮**: Floating action button for quick mobile actions
-- **格式选择**: Support for CSV, XLSX, and JSON export formats
+- **格式选择**: Support for CSV, XLSX, JSON, and PDF export formats
+
+### 📄 **Rich PDF Documents**
+- **动词练习册**: Generate beautifully formatted verb conjugation practice worksheets  
+- **答案册**: Complete answer keys with all conjugation forms
+- **离线学习**: Print-ready documents for offline study and repetition practice
+- **可定制**: Use selected verbs and conjugation forms for personalized practice
+- **专业排版**: HTML/CSS-based generation with perfect Unicode support for Japanese and Chinese characters
+- **浏览器打印**: Uses browser's native print functionality for high-quality PDF output
 
 ### 🎨 **Modern UI/UX**
 - **简约设计**: Clean, minimalistic design inspired by modern standards
@@ -56,6 +64,8 @@ A modernized Japanese vocabulary learning tool built with Next.js, featuring adv
 - **Data**: JSON-based vocabulary database with verb conjugation support
 - **Localization**: Full Simplified Chinese interface
 - **Export**: Multiple format support (CSV, XLSX, JSON)
+- **PDF Generation**: HTML/CSS-based generation with browser print API for perfect Unicode support
+- **Print Ready**: Professional layouts optimized for offline study
 
 ## Getting Started
 
@@ -195,7 +205,8 @@ The application includes a comprehensive verb conjugation system with:
 │   ├── types.ts                 # TypeScript definitions including VerbConjugations
 │   ├── utils.ts                 # Utility functions (cn helper, clsx)
 │   ├── vocabulary-utils.ts      # Data processing and filtering functions
-│   └── conjugation-utils.ts     # Verb conjugation logic and forms
+│   ├── conjugation-utils.ts     # Verb conjugation logic and forms
+│   └── pdf-utils.ts             # PDF generation utilities for practice documents
 ├── hooks/
 │   └── use-mobile.ts            # Mobile detection hook
 └── public/
@@ -290,3 +301,32 @@ This project is licensed under the MIT License.
 ## Support
 
 For questions or issues, please open an issue on the GitHub repository.
+
+## 动词练习册生成 (PDF Practice Documents)
+
+The application now includes a sophisticated PDF generation system for creating rich, formatted verb conjugation practice documents:
+
+1. **选择动词**: Filter and select verbs using the table checkbox selection
+2. **选择变位形式**: Configure which conjugation forms to include in the practice document
+3. **选择导出格式**:
+   - **PDF练习册**: Generates a worksheet with blank spaces for practice (opens print dialog)
+   - **PDF答案册**: Generates a complete answer key with all conjugations (opens print dialog)
+4. **打印为PDF**: Use browser's "Save as PDF" option in the print dialog to create downloadable documents
+
+#### PDF Document Features
+- **Professional Layout**: Clean typography optimized for Japanese and Chinese text
+- **Difficulty Indicators**: Each conjugation form labeled with difficulty level (基础/中级/高级)
+- **Example Sentences**: Includes usage examples for context
+- **Practice Spaces**: Blank lines for handwriting practice (practice version)
+- **Complete Answers**: Full conjugation answers (answer key version)
+- **Page Numbers**: Multi-page documents with proper pagination
+- **Study Instructions**: Helpful tips and usage guidelines
+
+#### Usage Workflow
+```
+1. 筛选动词 → Filter verbs by textbook, lesson, or search
+2. 选择词汇 → Select specific verbs using checkboxes
+3. 配置变位 → Choose conjugation forms and difficulty level
+4. 选择格式 → Select "PDF练习" or "PDF答案" from export dropdown
+5. 生成文档 → Click export to generate and download PDF
+```
