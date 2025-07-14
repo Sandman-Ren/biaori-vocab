@@ -6,6 +6,7 @@ interface PDFGenerationOptions {
   selectedConjugations: (keyof VerbConjugations)[];
   includeExamples?: boolean;
   includeAnswers?: boolean;
+  simplifiedLayout?: boolean; // New option for stripped-down formatting
 }
 
 // Conjugation form labels in Chinese
@@ -47,7 +48,7 @@ const CONJUGATION_LEVELS: Record<keyof VerbConjugations, string> = {
 };
 
 export function generateVerbConjugationPDF(options: PDFGenerationOptions): void {
-  const { selectedVocabulary, selectedConjugations, includeExamples = true, includeAnswers = true } = options;
+  const { selectedVocabulary, selectedConjugations, includeExamples = true, includeAnswers = true, simplifiedLayout = false } = options;
   
   // Filter verbs and generate conjugations if needed
   const verbsWithConjugations: (VocabularyItem & { conjugations: VerbConjugations })[] = selectedVocabulary
@@ -84,7 +85,7 @@ export function generateVerbConjugationPDF(options: PDFGenerationOptions): void 
   }
 
   // Generate HTML content for the PDF
-  const htmlContent = generatePDFHTML(verbsWithConjugations, selectedConjugations, includeExamples, includeAnswers);
+  const htmlContent = generatePDFHTML(verbsWithConjugations, selectedConjugations, includeExamples, includeAnswers, simplifiedLayout);
   
   // Create a new window for printing
   const printWindow = window.open('', '_blank', 'width=800,height=600');
@@ -115,10 +116,14 @@ function generatePDFHTML(
   verbsWithConjugations: (VocabularyItem & { conjugations: VerbConjugations })[],
   selectedConjugations: (keyof VerbConjugations)[],
   includeExamples: boolean,
-  includeAnswers: boolean
+  includeAnswers: boolean,
+  simplifiedLayout: boolean = false
 ): string {
   const worksheetType = includeAnswers ? '答案册' : '练习册';
   const currentDate = new Date().toLocaleDateString('zh-CN');
+  
+  // Choose styles based on layout preference
+  const styles = simplifiedLayout ? getSimplifiedStyles() : getRichStyles();
   
   return `
     <!DOCTYPE html>
@@ -128,210 +133,7 @@ function generatePDFHTML(
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>动词变位${worksheetType}</title>
       <style>
-        @page {
-          size: A4;
-          margin: 20mm;
-        }
-        
-        * {
-          box-sizing: border-box;
-        }
-        
-        body {
-          font-family: "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
-          line-height: 1.6;
-          color: #333;
-          margin: 0;
-          padding: 0;
-          background: white;
-        }
-        
-        .page-header {
-          text-align: center;
-          margin-bottom: 30px;
-          border-bottom: 2px solid #eee;
-          padding-bottom: 20px;
-        }
-        
-        .page-title {
-          font-size: 24px;
-          font-weight: bold;
-          margin-bottom: 10px;
-          color: #2563eb;
-        }
-        
-        .page-subtitle {
-          font-size: 14px;
-          color: #666;
-          margin-bottom: 5px;
-        }
-        
-        .legend {
-          background: #f8fafc;
-          padding: 15px;
-          border-radius: 8px;
-          margin-bottom: 25px;
-          border-left: 4px solid #3b82f6;
-        }
-        
-        .legend-title {
-          font-weight: bold;
-          margin-bottom: 8px;
-          color: #1e40af;
-        }
-        
-        .verb-section {
-          margin-bottom: 40px;
-          page-break-inside: avoid;
-          border: 1px solid #e5e7eb;
-          border-radius: 8px;
-          padding: 20px;
-          background: #fafafa;
-        }
-        
-        .verb-header {
-          margin-bottom: 15px;
-        }
-        
-        .verb-word {
-          font-size: 20px;
-          font-weight: bold;
-          color: #1f2937;
-          margin-bottom: 5px;
-        }
-        
-        .verb-reading {
-          font-size: 16px;
-          color: #6b7280;
-          margin-bottom: 5px;
-        }
-        
-        .verb-meaning {
-          font-size: 14px;
-          color: #374151;
-          margin-bottom: 5px;
-        }
-        
-        .verb-lesson {
-          font-size: 12px;
-          color: #9ca3af;
-        }
-        
-        .conjugation-table {
-          width: 100%;
-          border-collapse: collapse;
-          margin: 15px 0;
-          background: white;
-          border-radius: 6px;
-          overflow: hidden;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .conjugation-table th {
-          background: #f3f4f6;
-          padding: 12px;
-          text-align: left;
-          font-weight: bold;
-          color: #374151;
-          border-bottom: 2px solid #e5e7eb;
-        }
-        
-        .conjugation-table td {
-          padding: 12px;
-          border-bottom: 1px solid #e5e7eb;
-          vertical-align: top;
-        }
-        
-        .conjugation-form {
-          font-weight: 500;
-          color: #1f2937;
-        }
-        
-        .difficulty-badge {
-          display: inline-block;
-          padding: 2px 8px;
-          border-radius: 12px;
-          font-size: 11px;
-          font-weight: bold;
-          text-transform: uppercase;
-        }
-        
-        .difficulty-basic {
-          background: #dcfce7;
-          color: #166534;
-        }
-        
-        .difficulty-intermediate {
-          background: #fef3c7;
-          color: #92400e;
-        }
-        
-        .difficulty-advanced {
-          background: #fecaca;
-          color: #991b1b;
-        }
-        
-        .answer-field {
-          min-height: 24px;
-          border-bottom: 1px solid #9ca3af;
-          min-width: 150px;
-          display: inline-block;
-        }
-        
-        .examples-section {
-          margin-top: 20px;
-          padding: 15px;
-          background: #f9fafb;
-          border-radius: 6px;
-          border-left: 4px solid #10b981;
-        }
-        
-        .examples-title {
-          font-weight: bold;
-          margin-bottom: 10px;
-          color: #065f46;
-        }
-        
-        .example-item {
-          margin-bottom: 8px;
-          padding-left: 15px;
-          position: relative;
-        }
-        
-        .example-item:before {
-          content: "•";
-          position: absolute;
-          left: 0;
-          color: #10b981;
-          font-weight: bold;
-        }
-        
-        .footer {
-          margin-top: 40px;
-          padding-top: 20px;
-          border-top: 1px solid #e5e7eb;
-          text-align: center;
-          font-size: 12px;
-          color: #6b7280;
-        }
-        
-        @media print {
-          body {
-            font-size: 12px;
-          }
-          
-          .page-title {
-            font-size: 20px;
-          }
-          
-          .verb-word {
-            font-size: 18px;
-          }
-          
-          .verb-section {
-            page-break-inside: avoid;
-          }
-        }
+        ${styles}
       </style>
     </head>
     <body>
@@ -420,4 +222,406 @@ export function generateVerbConjugationAnswerKey(options: PDFGenerationOptions):
     ...options,
     includeAnswers: true
   });
+}
+
+function getRichStyles(): string {
+  return `
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background: white;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 20px;
+    }
+    
+    .page-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #2563eb;
+    }
+    
+    .page-subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 5px;
+    }
+    
+    .legend {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      border-left: 4px solid #3b82f6;
+    }
+    
+    .legend-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #1e40af;
+    }
+    
+    .verb-section {
+      margin-bottom: 40px;
+      page-break-inside: avoid;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fafafa;
+    }
+    
+    .verb-header {
+      margin-bottom: 15px;
+    }
+    
+    .verb-word {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 5px;
+    }
+    
+    .verb-reading {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 5px;
+    }
+    
+    .verb-meaning {
+      font-size: 14px;
+      color: #374151;
+      margin-bottom: 5px;
+    }
+    
+    .verb-lesson {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    
+    .conjugation-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .conjugation-table th {
+      background: #f3f4f6;
+      padding: 12px;
+      text-align: left;
+      font-weight: bold;
+      color: #374151;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    
+    .conjugation-table td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+    
+    .conjugation-form {
+      font-weight: 500;
+      color: #1f2937;
+    }
+    
+    .difficulty-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .difficulty-basic {
+      background: #dcfce7;
+      color: #166534;
+    }
+    
+    .difficulty-intermediate {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    
+    .difficulty-advanced {
+      background: #fecaca;
+      color: #991b1b;
+    }
+    
+    .answer-field {
+      min-height: 24px;
+      border-bottom: 1px solid #9ca3af;
+      min-width: 150px;
+      display: inline-block;
+    }
+    
+    .examples-section {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f9fafb;
+      border-radius: 6px;
+      border-left: 4px solid #10b981;
+    }
+    
+    .examples-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #065f46;
+    }
+    
+    .example-item {
+      margin-bottom: 8px;
+      padding-left: 15px;
+      position: relative;
+    }
+    
+    .example-item:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+    
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 12px;
+      color: #6b7280;
+    }
+    
+    @media print {
+      body {
+        font-size: 12px;
+      }
+      
+      .page-title {
+        font-size: 20px;
+      }
+      
+      .verb-word {
+        font-size: 18px;
+      }
+      
+      .verb-section {
+        page-break-inside: avoid;
+      }
+    }
+  `;
+}
+
+function getSimplifiedStyles(): string {
+  return `
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Times New Roman", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+      line-height: 1.4;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      background: white;
+      font-size: 12px;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 10px;
+    }
+    
+    .page-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #000;
+    }
+    
+    .page-subtitle {
+      font-size: 11px;
+      color: #000;
+      margin-bottom: 3px;
+    }
+    
+    .legend {
+      display: none; /* Hide in simplified mode */
+    }
+    
+    .verb-section {
+      margin-bottom: 25px;
+      page-break-inside: avoid;
+      border: none;
+      padding: 10px 0;
+      background: white;
+    }
+    
+    .verb-header {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    
+    .verb-word {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 2px;
+      display: inline;
+    }
+    
+    .verb-reading {
+      font-size: 12px;
+      color: #000;
+      margin-bottom: 2px;
+      display: inline;
+      margin-left: 10px;
+    }
+    
+    .verb-meaning {
+      font-size: 11px;
+      color: #000;
+      margin-bottom: 2px;
+      display: inline;
+      margin-left: 10px;
+    }
+    
+    .verb-lesson {
+      font-size: 10px;
+      color: #666;
+      display: inline;
+      margin-left: 10px;
+    }
+    
+    .conjugation-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      border: 1px solid #000;
+    }
+    
+    .conjugation-table th {
+      background: white;
+      padding: 6px 8px;
+      text-align: left;
+      font-weight: bold;
+      color: #000;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      font-size: 11px;
+    }
+    
+    .conjugation-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      vertical-align: top;
+      font-size: 11px;
+    }
+    
+    .conjugation-form {
+      font-weight: normal;
+      color: #000;
+    }
+    
+    .difficulty-badge {
+      font-size: 9px;
+      color: #666;
+      font-weight: normal;
+    }
+    
+    .difficulty-basic::before {
+      content: "[基]";
+    }
+    
+    .difficulty-intermediate::before {
+      content: "[中]";
+    }
+    
+    .difficulty-advanced::before {
+      content: "[高]";
+    }
+    
+    .answer-field {
+      min-height: 18px;
+      border-bottom: 1px solid #000;
+      min-width: 120px;
+      display: inline-block;
+    }
+    
+    .examples-section {
+      margin-top: 10px;
+      padding: 5px 0;
+      background: white;
+      border: none;
+    }
+    
+    .examples-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #000;
+      font-size: 11px;
+    }
+    
+    .example-item {
+      margin-bottom: 3px;
+      padding-left: 0;
+      font-size: 10px;
+      color: #333;
+    }
+    
+    .example-item:before {
+      content: "• ";
+      color: #000;
+    }
+    
+    .footer {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #000;
+      text-align: center;
+      font-size: 10px;
+      color: #000;
+    }
+    
+    @media print {
+      body {
+        font-size: 11px;
+      }
+      
+      .verb-section {
+        page-break-inside: avoid;
+      }
+    }
+  `;
 }

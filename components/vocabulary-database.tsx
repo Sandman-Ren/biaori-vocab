@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -50,6 +51,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isFilterPanelCollapsed, setIsFilterPanelCollapsed] = useState(false);
   const [exportFormat, setExportFormat] = useState<'csv' | 'xlsx' | 'json' | 'pdf-practice' | 'pdf-answers'>('csv');
+  const [simplifiedPDF, setSimplifiedPDF] = useState(false);
   const [isMobileFABExpanded, setIsMobileFABExpanded] = useState(false);
   const [isMobileExportDialogOpen, setIsMobileExportDialogOpen] = useState(false);
   const isMobile = useIsMobile();
@@ -177,7 +179,8 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
           selectedVocabulary: selectedItems,
           selectedConjugations: filters.selectedConjugations,
           includeExamples: true,
-          includeAnswers: false
+          includeAnswers: false,
+          simplifiedLayout: simplifiedPDF
         });
         return;
         
@@ -186,7 +189,8 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
           selectedVocabulary: selectedItems,
           selectedConjugations: filters.selectedConjugations,
           includeExamples: true,
-          includeAnswers: true
+          includeAnswers: true,
+          simplifiedLayout: simplifiedPDF
         });
         return;
         
@@ -335,15 +339,32 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                         </Select>
                         
                         {(exportFormat === 'pdf-practice' || exportFormat === 'pdf-answers') && (
-                          <div className="text-xs text-blue-600 bg-blue-50 p-3 rounded-lg border border-blue-200">
-                            <div className="font-medium mb-1">📚 动词变位练习册说明</div>
-                            <ul className="space-y-1 text-blue-700">
-                              <li>• 仅包含选中的动词（{vocabulary.filter(v => filters.selectedRows.includes(v._id) && v.part_of_speech.includes('动')).length} 个动词）</li>
-                              <li>• 使用当前选中的变位形式（{filters.selectedConjugations.length} 种形式）</li>
-                              <li>• 练习册：空白处供填写练习</li>
-                              <li>• 答案册：包含完整的变位答案</li>
-                              <li>• 点击导出后打开打印预览，选择&ldquo;保存为PDF&rdquo;</li>
-                            </ul>
+                          <div className="space-y-3">
+                            <div className="text-xs text-blue-600 bg-blue-50 p-3 rounded-lg border border-blue-200">
+                              <div className="font-medium mb-1">📚 动词变位练习册说明</div>
+                              <ul className="space-y-1 text-blue-700">
+                                <li>• 仅包含选中的动词（{vocabulary.filter(v => filters.selectedRows.includes(v._id) && v.part_of_speech.includes('动')).length} 个动词）</li>
+                                <li>• 使用当前选中的变位形式（{filters.selectedConjugations.length} 种形式）</li>
+                                <li>• 练习册：空白处供填写练习</li>
+                                <li>• 答案册：包含完整的变位答案</li>
+                                <li>• 点击导出后打开打印预览，选择&ldquo;保存为PDF&rdquo;</li>
+                              </ul>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border">
+                              <div className="flex flex-col">
+                                <Label htmlFor="simplified-pdf" className="text-sm font-medium">
+                                  简化版式
+                                </Label>
+                                <span className="text-xs text-gray-500">
+                                  简洁打印友好的黑白版式
+                                </span>
+                              </div>
+                              <Switch
+                                id="simplified-pdf"
+                                checked={simplifiedPDF}
+                                onCheckedChange={setSimplifiedPDF}
+                              />
+                            </div>
                           </div>
                         )}
                         <div className="flex space-x-2 pt-2">
@@ -501,14 +522,26 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               exit={{ opacity: 0, height: 0 }}
               className="px-4 sm:px-6 py-2 bg-blue-50 border-b border-blue-200"
             >
-              <div className="flex items-center space-x-2 text-sm text-blue-700">
-                <Info className="w-4 h-4 text-blue-500" />
-                <span>
-                  PDF打印模式：将为选中的 <span className="font-medium">{vocabulary.filter(v => filters.selectedRows.includes(v._id) && v.part_of_speech.includes('动')).length} 个动词</span> 
-                  生成 <span className="font-medium">{exportFormat === 'pdf-practice' ? '练习册' : '答案册'}</span>，
-                  包含 <span className="font-medium">{filters.selectedConjugations.length} 种变位形式</span>。
-                  点击导出后将打开打印预览。
-                </span>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2 text-sm text-blue-700">
+                  <Info className="w-4 h-4 text-blue-500" />
+                  <span>
+                    PDF打印模式：将为选中的 <span className="font-medium">{vocabulary.filter(v => filters.selectedRows.includes(v._id) && v.part_of_speech.includes('动')).length} 个动词</span> 
+                    生成 <span className="font-medium">{exportFormat === 'pdf-practice' ? '练习册' : '答案册'}</span>，
+                    包含 <span className="font-medium">{filters.selectedConjugations.length} 种变位形式</span>。
+                    点击导出后将打开打印预览。
+                  </span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Label htmlFor="simplified-pdf-desktop" className="text-xs text-blue-600">
+                    简化版式
+                  </Label>
+                  <Switch
+                    id="simplified-pdf-desktop"
+                    checked={simplifiedPDF}
+                    onCheckedChange={setSimplifiedPDF}
+                  />
+                </div>
               </div>
             </motion.div>
           )}
