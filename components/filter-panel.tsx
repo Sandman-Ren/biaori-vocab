@@ -162,7 +162,7 @@ export default function FilterPanel({
     selectedPartsOfSpeech.length > 0 || textSearch.length > 0;
 
   return (
-    <div className="w-full lg:w-72 border-r-0 lg:border-r border-gray-100 px-6 py-6 bg-white h-full overflow-y-auto">
+    <div className="w-full px-6 py-6 bg-white">
       {/* Header - Mobile only */}
       <div className="lg:hidden mb-6 pb-4 border-b border-gray-100">
         <div className="flex items-center justify-between">

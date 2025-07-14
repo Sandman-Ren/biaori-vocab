@@ -41,6 +41,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
 
   const [bookmarkedRows, setBookmarkedRows] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isFilterPanelCollapsed, setIsFilterPanelCollapsed] = useState(false);
   const isMobile = useIsMobile();
 
   // Load bookmarks from localStorage on mount
@@ -166,9 +167,9 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="h-screen flex flex-col bg-white">
       {/* Header */}
-      <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+      <header className="bg-white border-b border-gray-100 z-50 flex-shrink-0">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
             <div className="flex items-center space-x-3">
@@ -237,32 +238,76 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
         </div>
       </header>
 
-      <div className="flex">
-        {/* Filter Panel - Desktop only */}
+      {/* Main Content Area - Full Height */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Collapsible Filter Panel - Desktop only */}
         {!isMobile && (
-          <FilterPanel
-            books={bookInfo}
-            lessons={lessonInfo}
-            partsOfSpeech={partOfSpeechInfo}
-            selectedBooks={filters.books}
-            selectedLessons={filters.lessons}
-            selectedPartsOfSpeech={filters.partsOfSpeech}
-            textSearch={filters.textSearch}
-            searchFields={filters.searchFields}
-            selectedConjugations={filters.selectedConjugations}
-            onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
-            onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
-            onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
-            onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
-            onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
-            onSelectedConjugationsChange={handleSelectedConjugationsChange}
-          />
+          <>
+            {/* Collapsed Handle */}
+            {isFilterPanelCollapsed && (
+              <div className="flex-shrink-0 bg-gray-50 border-r border-gray-100 flex flex-col items-center justify-start pt-6">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsFilterPanelCollapsed(false)}
+                  className="rotate-90 text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 h-auto"
+                >
+                  <Filter className="w-4 h-4" />
+                </Button>
+                <div className="mt-4 text-xs text-gray-400 writing-mode-vertical transform rotate-180">
+                  Filters
+                </div>
+              </div>
+            )}
+
+            {/* Expanded Filter Panel */}
+            {!isFilterPanelCollapsed && (
+              <div className="w-72 flex-shrink-0 bg-white border-r border-gray-100 flex flex-col">
+                {/* Filter Panel Header */}
+                <div className="flex items-center justify-between p-4 border-b border-gray-100">
+                  <h2 className="text-sm font-medium text-gray-900">Filters</h2>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setIsFilterPanelCollapsed(true)}
+                    className="text-gray-500 hover:text-gray-700 p-1 h-auto"
+                  >
+                    <div className="flex items-center space-x-1">
+                      <span className="text-xs">Hide</span>
+                      <div className="w-3 h-3 border-l border-gray-400"></div>
+                    </div>
+                  </Button>
+                </div>
+                
+                {/* Scrollable Filter Content */}
+                <div className="flex-1 overflow-y-auto">
+                  <FilterPanel
+                    books={bookInfo}
+                    lessons={lessonInfo}
+                    partsOfSpeech={partOfSpeechInfo}
+                    selectedBooks={filters.books}
+                    selectedLessons={filters.lessons}
+                    selectedPartsOfSpeech={filters.partsOfSpeech}
+                    textSearch={filters.textSearch}
+                    searchFields={filters.searchFields}
+                    selectedConjugations={filters.selectedConjugations}
+                    onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
+                    onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
+                    onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
+                    onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
+                    onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
+                    onSelectedConjugationsChange={handleSelectedConjugationsChange}
+                  />
+                </div>
+              </div>
+            )}
+          </>
         )}
 
         {/* Main Content */}
-        <div className="flex-1 flex flex-col min-w-0">
+        <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
           {/* Table Controls */}
-          <div className="px-4 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+          <div className="px-4 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2 sm:space-x-3">
                 <Checkbox
@@ -299,7 +344,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
             )}
           </div>
 
-          {/* Table */}
+          {/* Scrollable Table Container */}
           <div className="flex-1 overflow-auto">
             <VocabularyTable
               vocabulary={paginatedVocabulary}
@@ -317,15 +362,17 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
           </div>
 
           {/* Pagination */}
-          <Pagination
-            currentPage={filters.currentPage}
-            totalPages={totalPages}
-            pageSize={filters.pageSize}
-            totalItems={filteredVocabulary.length}
-            onPageChange={(page) => setFilters(prev => ({ ...prev, currentPage: page }))}
-            onPageSizeChange={(pageSize) => setFilters(prev => ({ ...prev, pageSize, currentPage: 1 }))}
-            isMobile={isMobile}
-          />
+          <div className="flex-shrink-0">
+            <Pagination
+              currentPage={filters.currentPage}
+              totalPages={totalPages}
+              pageSize={filters.pageSize}
+              totalItems={filteredVocabulary.length}
+              onPageChange={(page) => setFilters(prev => ({ ...prev, currentPage: page }))}
+              onPageSizeChange={(pageSize) => setFilters(prev => ({ ...prev, pageSize, currentPage: 1 }))}
+              isMobile={isMobile}
+            />
+          </div>
         </div>
       </div>
 
