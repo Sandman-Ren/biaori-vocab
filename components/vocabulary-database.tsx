@@ -205,7 +205,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   </SheetContent>
                 </Sheet>
               )}
-              <h1 className="text-lg sm:text-xl font-medium text-gray-900">標準日本語</h1>
+              <h1 className="text-lg sm:text-xl font-medium text-gray-900">中日交流标准日本语</h1>
               <span className="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded">
                 词汇
               </span>
@@ -264,7 +264,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 <motion.button
                   onClick={() => setIsFilterPanelCollapsed(false)}
                   className="text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 rounded mt-4 mb-2 transition-colors duration-200"
-                  title="显示筛选器"
+                  title="显示筛选"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -272,7 +272,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   <ChevronRight className="w-4 h-4" />
                 </motion.button>
                 <div className="writing-mode-vertical text-xs text-gray-400 mt-2 select-none">
-                  筛选器
+                  筛选
                 </div>
                 
                 {/* Visual indicator of active filters */}
@@ -284,11 +284,11 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               <div className="h-full flex flex-col">
                 {/* Filter Panel Header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-100">
-                  <h2 className="text-sm font-medium text-gray-900">筛选器</h2>
+                  <h2 className="text-sm font-medium text-gray-900">筛选</h2>
                   <motion.button
                     onClick={() => setIsFilterPanelCollapsed(true)}
                     className="text-gray-500 hover:text-gray-700 p-1 rounded transition-colors duration-200"
-                    title="隐藏筛选器"
+                    title="隐藏筛选"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}

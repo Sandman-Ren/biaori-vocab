@@ -166,7 +166,7 @@ export default function FilterPanel({
       {/* Header - Mobile only */}
       <div className="lg:hidden mb-6 pb-4 border-b border-gray-100">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-gray-900">筛选器</h2>
+          <h2 className="text-lg font-medium text-gray-900">筛选</h2>
           {hasActiveFilters && (
             <button
               onClick={clearAllFilters}
