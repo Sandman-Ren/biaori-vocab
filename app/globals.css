@@ -121,6 +121,12 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  /* Vertical writing mode for collapsed filter handle */
+  .writing-mode-vertical {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+  }
+  
   /* Improve touch targets on mobile - but not for checkboxes */
   @media (max-width: 767px) {
     button:not([data-slot="checkbox"]), 

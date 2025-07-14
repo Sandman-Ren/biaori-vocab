@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Table, 
   TableBody, 
@@ -368,16 +369,37 @@ export default function VocabularyTable({
                     </TableCell>
                   </TableRow>
                   
-                  {isVerbItem && isExpanded && (
-                    <TableRow key={`vocabulary-table-conjugations-${item._id}`}>
-                      <TableCell colSpan={8} className="p-0">
-                        <VerbConjugationDisplay 
-                          vocabulary={item} 
-                          selectedConjugations={selectedConjugations}
-                        />
-                      </TableCell>
-                    </TableRow>
-                  )}
+                  <AnimatePresence>
+                    {isVerbItem && isExpanded && (
+                      <motion.tr
+                        key={`conjugations-${item._id}`}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 25,
+                          duration: 0.15,
+                        }}
+                        style={{ overflow: "hidden" }}
+                      >
+                        <TableCell colSpan={8} className="p-0">
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ delay: 0.05, type: "spring", stiffness: 500, damping: 28, duration: 0.12 }}
+                          >
+                            <VerbConjugationDisplay 
+                              vocabulary={item} 
+                              selectedConjugations={selectedConjugations}
+                            />
+                          </motion.div>
+                        </TableCell>
+                      </motion.tr>
+                    )}
+                  </AnimatePresence>
                 </React.Fragment>
               );
             })}
