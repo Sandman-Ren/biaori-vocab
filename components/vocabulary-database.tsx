@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
@@ -247,116 +247,78 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
         {/* Collapsible Filter Panel - Desktop only */}
         {!isMobile && (
           <motion.div
-            layout
             initial={false}
             animate={{
               width: isFilterPanelCollapsed ? 48 : 288, // 12 * 4 = 48px, 72 * 4 = 288px
             }}
             transition={{
               type: "spring",
-              stiffness: 400,
-              damping: 25,
-              mass: 0.8,
-              duration: 0.15,
+              stiffness: 500,
+              damping: 30,
+              mass: 0.5,
             }}
-            className="flex-shrink-0 bg-white border-r border-gray-100 flex flex-col overflow-hidden"
+            className="flex-shrink-0 bg-white border-r border-gray-100 flex flex-col overflow-hidden force-pointer-events"
           >
-            <AnimatePresence mode="wait">
-              {isFilterPanelCollapsed ? (
-                <motion.div
-                  key="collapsed"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: "spring", stiffness: 600, damping: 30, duration: 0.12 }}
-                  className="bg-gray-50 h-full flex flex-col items-center justify-start"
+            {isFilterPanelCollapsed ? (
+              <div className="bg-gray-50 h-full flex flex-col items-center justify-start">
+                <motion.button
+                  onClick={() => setIsFilterPanelCollapsed(false)}
+                  className="text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 rounded mt-4 mb-2 transition-colors duration-200"
+                  title="Show filters"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 >
+                  <ChevronRight className="w-4 h-4" />
+                </motion.button>
+                <div className="writing-mode-vertical text-xs text-gray-400 mt-2 select-none">
+                  FILTERS
+                </div>
+                
+                {/* Visual indicator of active filters */}
+                {(filters.books.length > 0 || filters.lessons.length > 0 || filters.partsOfSpeech.length > 0 || filters.textSearch) && (
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-4" />
+                )}
+              </div>
+            ) : (
+              <div className="h-full flex flex-col">
+                {/* Filter Panel Header */}
+                <div className="flex items-center justify-between p-4 border-b border-gray-100">
+                  <h2 className="text-sm font-medium text-gray-900">Filters</h2>
                   <motion.button
-                    onClick={() => setIsFilterPanelCollapsed(false)}
-                    className="text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 rounded mt-4 mb-2 transition-colors duration-200"
-                    title="Show filters"
+                    onClick={() => setIsFilterPanelCollapsed(true)}
+                    className="text-gray-500 hover:text-gray-700 p-1 rounded transition-colors duration-200"
+                    title="Hide filters"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   >
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronLeft className="w-4 h-4" />
                   </motion.button>
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05, type: "spring", stiffness: 500, damping: 28, duration: 0.18 }}
-                    className="writing-mode-vertical text-xs text-gray-400 mt-2 select-none"
-                  >
-                    FILTERS
-                  </motion.div>
-                  
-                  {/* Visual indicator of active filters */}
-                  {(filters.books.length > 0 || filters.lessons.length > 0 || filters.partsOfSpeech.length > 0 || filters.textSearch) && (
-                    <motion.div
-                      initial={{ scale: 0, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.08, type: "spring", stiffness: 400, damping: 20, duration: 0.2 }}
-                      className="w-2 h-2 bg-blue-500 rounded-full mt-4"
-                    />
-                  )}
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="expanded"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: "spring", stiffness: 600, damping: 30, duration: 0.12 }}
-                  className="h-full flex flex-col"
-                >
-                  {/* Filter Panel Header */}
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05, type: "spring", stiffness: 500, damping: 28, duration: 0.18 }}
-                    className="flex items-center justify-between p-4 border-b border-gray-100"
-                  >
-                    <h2 className="text-sm font-medium text-gray-900">Filters</h2>
-                    <motion.button
-                      onClick={() => setIsFilterPanelCollapsed(true)}
-                      className="text-gray-500 hover:text-gray-700 p-1 rounded transition-colors duration-200"
-                      title="Hide filters"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                    </motion.button>
-                  </motion.div>
-                  
-                  {/* Scrollable Filter Content */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.08, type: "spring", stiffness: 450, damping: 26, duration: 0.16 }}
-                    className="flex-1 overflow-y-auto"
-                  >
-                    <FilterPanel
-                      books={bookInfo}
-                      lessons={lessonInfo}
-                      partsOfSpeech={partOfSpeechInfo}
-                      selectedBooks={filters.books}
-                      selectedLessons={filters.lessons}
-                      selectedPartsOfSpeech={filters.partsOfSpeech}
-                      textSearch={filters.textSearch}
-                      searchFields={filters.searchFields}
-                      selectedConjugations={filters.selectedConjugations}
-                      onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
-                      onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
-                      onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
-                      onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
-                      onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
-                      onSelectedConjugationsChange={handleSelectedConjugationsChange}
-                    />
-                  </motion.div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                </div>
+                
+                {/* Scrollable Filter Content */}
+                <div className="flex-1 overflow-y-auto force-pointer-events">
+                  <FilterPanel
+                    books={bookInfo}
+                    lessons={lessonInfo}
+                    partsOfSpeech={partOfSpeechInfo}
+                    selectedBooks={filters.books}
+                    selectedLessons={filters.lessons}
+                    selectedPartsOfSpeech={filters.partsOfSpeech}
+                    textSearch={filters.textSearch}
+                    searchFields={filters.searchFields}
+                    selectedConjugations={filters.selectedConjugations}
+                    onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
+                    onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
+                    onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
+                    onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
+                    onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
+                    onSelectedConjugationsChange={handleSelectedConjugationsChange}
+                  />
+                </div>
+              </div>
+            )}
           </motion.div>
         )}
 
@@ -373,7 +335,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
           }}
         >
           {/* Table Controls */}
-          <div className="px-4 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between flex-shrink-0">
+          <div className="px-4 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between flex-shrink-0 min-h-[64px]">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2 sm:space-x-3">
                 <Checkbox
@@ -386,21 +348,23 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 />
                 <Label className="text-sm text-gray-600 hidden sm:block">Select all</Label>
               </div>
-              {filters.selectedRows.length > 0 && (
-                <>
-                  <span className="text-sm text-gray-400">
-                    {filters.selectedRows.length} selected
-                  </span>
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    onClick={clearSelection}
-                    className="text-gray-500 hover:text-gray-700"
-                  >
-                    Clear
-                  </Button>
-                </>
-              )}
+              {/* Always render selection controls but hide when no selection */}
+              <div className={`flex items-center space-x-3 transition-opacity duration-200 ${
+                filters.selectedRows.length > 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'
+              }`}>
+                <span className="text-sm text-gray-400 whitespace-nowrap">
+                  {filters.selectedRows.length} selected
+                </span>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={clearSelection}
+                  className="text-gray-500 hover:text-gray-700"
+                  tabIndex={filters.selectedRows.length > 0 ? 0 : -1}
+                >
+                  Clear
+                </Button>
+              </div>
             </div>
             {/* Mobile filter count indicator */}
             {isMobile && (filters.books.length > 0 || filters.lessons.length > 0 || filters.partsOfSpeech.length > 0 || filters.textSearch) && (

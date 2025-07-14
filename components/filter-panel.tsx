@@ -162,7 +162,7 @@ export default function FilterPanel({
     selectedPartsOfSpeech.length > 0 || textSearch.length > 0;
 
   return (
-    <div className="w-full px-6 py-6 bg-white">
+    <div className="w-full px-6 py-6 bg-white force-pointer-events">
       {/* Header - Mobile only */}
       <div className="lg:hidden mb-6 pb-4 border-b border-gray-100">
         <div className="flex items-center justify-between">
@@ -287,7 +287,7 @@ export default function FilterPanel({
             </Button>
           </div>
           
-          <div className="space-y-3 max-h-48 overflow-y-auto">
+          <div className="space-y-3 max-h-48 scrollbar-hide">
             {displayedLessons.map((lesson) => (
               <div key={`filter-panel-lesson-${lesson.id}`} className="flex items-center justify-between text-sm">
                 <div className="flex items-center space-x-2 sm:space-x-3">

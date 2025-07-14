@@ -147,3 +147,35 @@
     }
   }
 }
+
+/* Ensure pointer events work during layout animations */
+.force-pointer-events {
+  pointer-events: auto !important;
+}
+
+/* Custom scrollbar that doesn't affect layout */
+.scrollbar-hidden {
+  /* For Webkit browsers (Chrome, Safari, Edge) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  overflow-y: auto;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Simple and reliable scrollbar hiding */
+.scrollbar-hide {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  -webkit-scrollbar: none;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* Keep scroll functionality */
+  overflow-y: auto;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

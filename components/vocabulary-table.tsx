@@ -385,17 +385,10 @@ export default function VocabularyTable({
                         style={{ overflow: "hidden" }}
                       >
                         <TableCell colSpan={8} className="p-0">
-                          <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ delay: 0.05, type: "spring", stiffness: 500, damping: 28, duration: 0.12 }}
-                          >
-                            <VerbConjugationDisplay 
-                              vocabulary={item} 
-                              selectedConjugations={selectedConjugations}
-                            />
-                          </motion.div>
+                          <VerbConjugationDisplay 
+                            vocabulary={item} 
+                            selectedConjugations={selectedConjugations}
+                          />
                         </TableCell>
                       </motion.tr>
                     )}
