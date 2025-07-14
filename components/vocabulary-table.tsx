@@ -12,15 +12,18 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ChevronUp, ChevronDown, Star } from 'lucide-react';
-import { VocabularyItem } from '@/lib/types';
+import { ChevronUp, ChevronDown, Star, ChevronRight } from 'lucide-react';
+import { VocabularyItem, VerbConjugations } from '@/lib/types';
 import { getPartOfSpeechColor } from '@/lib/vocabulary-utils';
+import { isVerb } from '@/lib/conjugation-utils';
+import VerbConjugationDisplay from './verb-conjugation-display';
 
 interface VocabularyTableProps {
   vocabulary: VocabularyItem[];
   selectedRows: string[];
   sortColumn: string;
   sortDirection: 'asc' | 'desc';
+  selectedConjugations: (keyof VerbConjugations)[];
   onRowSelect: (rowId: string, selected: boolean) => void;
   onSelectAll: (selected: boolean) => void;
   onSort: (column: string) => void;
@@ -34,6 +37,7 @@ export default function VocabularyTable({
   selectedRows,
   sortColumn,
   sortDirection,
+  selectedConjugations,
   onRowSelect,
   onSelectAll,
   onSort,
@@ -42,6 +46,7 @@ export default function VocabularyTable({
   isMobile = false,
 }: VocabularyTableProps) {
   const [hoveredRow, setHoveredRow] = useState<string | null>(null);
+  const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
 
   const allSelected = vocabulary.length > 0 && 
     vocabulary.every(item => selectedRows.includes(getRowId(item)));
@@ -60,6 +65,20 @@ export default function VocabularyTable({
     const rowId = getRowId(item);
     const isSelected = selectedRows.includes(rowId);
     onRowSelect(rowId, !isSelected);
+  };
+
+  const toggleRowExpansion = (item: VocabularyItem, e: React.MouseEvent) => {
+    e.stopPropagation();
+    const rowId = getRowId(item);
+    setExpandedRows(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(rowId)) {
+        newSet.delete(rowId);
+      } else {
+        newSet.add(rowId);
+      }
+      return newSet;
+    });
   };
 
   const handleSort = (column: string) => {
@@ -263,75 +282,104 @@ export default function VocabularyTable({
               const isSelected = selectedRows.includes(rowId);
               const isBookmarked = bookmarkedRows.includes(rowId);
               const isHovered = hoveredRow === rowId;
+              const isExpanded = expandedRows.has(rowId);
+              const isVerbItem = isVerb(item.part_of_speech);
 
               return (
-                <TableRow
-                  key={`vocabulary-table-row-${item._id}`}
-                  className={`
-                    transition-colors cursor-pointer
-                    ${isSelected 
-                      ? 'bg-blue-50 border-l-2 border-l-blue-500' 
-                      : isHovered ? 'bg-gray-50' : ''
-                    }
-                  `}
-                  onMouseEnter={() => setHoveredRow(rowId)}
-                  onMouseLeave={() => setHoveredRow(null)}
-                  onClick={() => handleRowSelect(item)}
-                >
-                  <TableCell onClick={(e) => e.stopPropagation()}>
-                    <Checkbox
-                      checked={isSelected}
-                      onCheckedChange={(checked) => onRowSelect(rowId, checked as boolean)}
-                      aria-label={`Select ${item.japanese_word}`}
-                    />
-                  </TableCell>
-                  <TableCell className="font-medium">
-                    {item.japanese_word}
-                  </TableCell>
-                  <TableCell className="text-gray-600 text-sm">
-                    {item.reading}
-                  </TableCell>
-                  <TableCell className="text-gray-900 text-sm">
-                    {item.chinese_meaning}
-                  </TableCell>
-                  <TableCell>
-                    <Badge 
-                      variant="outline" 
-                      className={`text-xs ${getPartOfSpeechColor(item.part_of_speech)}`}
-                    >
-                      {item.part_of_speech}
-                    </Badge>
-                  </TableCell>
-                  <TableCell className="text-sm text-gray-600">
-                    {item.lesson_name}
-                  </TableCell>
-                  <TableCell className="text-sm text-gray-400">
-                    {item.example_sentences.length}
-                  </TableCell>
-                  <TableCell onClick={(e) => e.stopPropagation()}>
-                    <div className="flex items-center space-x-2">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="text-gray-600 hover:text-gray-900 px-2"
+                <>
+                  <TableRow
+                    key={`vocabulary-table-row-${item._id}`}
+                    className={`
+                      transition-colors cursor-pointer
+                      ${isSelected 
+                        ? 'bg-blue-50 border-l-2 border-l-blue-500' 
+                        : isHovered ? 'bg-gray-50' : ''
+                      }
+                    `}
+                    onMouseEnter={() => setHoveredRow(rowId)}
+                    onMouseLeave={() => setHoveredRow(null)}
+                    onClick={() => handleRowSelect(item)}
+                  >
+                    <TableCell onClick={(e) => e.stopPropagation()}>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          checked={isSelected}
+                          onCheckedChange={(checked) => onRowSelect(rowId, checked as boolean)}
+                          aria-label={`Select ${item.japanese_word}`}
+                        />
+                        {isVerbItem && (
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={(e) => toggleRowExpansion(item, e)}
+                            className="p-1 hover:bg-gray-200"
+                          >
+                            <ChevronRight 
+                              className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-90' : ''}`} 
+                            />
+                          </Button>
+                        )}
+                      </div>
+                    </TableCell>
+                    <TableCell className="font-medium">
+                      {item.japanese_word}
+                    </TableCell>
+                    <TableCell className="text-gray-600 text-sm">
+                      {item.reading}
+                    </TableCell>
+                    <TableCell className="text-gray-900 text-sm">
+                      {item.chinese_meaning}
+                    </TableCell>
+                    <TableCell>
+                      <Badge 
+                        variant="outline" 
+                        className={`text-xs ${getPartOfSpeechColor(item.part_of_speech)}`}
                       >
-                        View
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => onBookmark(rowId)}
-                        className={`px-1 ${
-                          isBookmarked 
-                            ? 'text-yellow-500 hover:text-yellow-600' 
-                            : 'text-gray-400 hover:text-yellow-500'
-                        }`}
-                      >
-                        <Star className={`w-4 h-4 ${isBookmarked ? 'fill-current' : ''}`} />
-                      </Button>
-                    </div>
-                  </TableCell>
-                </TableRow>
+                        {item.part_of_speech}
+                      </Badge>
+                    </TableCell>
+                    <TableCell className="text-sm text-gray-600">
+                      {item.lesson_name}
+                    </TableCell>
+                    <TableCell className="text-sm text-gray-400">
+                      {item.example_sentences.length}
+                    </TableCell>
+                    <TableCell onClick={(e) => e.stopPropagation()}>
+                      <div className="flex items-center space-x-2">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-gray-600 hover:text-gray-900 px-2"
+                        >
+                          View
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => onBookmark(rowId)}
+                          className={`px-1 ${
+                            isBookmarked 
+                              ? 'text-yellow-500 hover:text-yellow-600' 
+                              : 'text-gray-400 hover:text-yellow-500'
+                          }`}
+                        >
+                          <Star className={`w-4 h-4 ${isBookmarked ? 'fill-current' : ''}`} />
+                        </Button>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                  
+                  {isVerbItem && isExpanded && (
+                    <TableRow key={`vocabulary-table-conjugations-${item._id}`}>
+                      <TableCell colSpan={8} className="p-0">
+                        <VerbConjugationDisplay 
+                          vocabulary={item} 
+                          selectedConjugations={selectedConjugations}
+                        />
+                      </TableCell>
+                    </TableRow>
+                  )}
+                </>
               );
             })}
           </TableBody>

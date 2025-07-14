@@ -36,6 +36,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
     selectedRows: [],
     currentPage: 1,
     pageSize: 50,
+    selectedConjugations: ['polite_present', 'polite_past', 'polite_negative', 'casual_present'],
   });
 
   const [bookmarkedRows, setBookmarkedRows] = useState<string[]>([]);
@@ -138,6 +139,13 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
     }
   };
 
+  const handleSelectedConjugationsChange = (conjugations: (keyof import('@/lib/types').VerbConjugations)[]) => {
+    setFilters(prev => ({
+      ...prev,
+      selectedConjugations: conjugations
+    }));
+  };
+
   const clearSelection = () => {
     setFilters(prev => ({ ...prev, selectedRows: [] }));
   };
@@ -181,11 +189,13 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                       selectedPartsOfSpeech={filters.partsOfSpeech}
                       textSearch={filters.textSearch}
                       searchFields={filters.searchFields}
+                      selectedConjugations={filters.selectedConjugations}
                       onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
                       onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
                       onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
                       onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
                       onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
+                      onSelectedConjugationsChange={handleSelectedConjugationsChange}
                     />
                   </SheetContent>
                 </Sheet>
@@ -239,11 +249,13 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
             selectedPartsOfSpeech={filters.partsOfSpeech}
             textSearch={filters.textSearch}
             searchFields={filters.searchFields}
+            selectedConjugations={filters.selectedConjugations}
             onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
             onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
             onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
             onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
             onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
+            onSelectedConjugationsChange={handleSelectedConjugationsChange}
           />
         )}
 
@@ -294,6 +306,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               selectedRows={filters.selectedRows}
               sortColumn={filters.sortColumn}
               sortDirection={filters.sortDirection}
+              selectedConjugations={filters.selectedConjugations}
               onRowSelect={handleRowSelect}
               onSelectAll={handleSelectAll}
               onSort={handleSort}

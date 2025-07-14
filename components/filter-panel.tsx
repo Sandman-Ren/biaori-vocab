@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import { BookInfo, LessonInfo, PartOfSpeechInfo } from '@/lib/types';
+import { BookInfo, LessonInfo, PartOfSpeechInfo, VerbConjugations, ConjugationLevel } from '@/lib/types';
+import { CONJUGATION_FORMS, getConjugationsByLevel, detectCurrentLevel } from '@/lib/conjugation-utils';
 
 interface FilterPanelProps {
   books: BookInfo[];
@@ -17,11 +19,13 @@ interface FilterPanelProps {
   selectedPartsOfSpeech: string[];
   textSearch: string;
   searchFields: string[];
+  selectedConjugations: (keyof VerbConjugations)[];
   onBooksChange: (books: string[]) => void;
   onLessonsChange: (lessons: string[]) => void;
   onPartsOfSpeechChange: (partsOfSpeech: string[]) => void;
   onTextSearchChange: (search: string) => void;
   onSearchFieldsChange: (fields: string[]) => void;
+  onSelectedConjugationsChange: (conjugations: (keyof VerbConjugations)[]) => void;
 }
 
 export default function FilterPanel({
@@ -33,11 +37,13 @@ export default function FilterPanel({
   selectedPartsOfSpeech,
   textSearch,
   searchFields,
+  selectedConjugations,
   onBooksChange,
   onLessonsChange,
   onPartsOfSpeechChange,
   onTextSearchChange,
   onSearchFieldsChange,
+  onSelectedConjugationsChange,
 }: FilterPanelProps) {
   const [lessonSearch, setLessonSearch] = useState('');
   const [showAllLessons, setShowAllLessons] = useState(false);
@@ -46,6 +52,7 @@ export default function FilterPanel({
     lessons: true,
     partsOfSpeech: true,
     search: true,
+    conjugations: true,
   });
 
   const filteredLessons = lessons.filter(lesson =>
@@ -87,6 +94,21 @@ export default function FilterPanel({
       onSearchFieldsChange(searchFields.filter(f => f !== field));
     }
   };
+
+  const handleConjugationChange = (conjugationKey: keyof VerbConjugations, checked: boolean) => {
+    if (checked) {
+      onSelectedConjugationsChange([...selectedConjugations, conjugationKey]);
+    } else {
+      onSelectedConjugationsChange(selectedConjugations.filter(c => c !== conjugationKey));
+    }
+  };
+
+  const applyConjugationPreset = (preset: string) => {
+    const presetConjugations = getConjugationsByLevel(preset as ConjugationLevel);
+    onSelectedConjugationsChange(presetConjugations);
+  };
+
+  const currentPreset = detectCurrentLevel(selectedConjugations);
 
   const clearAllFilters = () => {
     onBooksChange([]);
@@ -246,6 +268,145 @@ export default function FilterPanel({
                 <span className="text-xs text-gray-400">{pos.count.toLocaleString()}</span>
               </div>
             ))}
+          </div>
+        </CollapsibleContent>
+      </Collapsible>
+
+      {/* Verb Conjugations */}
+      <Collapsible 
+        open={expandedSections.conjugations} 
+        onOpenChange={(open) => setExpandedSections(prev => ({ ...prev, conjugations: open }))}
+        className="mb-6"
+      >
+        <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
+          <Label className="text-sm font-medium text-gray-900">
+            Verb Conjugations {selectedConjugations.length > 0 && `(${selectedConjugations.length} selected)`}
+          </Label>
+          {expandedSections.conjugations ? (
+            <ChevronDown className="w-4 h-4 text-gray-500" />
+          ) : (
+            <ChevronRight className="w-4 h-4 text-gray-500" />
+          )}
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-4">
+          <div className="space-y-4">
+            {/* Preset Buttons */}
+            <div className="space-y-2">
+              <Label className="text-xs text-gray-600">Quick Presets:</Label>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { key: 'beginner', label: 'Beginner', count: 6 },
+                  { key: 'intermediate', label: 'Intermediate', count: 10 },
+                  { key: 'advanced', label: 'Advanced', count: 13 },
+                  { key: 'complete', label: 'All Forms', count: 15 },
+                ].map(preset => (
+                  <Button
+                    key={preset.key}
+                    variant={currentPreset === preset.key ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => applyConjugationPreset(preset.key)}
+                    className="text-xs"
+                  >
+                    {preset.label} ({preset.count})
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            {/* Individual Form Checkboxes */}
+            <div className="space-y-3">
+              <Label className="text-xs text-gray-600">Individual Forms:</Label>
+              
+              {/* Basic Forms */}
+              <div className="space-y-3">
+                <div className="text-xs font-medium text-blue-600">Basic Forms</div>
+                <div className="space-y-3">
+                  {CONJUGATION_FORMS.filter(form => form.category === 'basic').map(form => (
+                    <div key={`conjugation-${form.key}`} className="flex items-start space-x-3 ml-2">
+                      <Checkbox
+                        id={`conjugation-${form.key}`}
+                        checked={selectedConjugations.includes(form.key)}
+                        onCheckedChange={(checked) => handleConjugationChange(form.key, checked as boolean)}
+                        className="mt-0.5"
+                      />
+                      <Label
+                        htmlFor={`conjugation-${form.key}`}
+                        className="cursor-pointer text-sm flex-1 leading-relaxed"
+                      >
+                        <div className="space-y-1">
+                          <div className="font-medium">{form.label}</div>
+                          <div className="text-xs text-gray-500">{form.description}</div>
+                        </div>
+                      </Label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Intermediate Forms */}
+              <div className="space-y-3">
+                <div className="text-xs font-medium text-orange-600">Intermediate Forms</div>
+                <div className="space-y-3">
+                  {CONJUGATION_FORMS.filter(form => form.category === 'intermediate').map(form => (
+                    <div key={`conjugation-${form.key}`} className="flex items-start space-x-3 ml-2">
+                      <Checkbox
+                        id={`conjugation-${form.key}`}
+                        checked={selectedConjugations.includes(form.key)}
+                        onCheckedChange={(checked) => handleConjugationChange(form.key, checked as boolean)}
+                        className="mt-0.5"
+                      />
+                      <Label
+                        htmlFor={`conjugation-${form.key}`}
+                        className="cursor-pointer text-sm flex-1 leading-relaxed"
+                      >
+                        <div className="space-y-1">
+                          <div className="font-medium">{form.label}</div>
+                          <div className="text-xs text-gray-500">{form.description}</div>
+                        </div>
+                      </Label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Advanced Forms */}
+              <div className="space-y-3">
+                <div className="text-xs font-medium text-red-600">Advanced Forms</div>
+                <div className="space-y-3">
+                  {CONJUGATION_FORMS.filter(form => form.category === 'advanced').map(form => (
+                    <div key={`conjugation-${form.key}`} className="flex items-start space-x-3 ml-2">
+                      <Checkbox
+                        id={`conjugation-${form.key}`}
+                        checked={selectedConjugations.includes(form.key)}
+                        onCheckedChange={(checked) => handleConjugationChange(form.key, checked as boolean)}
+                        className="mt-0.5"
+                      />
+                      <Label
+                        htmlFor={`conjugation-${form.key}`}
+                        className="cursor-pointer text-sm flex-1 leading-relaxed"
+                      >
+                        <div className="space-y-1">
+                          <div className="font-medium">{form.label}</div>
+                          <div className="text-xs text-gray-500">{form.description}</div>
+                        </div>
+                      </Label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Clear Button */}
+            {selectedConjugations.length > 0 && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => onSelectedConjugationsChange([])}
+                className="w-full text-xs"
+              >
+                Clear All
+              </Button>
+            )}
           </div>
         </CollapsibleContent>
       </Collapsible>
