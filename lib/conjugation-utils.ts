@@ -50,13 +50,17 @@ export function getConjugationsByLevel(level: ConjugationLevel): (keyof VerbConj
 }
 
 export function detectCurrentLevel(selectedConjugations: (keyof VerbConjugations)[]): ConjugationLevel {
+  if (!selectedConjugations || selectedConjugations.length === 0) {
+    return 'custom';
+  }
+  
   const beginnerForms = getConjugationsByLevel('beginner');
   const intermediateForms = getConjugationsByLevel('intermediate');
   const advancedForms = getConjugationsByLevel('advanced');
   const completeForms = getConjugationsByLevel('complete');
 
   const arraysEqual = (a: (keyof VerbConjugations)[], b: (keyof VerbConjugations)[]) => 
-    a.length === b.length && a.every(item => b.includes(item));
+    a && b && a.length === b.length && a.every(item => b.includes(item));
 
   if (arraysEqual(selectedConjugations, completeForms)) return 'complete';
   if (arraysEqual(selectedConjugations, advancedForms)) return 'advanced';

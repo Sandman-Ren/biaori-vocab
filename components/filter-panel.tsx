@@ -110,6 +110,47 @@ export default function FilterPanel({
 
   const currentPreset = detectCurrentLevel(selectedConjugations);
 
+  // Helper functions for select all/deselect all
+  const selectAllBooks = () => {
+    onBooksChange(books.map(book => book.id));
+  };
+
+  const deselectAllBooks = () => {
+    onBooksChange([]);
+  };
+
+  const selectAllLessons = () => {
+    onLessonsChange(filteredLessons.map(lesson => lesson.name));
+  };
+
+  const deselectAllLessons = () => {
+    onLessonsChange([]);
+  };
+
+  const selectAllPartsOfSpeech = () => {
+    onPartsOfSpeechChange(partsOfSpeech.map(pos => pos.name));
+  };
+
+  const deselectAllPartsOfSpeech = () => {
+    onPartsOfSpeechChange([]);
+  };
+
+  const selectAllSearchFields = () => {
+    onSearchFieldsChange(['japanese', 'reading', 'meaning', 'examples']);
+  };
+
+  const deselectAllSearchFields = () => {
+    onSearchFieldsChange([]);
+  };
+
+  const selectAllConjugations = () => {
+    onSelectedConjugationsChange(CONJUGATION_FORMS.map(form => form.key));
+  };
+
+  const deselectAllConjugations = () => {
+    onSelectedConjugationsChange([]);
+  };
+
   const clearAllFilters = () => {
     onBooksChange([]);
     onLessonsChange([]);
@@ -155,6 +196,28 @@ export default function FilterPanel({
         </CollapsibleTrigger>
         <CollapsibleContent className="mt-4">
           <div className="space-y-3">
+            {/* Select All/Deselect All for Books */}
+            <div className="flex space-x-2 mb-3">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={selectAllBooks}
+                className="text-xs flex-1"
+                disabled={selectedBooks.length === books.length}
+              >
+                Select All ({books.length})
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={deselectAllBooks}
+                className="text-xs flex-1"
+                disabled={selectedBooks.length === 0}
+              >
+                Deselect All
+              </Button>
+            </div>
+            
             {books.map((book) => (
               <div key={`filter-panel-book-${book.id}`} className="flex items-center justify-between text-sm">
                 <div className="flex items-center space-x-2 sm:space-x-3">
@@ -201,6 +264,29 @@ export default function FilterPanel({
             onChange={(e) => setLessonSearch(e.target.value)}
             className="mb-4 text-sm"
           />
+          
+          {/* Select All/Deselect All for Lessons */}
+          <div className="flex space-x-2 mb-3">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={selectAllLessons}
+              className="text-xs flex-1"
+              disabled={selectedLessons.length === filteredLessons.length}
+            >
+              Select All ({filteredLessons.length})
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={deselectAllLessons}
+              className="text-xs flex-1"
+              disabled={selectedLessons.length === 0}
+            >
+              Deselect All
+            </Button>
+          </div>
+          
           <div className="space-y-3 max-h-48 overflow-y-auto">
             {displayedLessons.map((lesson) => (
               <div key={`filter-panel-lesson-${lesson.id}`} className="flex items-center justify-between text-sm">
@@ -250,6 +336,28 @@ export default function FilterPanel({
         </CollapsibleTrigger>
         <CollapsibleContent className="mt-4">
           <div className="space-y-3">
+            {/* Select All/Deselect All for Parts of Speech */}
+            <div className="flex space-x-2 mb-3">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={selectAllPartsOfSpeech}
+                className="text-xs flex-1"
+                disabled={selectedPartsOfSpeech.length === partsOfSpeech.length}
+              >
+                Select All ({partsOfSpeech.length})
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={deselectAllPartsOfSpeech}
+                className="text-xs flex-1"
+                disabled={selectedPartsOfSpeech.length === 0}
+              >
+                Deselect All
+              </Button>
+            </div>
+            
             {partsOfSpeech.map((pos) => (
               <div key={`filter-panel-pos-${pos.name}`} className="flex items-center justify-between text-sm">
                 <div className="flex items-center space-x-2 sm:space-x-3">
@@ -311,6 +419,28 @@ export default function FilterPanel({
                   </Button>
                 ))}
               </div>
+            </div>
+
+            {/* Select All/Deselect All for Conjugations */}
+            <div className="flex space-x-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={selectAllConjugations}
+                className="text-xs flex-1"
+                disabled={selectedConjugations.length === CONJUGATION_FORMS.length}
+              >
+                Select All ({CONJUGATION_FORMS.length})
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={deselectAllConjugations}
+                className="text-xs flex-1"
+                disabled={selectedConjugations.length === 0}
+              >
+                Deselect All
+              </Button>
             </div>
 
             {/* Individual Form Checkboxes */}
@@ -395,18 +525,6 @@ export default function FilterPanel({
                 </div>
               </div>
             </div>
-
-            {/* Clear Button */}
-            {selectedConjugations.length > 0 && (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => onSelectedConjugationsChange([])}
-                className="w-full text-xs"
-              >
-                Clear All
-              </Button>
-            )}
           </div>
         </CollapsibleContent>
       </Collapsible>
@@ -439,7 +557,30 @@ export default function FilterPanel({
             <summary className="cursor-pointer hover:text-gray-700 mb-2">
               Search options
             </summary>
-            <div className="space-y-2 ml-1 mt-2">
+            
+            {/* Select All/Deselect All for Search Fields */}
+            <div className="flex space-x-2 mb-3 mt-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={selectAllSearchFields}
+                className="text-xs flex-1"
+                disabled={searchFields.length === 4}
+              >
+                Select All (4)
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={deselectAllSearchFields}
+                className="text-xs flex-1"
+                disabled={searchFields.length === 0}
+              >
+                Deselect All
+              </Button>
+            </div>
+            
+            <div className="space-y-2 ml-1">
               {[
                 { id: 'japanese', label: 'Japanese' },
                 { id: 'reading', label: 'Reading' },

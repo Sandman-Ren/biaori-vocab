@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   Table, 
   TableBody, 
@@ -286,9 +286,8 @@ export default function VocabularyTable({
               const isVerbItem = isVerb(item.part_of_speech);
 
               return (
-                <>
+                <React.Fragment key={`vocabulary-fragment-${item._id}`}>
                   <TableRow
-                    key={`vocabulary-table-row-${item._id}`}
                     className={`
                       transition-colors cursor-pointer
                       ${isSelected 
@@ -379,7 +378,7 @@ export default function VocabularyTable({
                       </TableCell>
                     </TableRow>
                   )}
-                </>
+                </React.Fragment>
               );
             })}
           </TableBody>
