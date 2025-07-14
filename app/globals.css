@@ -117,5 +117,27 @@
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Improve touch targets on mobile - but not for checkboxes */
+  @media (max-width: 767px) {
+    button:not([data-slot="checkbox"]), 
+    [role="button"]:not([data-slot="checkbox"]) {
+      min-height: 44px;
+    }
+    
+    /* For input fields, but not checkboxes */
+    input[type="text"], 
+    input[type="number"],
+    input[type="search"],
+    input[type="email"],
+    input[type="password"],
+    select, 
+    textarea {
+      font-size: 16px; /* Prevent zoom on iOS */
+      min-height: 44px;
+    }
   }
 }

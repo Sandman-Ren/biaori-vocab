@@ -4,10 +4,13 @@ import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import FilterPanel from '@/components/filter-panel';
 import VocabularyTable from '@/components/vocabulary-table';
 import Pagination from '@/components/pagination';
 import { VocabularyItem, FilterState } from '@/lib/types';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { Filter } from 'lucide-react';
 import { 
   getBookInfo, 
   getLessonInfo, 
@@ -36,6 +39,8 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
   });
 
   const [bookmarkedRows, setBookmarkedRows] = useState<string[]>([]);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   // Load bookmarks from localStorage on mount
   useEffect(() => {
@@ -156,17 +161,43 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div className="max-w-full mx-auto px-6 lg:px-8">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
             <div className="flex items-center space-x-3">
-              <h1 className="text-xl font-medium text-gray-900">標準日本語</h1>
+              {isMobile && (
+                <Sheet open={isFilterOpen} onOpenChange={setIsFilterOpen}>
+                  <SheetTrigger asChild>
+                    <Button variant="ghost" size="sm" className="px-2">
+                      <Filter className="w-4 h-4" />
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="left" className="w-80 p-0">
+                    <FilterPanel
+                      books={bookInfo}
+                      lessons={lessonInfo}
+                      partsOfSpeech={partOfSpeechInfo}
+                      selectedBooks={filters.books}
+                      selectedLessons={filters.lessons}
+                      selectedPartsOfSpeech={filters.partsOfSpeech}
+                      textSearch={filters.textSearch}
+                      searchFields={filters.searchFields}
+                      onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
+                      onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
+                      onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
+                      onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
+                      onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
+                    />
+                  </SheetContent>
+                </Sheet>
+              )}
+              <h1 className="text-lg sm:text-xl font-medium text-gray-900">標準日本語</h1>
               <span className="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded">
                 Vocabulary
               </span>
             </div>
             
-            <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600">
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <span className="text-sm text-gray-600 hidden sm:block">
                 <span className="font-medium">{filteredVocabulary.length.toLocaleString()}</span>
                 {' '}of{' '}
                 <span className="text-gray-400">{vocabulary.length.toLocaleString()}</span>
@@ -177,7 +208,9 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   size="sm"
                   className="bg-black text-white hover:bg-gray-800"
                 >
-                  Practice ({filters.selectedRows.length})
+                  <span className="hidden sm:inline">Practice</span>
+                  <span className="sm:hidden">({filters.selectedRows.length})</span>
+                  <span className="hidden sm:inline"> ({filters.selectedRows.length})</span>
                 </Button>
               )}
               <Button 
@@ -185,6 +218,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 size="sm"
                 onClick={exportSelected}
                 disabled={filters.selectedRows.length === 0}
+                className="hidden sm:inline-flex"
               >
                 Export
               </Button>
@@ -194,29 +228,31 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
       </header>
 
       <div className="flex">
-        {/* Filter Panel */}
-        <FilterPanel
-          books={bookInfo}
-          lessons={lessonInfo}
-          partsOfSpeech={partOfSpeechInfo}
-          selectedBooks={filters.books}
-          selectedLessons={filters.lessons}
-          selectedPartsOfSpeech={filters.partsOfSpeech}
-          textSearch={filters.textSearch}
-          searchFields={filters.searchFields}
-          onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
-          onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
-          onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
-          onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
-          onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
-        />
+        {/* Filter Panel - Desktop only */}
+        {!isMobile && (
+          <FilterPanel
+            books={bookInfo}
+            lessons={lessonInfo}
+            partsOfSpeech={partOfSpeechInfo}
+            selectedBooks={filters.books}
+            selectedLessons={filters.lessons}
+            selectedPartsOfSpeech={filters.partsOfSpeech}
+            textSearch={filters.textSearch}
+            searchFields={filters.searchFields}
+            onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
+            onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
+            onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
+            onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
+            onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
+          />
+        )}
 
         {/* Main Content */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col min-w-0">
           {/* Table Controls */}
-          <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+          <div className="px-4 sm:px-6 py-4 border-b border-gray-100 flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2 sm:space-x-3">
                 <Checkbox
                   checked={paginatedVocabulary.length > 0 && 
                     paginatedVocabulary.every(item => 
@@ -225,7 +261,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   onCheckedChange={handleSelectAll}
                   aria-label="Select all on page"
                 />
-                <Label className="text-sm text-gray-600">Select all</Label>
+                <Label className="text-sm text-gray-600 hidden sm:block">Select all</Label>
               </div>
               {filters.selectedRows.length > 0 && (
                 <>
@@ -243,6 +279,12 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 </>
               )}
             </div>
+            {/* Mobile filter count indicator */}
+            {isMobile && (filters.books.length > 0 || filters.lessons.length > 0 || filters.partsOfSpeech.length > 0 || filters.textSearch) && (
+              <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                Filtered
+              </span>
+            )}
           </div>
 
           {/* Table */}
@@ -257,6 +299,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               onSort={handleSort}
               onBookmark={handleBookmark}
               bookmarkedRows={bookmarkedRows}
+              isMobile={isMobile}
             />
           </div>
 
@@ -268,9 +311,22 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
             totalItems={filteredVocabulary.length}
             onPageChange={(page) => setFilters(prev => ({ ...prev, currentPage: page }))}
             onPageSizeChange={(pageSize) => setFilters(prev => ({ ...prev, pageSize, currentPage: 1 }))}
+            isMobile={isMobile}
           />
         </div>
       </div>
+
+      {/* Floating Action Button - Mobile only */}
+      {isMobile && filters.selectedRows.length > 0 && (
+        <div className="fixed bottom-6 right-6 z-40">
+          <Button 
+            className="bg-black text-white hover:bg-gray-800 shadow-lg rounded-full w-14 h-14"
+            onClick={() => {/* TODO: Implement practice mode */}}
+          >
+            <span className="text-sm font-medium">{filters.selectedRows.length}</span>
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

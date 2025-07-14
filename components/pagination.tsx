@@ -12,6 +12,7 @@ interface PaginationProps {
   totalItems: number;
   onPageChange: (page: number) => void;
   onPageSizeChange: (pageSize: number) => void;
+  isMobile?: boolean;
 }
 
 export default function Pagination({
@@ -21,6 +22,7 @@ export default function Pagination({
   totalItems,
   onPageChange,
   onPageSizeChange,
+  isMobile = false,
 }: PaginationProps) {
   const startItem = (currentPage - 1) * pageSize + 1;
   const endItem = Math.min(currentPage * pageSize, totalItems);
@@ -45,21 +47,25 @@ export default function Pagination({
   const canGoNext = currentPage < totalPages;
 
   return (
-    <div className="flex items-center justify-between px-6 py-4 border-t border-gray-100">
-      <div className="text-sm text-gray-500">
+    <div className={`flex items-center justify-between px-4 sm:px-6 py-4 border-t border-gray-100 ${isMobile ? 'flex-col space-y-4' : ''}`}>
+      <div className="text-sm text-gray-500 order-2 sm:order-1">
         {totalItems > 0 ? (
           <>
-            {startItem}–{endItem} of {totalItems.toLocaleString()}
+            {isMobile ? (
+              <>{totalItems.toLocaleString()} items</>
+            ) : (
+              <>{startItem}–{endItem} of {totalItems.toLocaleString()}</>
+            )}
           </>
         ) : (
           'No results'
         )}
       </div>
 
-      <div className="flex items-center space-x-4">
+      <div className={`flex items-center space-x-4 order-1 sm:order-2 ${isMobile ? 'w-full justify-between' : ''}`}>
         {/* Page size selector */}
         <div className="flex items-center space-x-2 text-sm text-gray-500">
-          <span>Rows:</span>
+          <span className={isMobile ? 'hidden' : ''}>Rows:</span>
           <Select value={pageSize.toString()} onValueChange={(value) => onPageSizeChange(parseInt(value))}>
             <SelectTrigger className="w-20 h-8">
               <SelectValue />
@@ -87,16 +93,24 @@ export default function Pagination({
             </Button>
 
             <div className="flex items-center space-x-1 text-sm">
-              <Input
-                type="number"
-                value={currentPage}
-                onChange={handlePageInputChange}
-                onKeyDown={handlePageInputKeyDown}
-                className="w-16 h-8 text-center text-sm"
-                min={1}
-                max={totalPages}
-              />
-              <span className="text-gray-400">of {totalPages}</span>
+              {isMobile ? (
+                <span className="text-gray-600 min-w-[4rem] text-center">
+                  {currentPage} / {totalPages}
+                </span>
+              ) : (
+                <>
+                  <Input
+                    type="number"
+                    value={currentPage}
+                    onChange={handlePageInputChange}
+                    onKeyDown={handlePageInputKeyDown}
+                    className="w-16 h-8 text-center text-sm"
+                    min={1}
+                    max={totalPages}
+                  />
+                  <span className="text-gray-400">of {totalPages}</span>
+                </>
+              )}
             </div>
 
             <Button
