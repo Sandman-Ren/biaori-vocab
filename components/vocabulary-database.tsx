@@ -5,13 +5,15 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import FilterPanel from '@/components/filter-panel';
 import VocabularyTable from '@/components/vocabulary-table';
 import Pagination from '@/components/pagination';
 import { VocabularyItem, FilterState } from '@/lib/types';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Filter, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Filter, ChevronLeft, ChevronRight, Download, Play } from 'lucide-react';
 import { 
   getBookInfo, 
   getLessonInfo, 
@@ -43,6 +45,9 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
   const [bookmarkedRows, setBookmarkedRows] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isFilterPanelCollapsed, setIsFilterPanelCollapsed] = useState(false);
+  const [exportFormat, setExportFormat] = useState<'csv' | 'xlsx' | 'json'>('csv');
+  const [isMobileFABExpanded, setIsMobileFABExpanded] = useState(false);
+  const [isMobileExportDialogOpen, setIsMobileExportDialogOpen] = useState(false);
   const isMobile = useIsMobile();
 
   // Load bookmarks from localStorage on mount
@@ -157,14 +162,58 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
       filters.selectedRows.includes(item._id)
     );
     
-    const dataStr = JSON.stringify(selectedItems, null, 2);
-    const blob = new Blob([dataStr], { type: 'application/json' });
+    let blob: Blob;
+    let filename: string;
+    
+    switch (exportFormat) {
+      case 'csv':
+        const csvContent = convertToCSV(selectedItems);
+        blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        filename = 'selected-vocabulary.csv';
+        break;
+      
+      case 'xlsx':
+        // For now, we'll export as CSV and suggest using a converter
+        // In a real app, you'd use a library like xlsx or exceljs
+        const xlsxContent = convertToCSV(selectedItems);
+        blob = new Blob([xlsxContent], { type: 'text/csv;charset=utf-8;' });
+        filename = 'selected-vocabulary.csv'; // Note: keeping as CSV for now
+        break;
+      
+      case 'json':
+      default:
+        const dataStr = JSON.stringify(selectedItems, null, 2);
+        blob = new Blob([dataStr], { type: 'application/json' });
+        filename = 'selected-vocabulary.json';
+        break;
+    }
+    
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'selected-vocabulary.json';
+    link.download = filename;
     link.click();
     URL.revokeObjectURL(url);
+  };
+
+  const convertToCSV = (data: VocabularyItem[]): string => {
+    if (data.length === 0) return '';
+    
+    // CSV headers
+    const headers = ['Japanese', 'Reading', 'Meaning', 'Part of Speech', 'Book', 'Lesson', 'Examples'];
+    
+    // Convert data to CSV rows
+    const rows = data.map(item => [
+      `"${item.japanese_word.replace(/"/g, '""')}"`,
+      `"${item.reading.replace(/"/g, '""')}"`,
+      `"${item.chinese_meaning.replace(/"/g, '""')}"`,
+      `"${item.part_of_speech.replace(/"/g, '""')}"`,
+      `"${item.book_id}"`,
+      `"${item.lesson_name.replace(/"/g, '""')}"`,
+      `"${(item.example_sentences || []).join('; ').replace(/"/g, '""')}"`
+    ]);
+    
+    return [headers.join(','), ...rows.map(row => row.join(','))].join('\n');
   };
 
   return (
@@ -218,25 +267,94 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 <span className="text-gray-400">{vocabulary.length.toLocaleString()}</span>
               </span>
               {filters.selectedRows.length > 0 && (
-                <Button 
-                  variant="default" 
-                  size="sm"
-                  className="bg-black text-white hover:bg-gray-800"
-                >
-                  <span className="hidden sm:inline">练习</span>
-                  <span className="sm:hidden">({filters.selectedRows.length})</span>
-                  <span className="hidden sm:inline"> ({filters.selectedRows.length})</span>
-                </Button>
+                <>
+                  <Button 
+                    variant="default" 
+                    size="sm"
+                    className="bg-black text-white hover:bg-gray-800"
+                  >
+                    <span className="hidden sm:inline">练习</span>
+                    <span className="sm:hidden">({filters.selectedRows.length})</span>
+                    <span className="hidden sm:inline"> ({filters.selectedRows.length})</span>
+                  </Button>
+                  
+                  {/* Mobile Export Button with Format Selection */}
+                  <Dialog open={isMobileExportDialogOpen} onOpenChange={setIsMobileExportDialogOpen}>
+                    <DialogTrigger asChild>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        className="sm:hidden"
+                      >
+                        <Download className="w-4 h-4" />
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="sm:hidden max-w-[320px]">
+                      <DialogHeader>
+                        <DialogTitle>选择导出格式</DialogTitle>
+                      </DialogHeader>
+                      <div className="space-y-4 pt-4">
+                        <Select 
+                          value={exportFormat} 
+                          onValueChange={(value: 'csv' | 'xlsx' | 'json') => setExportFormat(value)}
+                        >
+                          <SelectTrigger className="w-full">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="csv">CSV - 逗号分隔值</SelectItem>
+                            <SelectItem value="xlsx">XLSX - Excel 表格</SelectItem>
+                            <SelectItem value="json">JSON - 数据格式</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <div className="flex space-x-2 pt-2">
+                          <Button 
+                            variant="outline" 
+                            onClick={() => setIsMobileExportDialogOpen(false)}
+                            className="flex-1"
+                          >
+                            取消
+                          </Button>
+                          <Button 
+                            onClick={() => {
+                              exportSelected();
+                              setIsMobileExportDialogOpen(false);
+                            }}
+                            className="flex-1 bg-green-600 hover:bg-green-700"
+                          >
+                            导出 ({filters.selectedRows.length})
+                          </Button>
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                </>
               )}
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={exportSelected}
-                disabled={filters.selectedRows.length === 0}
-                className="hidden sm:inline-flex"
-              >
-                导出
-              </Button>
+              {/* Export Dropdown */}
+              <div className="hidden sm:flex items-center space-x-2">
+                <Select 
+                  value={exportFormat} 
+                  onValueChange={(value: 'csv' | 'xlsx' | 'json') => setExportFormat(value)}
+                  disabled={filters.selectedRows.length === 0}
+                >
+                  <SelectTrigger className="w-20 h-8 text-xs">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="csv">CSV</SelectItem>
+                    <SelectItem value="xlsx">XLSX</SelectItem>
+                    <SelectItem value="json">JSON</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={exportSelected}
+                  disabled={filters.selectedRows.length === 0}
+                >
+                  导出
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -408,12 +526,78 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
 
       {/* Floating Action Button - Mobile only */}
       {isMobile && filters.selectedRows.length > 0 && (
-        <div className="fixed bottom-6 right-6 z-40">
+        <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end space-y-3">
+          {/* Expanded Actions */}
+          <motion.div
+            initial={false}
+            animate={{
+              opacity: isMobileFABExpanded ? 1 : 0,
+              y: isMobileFABExpanded ? 0 : 20,
+              scale: isMobileFABExpanded ? 1 : 0.8,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 25,
+            }}
+            className={`flex flex-col space-y-2 ${!isMobileFABExpanded ? 'pointer-events-none' : ''}`}
+          >
+            {/* Export Format Selector */}
+            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 min-w-[120px]">
+              <div className="text-xs text-gray-600 mb-2 font-medium">导出格式</div>
+              <Select 
+                value={exportFormat} 
+                onValueChange={(value: 'csv' | 'xlsx' | 'json') => setExportFormat(value)}
+              >
+                <SelectTrigger className="w-full h-8 text-xs">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="csv">CSV</SelectItem>
+                  <SelectItem value="xlsx">XLSX</SelectItem>
+                  <SelectItem value="json">JSON</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Export Button */}
+            <Button
+              className="bg-green-600 text-white hover:bg-green-700 shadow-lg rounded-full w-12 h-12"
+              onClick={() => {
+                exportSelected();
+                setIsMobileFABExpanded(false);
+              }}
+            >
+              <Download className="w-5 h-5" />
+            </Button>
+            
+            {/* Practice Button */}
+            <Button
+              className="bg-blue-600 text-white hover:bg-blue-700 shadow-lg rounded-full w-12 h-12"
+              onClick={() => {
+                // TODO: Implement practice mode
+                setIsMobileFABExpanded(false);
+              }}
+            >
+              <Play className="w-5 h-5" />
+            </Button>
+          </motion.div>
+
+          {/* Main FAB */}
           <Button 
             className="bg-black text-white hover:bg-gray-800 shadow-lg rounded-full w-14 h-14"
-            onClick={() => {/* TODO: Implement practice mode */}}
+            onClick={() => setIsMobileFABExpanded(!isMobileFABExpanded)}
           >
-            <span className="text-sm font-medium">{filters.selectedRows.length}</span>
+            <motion.div
+              animate={{ rotate: isMobileFABExpanded ? 45 : 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            >
+              {isMobileFABExpanded ? (
+                <span className="text-xl font-light">×</span>
+              ) : (
+                <span className="text-sm font-medium">{filters.selectedRows.length}</span>
+              )}
+            </motion.div>
           </Button>
         </div>
       )}
