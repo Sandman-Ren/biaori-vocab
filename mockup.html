@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>標準日本語 Vocabulary Database</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif; 
+            line-height: 1.6;
+        }
+        .japanese-text { 
+            font-size: 1rem; 
+            font-weight: 500;
+            letter-spacing: 0.025em;
+        }
+        .filter-panel { 
+            max-height: calc(100vh - 100px); 
+            overflow-y: auto; 
+        }
+        .table-container { 
+            max-height: calc(100vh - 160px); 
+            overflow-y: auto; 
+        }
+        .checkbox-group { 
+            max-height: 180px; 
+            overflow-y: auto; 
+        }
+        
+        /* Part of speech color coding - minimal neutral colors */
+        .pos-noun { 
+            background-color: #f8fafc; 
+            color: #475569; 
+            border: 1px solid #e2e8f0;
+        }
+        .pos-verb { 
+            background-color: #f1f5f9; 
+            color: #475569; 
+            border: 1px solid #cbd5e1;
+        }
+        .pos-adjective { 
+            background-color: #fafafa; 
+            color: #525252; 
+            border: 1px solid #e5e5e5;
+        }
+        .pos-idiom { 
+            background-color: #fafbff; 
+            color: #4c4f69; 
+            border: 1px solid #e4e4e7;
+        }
+        .pos-adverb { 
+            background-color: #fefefe; 
+            color: #404040; 
+            border: 1px solid #d4d4d8;
+        }
+        
+        /* Clean input styles */
+        input[type="text"], input[type="number"], select {
+            border: 1px solid #e2e8f0;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        input[type="text"]:focus, input[type="number"]:focus, select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Clean button styles */
+        .btn-primary {
+            background-color: #000;
+            color: white;
+            border: 1px solid #000;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1a1a1a;
+        }
+        
+        .btn-secondary {
+            background-color: #fff;
+            color: #374151;
+            border: 1px solid #d1d5db;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f9fafb;
+            border-color: #9ca3af;
+        }
+        
+        /* Clean table styles */
+        th {
+            font-weight: 500;
+            font-size: 0.875rem;
+            letter-spacing: 0.025em;
+        }
+        
+        /* Minimal selection styles */
+        .row-selected {
+            background-color: #f8fafc;
+            border-left: 2px solid #3b82f6;
+        }
+        
+        .row-selected:hover {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header: Title + Word Count + Actions -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-full mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-14">
+                <div class="flex items-center space-x-3">
+                    <h1 class="text-xl font-medium text-gray-900">標準日本語</h1>
+                    <span class="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded">Vocabulary</span>
+                </div>
+                
+                <!-- Word Count + Actions -->
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">
+                        <span class="font-medium">1,247</span> of <span class="text-gray-400">2,831</span>
+                    </span>
+                    <button class="px-3 py-1.5 btn-primary text-sm rounded">
+                        Practice (3)
+                    </button>
+                    <button class="px-3 py-1.5 btn-secondary text-sm rounded">
+                        Export
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex max-w-full mx-auto bg-white">
+        <!-- Filter Panel (Sidebar) -->
+        <div class="w-72 border-r border-gray-100 filter-panel px-6 py-6">
+            <!-- Books Filter -->
+            <div class="mb-8">
+                <h3 class="text-sm font-medium text-gray-900 mb-4">
+                    Books
+                </h3>
+                <div class="space-y-3">
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">新标初 (Book 7)</span>
+                        <span class="ml-auto text-xs text-gray-400">1,247</span>
+                    </label>
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">新标中 (Book 8)</span>
+                        <span class="ml-auto text-xs text-gray-400">892</span>
+                    </label>
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">新标高 (Book 9)</span>
+                        <span class="ml-auto text-xs text-gray-400">692</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Lessons Filter -->
+            <div class="mb-8">
+                <h3 class="text-sm font-medium text-gray-900 mb-4">
+                    Lessons
+                </h3>
+                <input type="text" placeholder="Search lessons..." class="w-full px-3 py-2 text-sm rounded mb-4">
+                <div class="checkbox-group space-y-3">
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">新标初_34</span>
+                        <span class="ml-auto text-xs text-gray-400">23</span>
+                    </label>
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">新标初_33</span>
+                        <span class="ml-auto text-xs text-gray-400">24</span>
+                    </label>
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">新标初_32</span>
+                        <span class="ml-auto text-xs text-gray-400">25</span>
+                    </label>
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">新标初_31</span>
+                        <span class="ml-auto text-xs text-gray-400">19</span>
+                    </label>
+                    <button class="text-sm text-gray-500 hover:text-gray-700">Show more...</button>
+                </div>
+            </div>
+
+            <!-- Parts of Speech Filter -->
+            <div class="mb-8">
+                <h3 class="text-sm font-medium text-gray-900 mb-4">
+                    Parts of Speech
+                </h3>
+                <div class="space-y-3">
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">名词</span>
+                        <span class="ml-auto text-xs text-gray-400">1,247</span>
+                    </label>
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">动词</span>
+                        <span class="ml-auto text-xs text-gray-400">523</span>
+                    </label>
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">形容词</span>
+                        <span class="ml-auto text-xs text-gray-400">234</span>
+                    </label>
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">惯用语</span>
+                        <span class="ml-auto text-xs text-gray-400">156</span>
+                    </label>
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-700">副词</span>
+                        <span class="ml-auto text-xs text-gray-400">89</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Text Search -->
+            <div class="mb-6">
+                <h3 class="text-sm font-medium text-gray-900 mb-4">
+                    Search
+                </h3>
+                <input type="text" placeholder="Japanese, reading, meaning..." class="w-full px-3 py-2 text-sm rounded mb-4">
+                <details class="text-sm text-gray-500">
+                    <summary class="cursor-pointer hover:text-gray-700 mb-2">Search options</summary>
+                    <div class="space-y-2 ml-1">
+                        <label class="flex items-center">
+                            <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                            <span class="ml-2">Japanese</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                            <span class="ml-2">Reading</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                            <span class="ml-2">Meaning</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                            <span class="ml-2">Examples</span>
+                        </label>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Main Table -->
+        <div class="flex-1">
+            <!-- Table Controls -->
+            <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <label class="flex items-center text-sm">
+                        <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1">
+                        <span class="ml-3 text-gray-600">Select all</span>
+                    </label>
+                    <span class="text-sm text-gray-400">3 selected</span>
+                </div>
+                <div class="flex items-center space-x-2 text-sm text-gray-500">
+                    <span>Rows:</span>
+                    <select class="border rounded px-2 py-1 text-sm" title="Rows per page">
+                        <option>25</option>
+                        <option selected>50</option>
+                        <option>100</option>
+                        <option>200</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table class="min-w-full">
+                    <thead class="sticky top-0 bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide w-12">
+                                
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100">
+                                Japanese ↓
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100">
+                                Reading
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100">
+                                Meaning
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100">
+                                Type
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100">
+                                Lesson
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide cursor-pointer hover:bg-gray-100">
+                                Examples
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
+                                
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-50">
+                        <!-- Row 1 - Selected -->
+                        <tr class="row-selected">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1" title="Select カレンダー">
+                            </td>
+                            <td class="px-6 py-4 japanese-text">カレンダー</td>
+                            <td class="px-6 py-4 text-gray-600 text-sm">カレンダー</td>
+                            <td class="px-6 py-4 text-gray-900 text-sm">挂历，日历</td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium pos-noun">
+                                    名词
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-600">新标初_34</td>
+                            <td class="px-6 py-4 text-sm text-gray-400">2</td>
+                            <td class="px-6 py-4 text-sm space-x-3">
+                                <button class="text-gray-600 hover:text-gray-900">View</button>
+                                <button class="text-gray-400 hover:text-yellow-500">☆</button>
+                            </td>
+                        </tr>
+                        
+                        <!-- Row 2 -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1" title="Select 食べる">
+                            </td>
+                            <td class="px-6 py-4 japanese-text">食べる</td>
+                            <td class="px-6 py-4 text-gray-600 text-sm">たべる</td>
+                            <td class="px-6 py-4 text-gray-900 text-sm">吃</td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium pos-verb">
+                                    动词
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-600">新标初_33</td>
+                            <td class="px-6 py-4 text-sm text-gray-400">3</td>
+                            <td class="px-6 py-4 text-sm space-x-3">
+                                <button class="text-gray-600 hover:text-gray-900">View</button>
+                                <button class="text-gray-400 hover:text-yellow-500">☆</button>
+                            </td>
+                        </tr>
+                        
+                        <!-- Row 3 - Selected -->
+                        <tr class="row-selected">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1" title="Select 美しい">
+                            </td>
+                            <td class="px-6 py-4 japanese-text">美しい</td>
+                            <td class="px-6 py-4 text-gray-600 text-sm">うつくしい</td>
+                            <td class="px-6 py-4 text-gray-900 text-sm">美丽的</td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium pos-adjective">
+                                    形容词
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-600">新标初_34</td>
+                            <td class="px-6 py-4 text-sm text-gray-400">2</td>
+                            <td class="px-6 py-4 text-sm space-x-3">
+                                <button class="text-gray-600 hover:text-gray-900">View</button>
+                                <button class="text-gray-400 hover:text-yellow-500">☆</button>
+                            </td>
+                        </tr>
+                        
+                        <!-- Row 4 -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1" title="Select お疲れ様">
+                            </td>
+                            <td class="px-6 py-4 japanese-text">お疲れ様</td>
+                            <td class="px-6 py-4 text-gray-600 text-sm">おつかれさま</td>
+                            <td class="px-6 py-4 text-gray-900 text-sm">辛苦了</td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium pos-idiom">
+                                    惯用语
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-600">新标初_33</td>
+                            <td class="px-6 py-4 text-sm text-gray-400">1</td>
+                            <td class="px-6 py-4 text-sm space-x-3">
+                                <button class="text-gray-600 hover:text-gray-900">View</button>
+                                <button class="text-gray-400 hover:text-yellow-500">☆</button>
+                            </td>
+                        </tr>
+                        
+                        <!-- Row 5 - Selected -->
+                        <tr class="row-selected">
+                            <td class="px-6 py-4">
+                                <input type="checkbox" checked class="rounded border-gray-200 text-gray-900 focus:ring-gray-500 focus:ring-1" title="Select とても">
+                            </td>
+                            <td class="px-6 py-4 japanese-text">とても</td>
+                            <td class="px-6 py-4 text-gray-600 text-sm">とても</td>
+                            <td class="px-6 py-4 text-gray-900 text-sm">非常，很</td>
+                            <td class="px-6 py-4">
+                                <span class="inline-flex items-center px-2 py-1 rounded text-xs font-medium pos-adverb">
+                                    副词
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-600">新标初_34</td>
+                            <td class="px-6 py-4 text-sm text-gray-400">4</td>
+                            <td class="px-6 py-4 text-sm space-x-3">
+                                <button class="text-gray-600 hover:text-gray-900">View</button>
+                                <button class="text-gray-400 hover:text-yellow-500">☆</button>
+                            </td>
+                        </tr>
+
+                        <!-- Additional rows would continue here... -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="px-6 py-4 border-t border-gray-100 flex items-center justify-between">
+                <div class="text-sm text-gray-500">
+                    1–50 of 1,247
+                </div>
+                <div class="flex items-center space-x-1">
+                    <button class="px-3 py-1 text-sm text-gray-400 cursor-not-allowed">
+                        ←
+                    </button>
+                    <input type="number" value="1" class="w-12 px-2 py-1 text-sm text-center rounded" title="Page number">
+                    <span class="text-sm text-gray-400">of 25</span>
+                    <button class="px-3 py-1 text-sm text-gray-600 hover:text-gray-900">
+                        →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Basic interactivity for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle select all checkbox
+            const selectAllCheckbox = document.querySelector('thead input[type="checkbox"]');
+            const rowCheckboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+            
+            selectAllCheckbox?.addEventListener('change', function() {
+                rowCheckboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                    updateRowSelection(checkbox);
+                });
+                updateSelectionCount();
+            });
+            
+            // Handle individual row checkboxes
+            rowCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    updateRowSelection(this);
+                    updateSelectionCount();
+                });
+            });
+            
+            function updateRowSelection(checkbox) {
+                const row = checkbox.closest('tr');
+                if (checkbox.checked) {
+                    row.classList.add('row-selected');
+                    row.classList.remove('hover:bg-gray-50');
+                } else {
+                    row.classList.remove('row-selected');
+                    row.classList.add('hover:bg-gray-50');
+                }
+            }
+            
+            function updateSelectionCount() {
+                const checkedCount = document.querySelectorAll('tbody input[type="checkbox"]:checked').length;
+                document.querySelector('.flex.items-center.space-x-4 span:last-child').textContent = `${checkedCount} selected`;
+                document.querySelector('header button.btn-primary').textContent = `Practice (${checkedCount})`;
+            }
+            
+            // Handle column sorting
+            document.querySelectorAll('th.cursor-pointer').forEach(header => {
+                header.addEventListener('click', function() {
+                    // Remove existing sort indicators
+                    document.querySelectorAll('th.cursor-pointer').forEach(h => {
+                        h.textContent = h.textContent.replace(' ↑', '').replace(' ↓', '');
+                    });
+                    
+                    // Add sort indicator
+                    this.textContent += Math.random() > 0.5 ? ' ↑' : ' ↓';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

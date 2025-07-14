@@ -1,72 +1,201 @@
-# A statically generated blog example using Next.js, Markdown, and TypeScript
+# 標準日本語 Vocabulary Database
 
-This is the existing [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) plus TypeScript.
+A comprehensive Japanese vocabulary learning tool built with Next.js, featuring advanced filtering, sorting, and practice capabilities.
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/app/building-your-application/routing/layouts-and-templates) feature using Markdown files as the data source.
+## Features
 
-The blog posts are stored in `/_posts` as Markdown files with front matter support. Adding a new Markdown file in there will create a new blog post.
+### 🔍 **Advanced Filtering**
+- **Books**: Filter by textbook series (新标初, 新标中, 新标高)
+- **Lessons**: Multi-select lesson filtering with search capability
+- **Parts of Speech**: Filter by grammatical categories (名词, 动词, 形容词, etc.)
+- **Text Search**: Search across Japanese words, readings, meanings, and examples
 
-To create the blog posts we use [`remark`](https://github.com/remarkjs/remark) and [`remark-html`](https://github.com/remarkjs/remark-html) to convert the Markdown files into an HTML string, and then send it down as a prop to the page. The metadata of every post is handled by [`gray-matter`](https://github.com/jonschlinkert/gray-matter) and also sent in props to the page.
+### 📊 **Interactive Table**
+- Sortable columns for all vocabulary properties
+- Row selection with bulk actions
+- Color-coded part-of-speech badges
+- Bookmark functionality for difficult words
+- Responsive pagination with configurable page sizes
 
-## Demo
+### 🎯 **Study Features**
+- Practice mode for selected vocabulary
+- Export functionality for custom study sets
+- Persistent bookmarks using localStorage
+- Real-time filtering and search
 
-[https://next-blog-starter.vercel.app/](https://next-blog-starter.vercel.app/)
+## Technology Stack
 
-## Deploy your own
+- **Framework**: Next.js 15 with App Router
+- **UI Components**: shadcn/ui
+- **Styling**: Tailwind CSS
+- **Build**: Static export for CDN deployment
+- **Data**: JSON-based vocabulary database
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/blog-starter&project-name=blog-starter&repository-name=blog-starter)
+## Getting Started
 
-### Related examples
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-- [AgilityCMS](/examples/cms-agilitycms)
-- [Builder.io](/examples/cms-builder-io)
-- [ButterCMS](/examples/cms-buttercms)
-- [Contentful](/examples/cms-contentful)
-- [Cosmic](/examples/cms-cosmic)
-- [DatoCMS](/examples/cms-datocms)
-- [DotCMS](/examples/cms-dotcms)
-- [Drupal](/examples/cms-drupal)
-- [Enterspeed](/examples/cms-enterspeed)
-- [Ghost](/examples/cms-ghost)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent.ai](/examples/cms-kontent-ai)
-- [MakeSwift](/examples/cms-makeswift)
-- [Payload](/examples/cms-payload)
-- [Plasmic](/examples/cms-plasmic)
-- [Prepr](/examples/cms-prepr)
-- [Prismic](/examples/cms-prismic)
-- [Sanity](/examples/cms-sanity)
-- [Sitecore XM Cloud](/examples/cms-sitecore-xmcloud)
-- [Sitefinity](/examples/cms-sitefinity)
-- [Storyblok](/examples/cms-storyblok)
-- [TakeShape](/examples/cms-takeshape)
-- [Tina](/examples/cms-tina)
-- [Umbraco](/examples/cms-umbraco)
-- [Umbraco heartcore](/examples/cms-umbraco-heartcore)
-- [Webiny](/examples/cms-webiny)
-- [WordPress](/examples/cms-wordpress)
-- [Blog Starter](/examples/blog-starter)
+### Installation
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
+1. Clone the repository:
 ```bash
-npx create-next-app --example blog-starter blog-starter-app
+git clone <repository-url>
+cd biaori-vocab
 ```
 
+2. Install dependencies:
 ```bash
-yarn create next-app --example blog-starter blog-starter-app
+npm install
 ```
 
+3. Start the development server:
 ```bash
-pnpm create next-app --example blog-starter blog-starter-app
+npm run dev
 ```
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Building for Production
 
-# Notes
+To create a static export for deployment:
 
-`blog-starter` uses [Tailwind CSS](https://tailwindcss.com) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3).
+```bash
+npm run build
+```
+
+The static files will be generated in the `out/` directory and can be deployed to any static hosting service.
+
+## Data Structure
+
+The vocabulary data is stored in `public/data/vocabulary.json` with the following schema:
+
+```json
+{
+  "book_id": "7",
+  "lesson_id": "321", 
+  "lesson_name": "新标初_34",
+  "japanese_word": "カレンダー",
+  "reading": "カレンダー",
+  "chinese_meaning": "挂历，日历",
+  "part_of_speech": "名词",
+  "example_sentences": [
+    "卓上カレンダー / 台历。",
+    "園芸カレンダー / 农艺全年行事表。"
+  ]
+}
+```
+
+## Usage Guide
+
+### Filtering Vocabulary
+
+1. **Books**: Select one or more textbook series to filter vocabulary
+2. **Lessons**: Use the search box to find specific lessons, then select desired lessons
+3. **Parts of Speech**: Filter by grammatical categories
+4. **Text Search**: Enter search terms and choose which fields to search in
+
+### Working with Selections
+
+1. **Individual Selection**: Click checkboxes to select specific vocabulary items
+2. **Bulk Selection**: Use "Select All" to select all items on the current page
+3. **Practice Mode**: Click "Practice" button to start studying selected items
+4. **Export**: Export selected vocabulary as JSON for external use
+
+### Bookmarking
+
+- Click the star icon (☆) to bookmark difficult words
+- Bookmarks are saved locally and persist between sessions
+- Use bookmarks to create custom review sets
+
+### Sorting and Pagination
+
+- Click column headers to sort by that field
+- Use the pagination controls to navigate through results
+- Adjust page size (25, 50, 100, 200 items) as needed
+
+## Project Structure
+
+```
+/
+├── app/
+│   ├── globals.css          # Global styles and theme variables
+│   ├── layout.tsx           # Root layout with font configuration
+│   └── page.tsx             # Main page with vocabulary data loading
+├── components/
+│   ├── ui/                  # shadcn/ui components
+│   ├── filter-panel.tsx     # Sidebar filtering interface
+│   ├── vocabulary-table.tsx # Main data table component
+│   ├── pagination.tsx       # Pagination controls
+│   └── vocabulary-database.tsx # Main container component
+├── lib/
+│   ├── types.ts             # TypeScript type definitions
+│   ├── utils.ts             # Utility functions (cn helper)
+│   └── vocabulary-utils.ts  # Data processing functions
+└── public/
+    └── data/
+        └── vocabulary.json  # Vocabulary database
+```
+
+## Component Architecture
+
+- **VocabularyDatabase**: Main container managing state and data flow
+- **FilterPanel**: Sidebar with all filtering options
+- **VocabularyTable**: Sortable, selectable data table
+- **Pagination**: Page navigation and size controls
+
+## Customization
+
+### Adding New Filters
+
+1. Update the `FilterState` interface in `lib/types.ts`
+2. Add filter logic to `filterVocabulary()` in `lib/vocabulary-utils.ts`
+3. Add UI controls in `components/filter-panel.tsx`
+
+### Styling
+
+The application uses a neutral, minimalistic design inspired by Vercel's design language:
+
+- **Typography**: Inter font with clean hierarchy
+- **Colors**: Monochromatic grays with subtle accents
+- **Layout**: Clean spacing and minimal borders
+- **Interactive Elements**: Subtle hover and focus states
+
+### Data Updates
+
+To update the vocabulary database:
+
+1. Replace `public/data/vocabulary.json` with new data
+2. Ensure the data matches the expected schema
+3. Rebuild the application: `npm run build`
+
+## Performance Considerations
+
+- **Static Generation**: All data is processed at build time
+- **Client-side Filtering**: Fast, responsive filtering without server requests
+- **Virtual Scrolling**: Efficient rendering of large datasets
+- **Debounced Search**: 300ms delay for text search input
+- **Memoized Computations**: React.useMemo for expensive calculations
+
+## Browser Support
+
+- Modern browsers supporting ES2020+
+- Chrome, Firefox, Safari, Edge latest versions
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/new-feature`
+3. Commit changes: `git commit -am 'Add new feature'`
+4. Push to branch: `git push origin feature/new-feature`
+5. Submit a pull request
+
+## Support
+
+For questions or issues, please open an issue on the GitHub repository.
