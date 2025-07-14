@@ -1,5 +1,7 @@
 # 標準日本語 Vocabulary Database
 
+🌐 **[Live Demo](https://sandman-ren.github.io/biaori-vocab/)** | [GitHub Repository](https://github.com/Sandman-Ren/biaori-vocab)
+
 A comprehensive Japanese vocabulary learning tool built with Next.js, featuring advanced filtering, sorting, and practice capabilities.
 
 ## Features

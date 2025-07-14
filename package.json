@@ -2,6 +2,7 @@
   "name": "biaori-vocab",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sandman-ren.github.io/biaori-vocab/",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
