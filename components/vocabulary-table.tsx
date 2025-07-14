@@ -140,10 +140,16 @@ export default function VocabularyTable({
               const rowId = getRowId(item);
               const isSelected = selectedRows.includes(rowId);
               const isBookmarked = bookmarkedRows.includes(rowId);
+              const isExpanded = expandedRows.has(rowId);
+              const isVerbItem = isVerb(item.part_of_speech);
 
               return (
-                <div
+                <motion.div
                   key={`vocabulary-mobile-card-${item._id}`}
+                  layout
+                  transition={{ 
+                    layout: { type: "spring", stiffness: 300, damping: 30 }
+                  }}
                   className={`
                     bg-white border rounded-lg p-4 transition-colors
                     ${isSelected 
@@ -166,6 +172,21 @@ export default function VocabularyTable({
                       </div>
                     </div>
                     <div className="flex items-center space-x-2" onClick={(e) => e.stopPropagation()}>
+                      {isVerbItem && (
+                        <motion.div
+                          animate={{ rotate: isExpanded ? 90 : 0 }}
+                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        >
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={(e) => toggleRowExpansion(item, e)}
+                            className="px-2 text-gray-500 hover:text-gray-700"
+                          >
+                            <ChevronRight className="w-4 h-4" />
+                          </Button>
+                        </motion.div>
+                      )}
                       <Button
                         variant="ghost"
                         size="sm"
@@ -202,7 +223,45 @@ export default function VocabularyTable({
                       </div>
                     )}
                   </div>
-                </div>
+
+                  {/* Mobile Verb Conjugation Expansion - Always rendered for verbs */}
+                  {isVerbItem && (
+                    <motion.div
+                      layout
+                      initial={false}
+                      animate={{
+                        height: isExpanded ? "auto" : 0,
+                        opacity: isExpanded ? 1 : 0,
+                        marginTop: isExpanded ? 12 : 0
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                        mass: 0.8
+                      }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <motion.div
+                        animate={{
+                          opacity: isExpanded ? 1 : 0,
+                          y: isExpanded ? 0 : -10
+                        }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 30,
+                          mass: 0.8
+                        }}
+                      >
+                        <VerbConjugationDisplay 
+                          vocabulary={item} 
+                          selectedConjugations={selectedConjugations}
+                        />
+                      </motion.div>
+                    </motion.div>
+                  )}
+                </motion.div>
               );
             })}
           </div>
@@ -288,7 +347,11 @@ export default function VocabularyTable({
 
               return (
                 <React.Fragment key={`vocabulary-fragment-${item._id}`}>
-                  <TableRow
+                  <motion.tr
+                    layout
+                    transition={{ 
+                      layout: { type: "spring", stiffness: 300, damping: 30 }
+                    }}
                     className={`
                       transition-colors cursor-pointer
                       ${isSelected 
@@ -308,16 +371,19 @@ export default function VocabularyTable({
                           aria-label={`Select ${item.japanese_word}`}
                         />
                         {isVerbItem && (
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={(e) => toggleRowExpansion(item, e)}
-                            className="p-1 hover:bg-gray-200"
+                          <motion.div
+                            animate={{ rotate: isExpanded ? 90 : 0 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
                           >
-                            <ChevronRight 
-                              className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-90' : ''}`} 
-                            />
-                          </Button>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={(e) => toggleRowExpansion(item, e)}
+                              className="p-1 hover:bg-gray-200"
+                            >
+                              <ChevronRight className="w-3 h-3" />
+                            </Button>
+                          </motion.div>
                         )}
                       </div>
                     </TableCell>
@@ -367,28 +433,41 @@ export default function VocabularyTable({
                         </Button>
                       </div>
                     </TableCell>
-                  </TableRow>
+                  </motion.tr>
                   
+                  {/* Conjugation Row - Conditionally rendered with smooth animation */}
                   <AnimatePresence>
                     {isVerbItem && isExpanded && (
                       <motion.tr
-                        key={`conjugations-${item._id}`}
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
+                        layout
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                         transition={{
                           type: "spring",
-                          stiffness: 400,
-                          damping: 25,
-                          duration: 0.15,
+                          stiffness: 300,
+                          damping: 30,
+                          mass: 0.8
                         }}
-                        style={{ overflow: "hidden" }}
                       >
                         <TableCell colSpan={8} className="p-0">
-                          <VerbConjugationDisplay 
-                            vocabulary={item} 
-                            selectedConjugations={selectedConjugations}
-                          />
+                          <motion.div
+                            initial={{ height: 0, y: -10 }}
+                            animate={{ height: "auto", y: 0 }}
+                            exit={{ height: 0, y: -10 }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 30,
+                              mass: 0.8
+                            }}
+                            style={{ overflow: "hidden" }}
+                          >
+                            <VerbConjugationDisplay 
+                              vocabulary={item} 
+                              selectedConjugations={selectedConjugations}
+                            />
+                          </motion.div>
                         </TableCell>
                       </motion.tr>
                     )}
