@@ -1,0 +1,101 @@
+{
+  "name": "中日交流标准日本语 词汇学习系统",
+  "short_name": "日语词汇学习",
+  "description": "专为中国学习者设计的现代化日语词汇学习工具，基于新标准日本语教材系列。包含高级筛选、动词变位、响应式设计、词汇详情模态窗口和流畅动画。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": ["education", "language", "learning", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.png", 
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128", 
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Desktop view of vocabulary table with filters"
+    },
+    {
+      "src": "/screenshots/mobile-modal.png", 
+      "sizes": "375x812",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Mobile view of vocabulary detail modal"
+    }
+  ],
+  "features": [
+    "vocabulary-database",
+    "advanced-filtering", 
+    "verb-conjugations",
+    "responsive-design",
+    "modal-dialogs",
+    "copy-functionality",
+    "bookmark-management",
+    "smooth-animations",
+    "mobile-optimized",
+    "accessibility",
+    "offline-capable"
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "capture_links": "new-client"
+}

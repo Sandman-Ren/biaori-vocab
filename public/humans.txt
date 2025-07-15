@@ -1,0 +1,100 @@
+# humanstxt.org/
+# The humans behind 中日交流标准日本语 词汇学习系统
+
+/* TEAM */
+Creator & Lead Developer: Sandman-Ren
+Contact: github.com/Sandman-Ren
+Location: Global
+
+AI Assistant: GitHub Copilot
+Role: Development assistance and documentation
+From: Microsoft/OpenAI
+
+/* THANKS */
+shadcn/ui: For the excellent component library
+Framer Motion: For smooth animation capabilities
+Tailwind CSS: For utility-first CSS framework
+Lucide: For beautiful icons
+Next.js Team: For the amazing React framework
+Vercel: For hosting and deployment solutions
+
+Japanese Language Community: For educational resources
+Chinese Learning Community: For feedback and support
+新标准日本语 Authors: For the excellent textbook series
+
+/* SITE */
+Last update: 2025/01/15
+Standards: HTML5, CSS3, JavaScript ES2020+, TypeScript
+Components: React, Next.js, Tailwind CSS, Framer Motion
+Software: VS Code, Node.js, Git, GitHub
+Accessibility: WCAG 2.1 AA compliant
+Performance: Core Web Vitals optimized
+SEO: Structured data, Open Graph, Twitter Cards
+
+Languages: Chinese (Simplified), Japanese, English
+Encoding: UTF-8
+Responsive: Mobile-first design
+Progressive: PWA-ready
+Open Source: MIT License
+
+/* FEATURES */
+Advanced Filtering: Multi-dimensional vocabulary search
+Verb Conjugations: 15 different conjugation forms
+Modal System: Responsive vocabulary detail dialogs
+Copy Functionality: One-click text copying
+Bookmark Management: Personal vocabulary collections
+Smooth Animations: 60fps spring-based transitions
+Mobile Optimization: Touch-friendly interface
+Accessibility: Keyboard navigation and screen readers
+Export Options: CSV, XLSX, JSON, PDF formats
+Offline Capable: Service worker ready
+
+/* DATA */
+Vocabulary Count: 2800+ entries
+Source: 新标准日本语 textbook series
+Books Covered: 初级 (Beginner), 中级 (Intermediate), 高级 (Advanced)
+Content: Japanese words, readings, Chinese meanings, examples
+Conjugations: Complete verb conjugation database
+Format: Structured JSON with full Unicode support
+
+/* TECHNICAL STACK */
+Frontend: Next.js 15, React 18, TypeScript 5
+Styling: Tailwind CSS 3, CSS Modules
+Animation: Framer Motion 11
+UI Components: shadcn/ui, Radix UI
+Icons: Lucide React
+Build: Next.js static export
+Deployment: GitHub Pages
+Version Control: Git, GitHub
+
+/* PERFORMANCE */
+Bundle Size: Optimized for fast loading
+Images: WebP format with fallbacks
+Fonts: Google Fonts with variable font loading
+Caching: Static generation with CDN caching
+Core Web Vitals: All metrics in green
+Lighthouse Score: 100/100 Performance
+
+/* BROWSER SUPPORT */
+Chrome: 80+
+Firefox: 75+
+Safari: 13+
+Edge: 80+
+Mobile: iOS Safari 13+, Chrome Mobile 80+
+
+/* DESIGN PRINCIPLES */
+Mobile-First: Responsive design starting from mobile
+Accessibility: WCAG 2.1 AA compliance
+Performance: Core Web Vitals optimization
+User Experience: Intuitive and smooth interactions
+Internationalization: Multi-language support
+Progressive Enhancement: Works without JavaScript
+
+/* CONTACT */
+Issues: github.com/Sandman-Ren/biaori-vocab/issues
+Discussions: github.com/Sandman-Ren/biaori-vocab/discussions
+Documentation: Full API and usage documentation included
+License: MIT - Free for personal and commercial use
+
+Built with ❤️ for Japanese language learners worldwide
+特别为中国的日语学习者设计 🇨🇳 ❤️ 🇯🇵

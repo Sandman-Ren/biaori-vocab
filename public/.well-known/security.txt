@@ -1,0 +1,31 @@
+# Security Policy for 中日交流标准日本语 词汇学习系统
+# Japanese Vocabulary Learning System Security Information
+
+Contact: https://github.com/Sandman-Ren/biaori-vocab/issues
+Contact: mailto:security@example.com
+Expires: 2025-12-31T23:59:59.000Z
+Acknowledgments: https://github.com/Sandman-Ren/biaori-vocab/blob/main/SECURITY.md
+Preferred-Languages: en, zh-CN, ja
+Canonical: https://sandman-ren.github.io/biaori-vocab/.well-known/security.txt
+
+# Security Scope
+# This application is a static site with client-side functionality
+# Primary security concerns:
+# - XSS prevention in user-generated content
+# - Content Security Policy implementation
+# - Data validation and sanitization
+# - Accessibility and privacy protection
+
+# Reporting Guidelines
+# Please report security vulnerabilities responsibly
+# Include steps to reproduce, impact assessment, and suggested fixes
+# Allow reasonable time for response before public disclosure
+
+# Out of Scope
+# - Third-party dependencies (report to respective maintainers)
+# - Browser-specific vulnerabilities
+# - Network infrastructure issues
+# - Social engineering attacks
+
+Policy: https://github.com/Sandman-Ren/biaori-vocab/blob/main/SECURITY.md
+Hiring: https://github.com/Sandman-Ren

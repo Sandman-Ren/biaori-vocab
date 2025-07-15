@@ -1,0 +1,63 @@
+# robots.txt for 中日交流标准日本语 词汇学习系统
+# Vocabulary Learning System for Chinese Japanese Learners
+
+User-agent: *
+Allow: /
+
+# Main content
+Allow: /
+Allow: /data/
+Allow: /docs/
+
+# Static assets
+Allow: /icons/
+Allow: /screenshots/
+Allow: /_next/static/
+Allow: /favicon.ico
+Allow: /manifest.json
+
+# Disallow unnecessary crawling
+Disallow: /_next/
+Disallow: /api/
+Disallow: *.json$
+
+# Sitemap location
+Sitemap: https://sandman-ren.github.io/biaori-vocab/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Archive.org
+User-agent: ia_archiver
+Allow: /
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Academic/Research bots
+User-agent: Academia
+Allow: /
+
+User-agent: ResearchBot
+Allow: /
+
+# Educational content bots
+User-agent: EdBot
+Allow: /
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

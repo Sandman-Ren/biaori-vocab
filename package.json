@@ -1,12 +1,66 @@
 {
   "name": "biaori-vocab",
-  "version": "0.1.0",
+  "version": "1.2.0",
+  "description": "专为中国学习者设计的现代化日语词汇学习工具，基于新标准日本语教材系列。包含高级筛选、动词变位、响应式设计、词汇详情模态窗口、复制功能、收藏管理和流畅动画。A modernized Japanese vocabulary learning tool designed for Chinese speakers using 新标准日本语 textbook series, featuring advanced filtering, verb conjugations, responsive design, vocabulary detail modals, copy functionality, bookmark management, and smooth animations.",
+  "keywords": [
+    "japanese",
+    "vocabulary", 
+    "learning",
+    "education",
+    "language-learning",
+    "chinese",
+    "nextjs",
+    "react",
+    "typescript",
+    "conjugation",
+    "responsive",
+    "accessibility",
+    "modal",
+    "framer-motion",
+    "tailwind",
+    "新标准日本语",
+    "日语学习",
+    "中文界面",
+    "词汇学习",
+    "动词变位",
+    "模态窗口",
+    "复制功能",
+    "收藏管理",
+    "移动端优化",
+    "无障碍设计",
+    "流畅动画"
+  ],
+  "author": {
+    "name": "Sandman-Ren",
+    "url": "https://github.com/Sandman-Ren"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sandman-Ren/biaori-vocab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sandman-Ren/biaori-vocab/issues"
+  },
+  "homepage": "https://github.com/Sandman-Ren/biaori-vocab#readme",
+  "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "docs:dev": "echo 'Documentation available in ./docs/'",
+    "deploy:vercel": "vercel --prod",
+    "deploy:netlify": "netlify deploy --prod --dir=out",
+    "prebuild": "npm run type-check && npm run lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
