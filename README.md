@@ -39,7 +39,18 @@ A modernized Japanese vocabulary learning tool built with Next.js, featuring adv
 - **浮动按钮**: Floating action button for quick mobile actions
 - **格式选择**: Support for CSV, XLSX, JSON, and PDF export formats
 
-### 📄 **Rich PDF Documents**
+### � **Vocabulary Detail Modal**
+- **详细信息**: Comprehensive vocabulary details in a responsive modal
+- **复制功能**: One-click copy for Japanese words, readings, and meanings
+- **收藏管理**: Bookmark vocabulary items directly from the modal
+- **例句展示**: Full example sentences with copy functionality
+- **课程信息**: Complete lesson and textbook details
+- **响应式设计**: Optimized for both mobile and desktop viewing
+- **流畅动画**: Smooth open/close animations with spring physics
+- **无障碍操作**: Full keyboard navigation and screen reader support
+- **音频播放**: Pronunciation playback (planned feature)
+
+### �📄 **Rich PDF Documents**
 - **动词练习册**: Generate beautifully formatted verb conjugation practice worksheets  
 - **答案册**: Complete answer keys with all conjugation forms
 - **离线学习**: Print-ready documents for offline study and repetition practice
@@ -52,6 +63,8 @@ A modernized Japanese vocabulary learning tool built with Next.js, featuring adv
 - **流畅动画**: Spring-based animations using Framer Motion
 - **即时反馈**: Immediate interactivity without blocking animations
 - **视觉一致性**: Consistent design language throughout the application
+- **模态窗口**: Professional modal dialogs with proper animation lifecycle
+- **交互设计**: Intuitive interaction patterns with visual feedback
 
 ## Technology Stack
 
@@ -167,6 +180,24 @@ The application includes a comprehensive verb conjugation system with:
 3. **移动支持**: Full conjugation support on mobile devices
 4. **中文标注**: All conjugation forms displayed with Chinese explanations
 
+### 词汇详情 (Vocabulary Details)
+
+1. **查看详情**: Click the "查看" (View) button in any vocabulary row to open the detail modal
+2. **基本信息**: View complete information including Japanese word, reading, and Chinese meaning
+3. **复制功能**: Use copy buttons to copy individual elements or all information at once
+4. **收藏管理**: Star/unstar vocabulary items directly from the modal
+5. **例句学习**: Read through example sentences with one-click copy functionality
+6. **课程信息**: See which lesson and textbook the vocabulary belongs to
+7. **关闭方式**: Close modal using the X button, ESC key, or clicking outside the modal
+8. **键盘导航**: Full keyboard navigation support for accessibility
+
+#### Modal Features:
+- **响应式布局**: Automatically adapts to mobile and desktop screen sizes
+- **流畅动画**: Smooth open/close animations with spring physics
+- **音频播放**: Pronunciation playback button (ready for integration)
+- **完整信息**: All available vocabulary data in one organized view
+- **无障碍设计**: Screen reader compatible with proper ARIA labels
+
 ### Working with Selections
 
 1. **Individual Selection**: Click checkboxes to select specific vocabulary items
@@ -197,7 +228,8 @@ The application includes a comprehensive verb conjugation system with:
 ├── components/
 │   ├── ui/                      # shadcn/ui components (enhanced)
 │   ├── filter-panel.tsx         # Collapsible sidebar with all filtering options
-│   ├── vocabulary-table.tsx     # Animated table with verb expansion
+│   ├── vocabulary-table.tsx     # Animated table with verb expansion and modal integration
+│   ├── vocabulary-detail-modal.tsx # Responsive vocabulary detail modal with animations
 │   ├── vocabulary-database.tsx  # Main container with mobile FAB and export
 │   ├── pagination.tsx           # Pagination controls (localized)
 │   └── verb-conjugation-display.tsx # Conjugation display component
@@ -218,7 +250,8 @@ The application includes a comprehensive verb conjugation system with:
 
 - **VocabularyDatabase**: Main container managing state, mobile detection, and export functionality
 - **FilterPanel**: Collapsible sidebar with spring animations and immediate interactivity
-- **VocabularyTable**: Responsive table with smooth row animations and verb expansion
+- **VocabularyTable**: Responsive table with smooth row animations, verb expansion, and modal integration
+- **VocabularyDetailModal**: Responsive modal component with detailed vocabulary information, copy functionality, and smooth animations
 - **VerbConjugationDisplay**: Expandable conjugation panels with Chinese labels
 - **Pagination**: Localized pagination controls with Chinese text
 - **Mobile Support**: FAB, mobile header, and responsive design throughout
@@ -261,8 +294,63 @@ Key animated interactions:
 - **Table Rows**: Smooth layout changes and verb conjugation expansion
 - **Mobile Cards**: Layout animations and expandable conjugations
 - **Chevron Icons**: Smooth rotation for expand/collapse states
+- **Vocabulary Modal**: Smooth open/close animations with backdrop fade and content scaling
+- **Modal Backdrop**: Fade in/out with blur effect for focus isolation
 
-### Data Updates
+#### Modal Animation Lifecycle
+
+The vocabulary detail modal uses a sophisticated animation system:
+
+```typescript
+// Modal entrance animation
+initial={{ scale: 0.9, opacity: 0, y: 20 }}
+animate={{ scale: 1, opacity: 1, y: 0 }}
+exit={{ scale: 0.9, opacity: 0, y: 20 }}
+
+// Backdrop animation
+initial={{ opacity: 0 }}
+animate={{ opacity: 1 }}
+exit={{ opacity: 0 }}
+```
+
+**Animation Features:**
+- **Entrance**: Scales up from 90% with fade-in and slight upward slide
+- **Exit**: Smooth reverse animation when closing via any method
+- **Backdrop**: Independent fade animation with blur effect
+- **Non-blocking**: Page remains interactive during animations
+- **Consistent**: Same animation regardless of close method (button, ESC, outside click)
+- **Performance**: GPU-accelerated transformations for 60fps animations
+
+### Quick Reference
+
+### Modal Usage
+| Action | Method |
+|--------|--------|
+| Open Modal | Click "查看" button in any vocabulary row |
+| Close Modal | X button, ESC key, or click outside modal |
+| Copy Text | Click 📋 button next to any text element |
+| Copy All | Click "复制全部" button in modal footer |
+| Bookmark | Click ⭐ star button in modal header |
+| Audio Play | Click "播放发音" button (ready for integration) |
+
+### Keyboard Shortcuts
+| Key | Action |
+|-----|--------|
+| `ESC` | Close open modal |
+| `Tab` | Navigate through modal elements |
+| `Enter/Space` | Activate focused button |
+| `↑/↓` | Scroll modal content (when focused) |
+
+### Part of Speech Colors
+| Part of Speech | Color Theme |
+|----------------|-------------|
+| 名词 (Noun) | 🔵 Blue |
+| 动词 (Verb) | 🟢 Green |
+| 形容词 (Adjective) | 🟣 Purple |
+| 副词 (Adverb) | 🟠 Orange |
+| 惯用语 (Idiom) | 🩷 Pink |
+
+## Data Updates
 
 To update the vocabulary database:
 

@@ -184,6 +184,165 @@ interface AnimationTypes {
    - 动词展开 with margin and height animation
    - 触摸反馈 for interaction states
 
+4. **Vocabulary Detail Modal**:
+   - 入场动画 with scale, opacity, and upward slide
+   - 退场动画 with reverse entrance animation
+   - 背景遮罩 independent fade animation with blur
+   - 响应式布局 adaptive content layout
+   - 非阻塞动画 page remains interactive during transitions
+
+#### Modal Animation Lifecycle
+```typescript
+// Entrance Animation
+initial={{ scale: 0.9, opacity: 0, y: 20 }}
+animate={{ scale: 1, opacity: 1, y: 0 }}
+transition={{ type: "spring", stiffness: 300, damping: 30 }}
+
+// Exit Animation  
+exit={{ scale: 0.9, opacity: 0, y: 20 }}
+transition={{ type: "spring", stiffness: 300, damping: 30 }}
+
+// Backdrop Animation
+initial={{ opacity: 0 }}
+animate={{ opacity: 1 }}
+exit={{ opacity: 0 }}
+transition={{ duration: 0.2 }}
+```
+
+### Vocabulary Detail Modal Design
+
+#### Modal Architecture
+The vocabulary detail modal follows a card-based information hierarchy with comprehensive functionality:
+
+```
+🔍 词汇详情 Modal
+├── 📋 Header Section
+│   ├── Modal Title: "词汇详情"
+│   ├── Part of Speech Badge (color-coded)
+│   ├── Bookmark Star Button (toggleable)
+│   └── Close Button (X)
+├── 📄 Content Sections (scrollable)
+│   ├── 🎌 基本信息 Card
+│   │   ├── Japanese Word (large, with copy)
+│   │   ├── Reading/Pronunciation (with copy)
+│   │   └── Chinese Meaning (with copy)
+│   ├── 📚 课程信息 Card  
+│   │   ├── Lesson Name
+│   │   └── Book ID
+│   ├── 💬 例句 Card (conditional)
+│   │   ├── Example Count Badge
+│   │   └── Sentence List (each with copy button)
+│   └── ℹ️ 其他信息 Card
+│       ├── Part of Speech
+│       ├── Example Count
+│       ├── Lesson ID
+│       └── Word Number
+└── 🎮 Footer Actions
+    ├── Mobile: Stacked Buttons (full-width)
+    │   ├── 复制全部 (Copy All)
+    │   ├── 播放发音 (Play Audio)
+    │   └── 关闭 (Close)
+    └── Desktop: Horizontal Layout
+        ├── Left: Action Buttons
+        └── Right: Close Button
+```
+
+#### Responsive Modal Behavior
+
+**Mobile Layout (< 640px)**:
+- Full-screen approach with safe margins
+- Stacked footer buttons for easy touch access
+- Larger touch targets (min 44px)
+- Card-based content organization
+- Optimized typography for mobile reading
+
+**Desktop Layout (≥ 640px)**:
+- Centered modal with max-width constraint
+- Horizontal footer with action grouping
+- Hover states for interactive elements  
+- Keyboard navigation support
+- Traditional modal positioning
+
+#### Modal Content Cards
+
+**1. 基本信息 (Basic Information)**
+```
+🎌 基本信息
+┌─────────────────────────────────┐
+│ カレンダー            [📋]      │ <- Large Japanese text + copy
+│ katakana reading                │
+│                                 │
+│ 挂历，日历              [📋]      │ <- Chinese meaning + copy  
+│                                 │
+│ [🔊 发音]                      │ <- Audio playback button
+└─────────────────────────────────┘
+```
+
+**2. 课程信息 (Course Information)**
+```
+📚 课程信息  
+┌─────────────────────────────────┐
+│ 课程: 新标初_34                   │
+│ 书籍ID: 7                       │  
+└─────────────────────────────────┘
+```
+
+**3. 例句 (Example Sentences)**
+```
+💬 例句                    [3 个]
+┌─────────────────────────────────┐
+│ 例句 1                    [📋]   │
+│ 卓上カレンダー / 台历。           │
+│                                 │
+│ 例句 2                    [📋]   │  
+│ 園芸カレンダー / 农艺全年行事表。  │
+└─────────────────────────────────┘
+```
+
+#### Copy Functionality Design
+
+**Individual Copy Buttons**:
+- Japanese word, reading, Chinese meaning
+- Each example sentence
+- Visual feedback with toast notifications
+
+**Bulk Copy Feature**:
+- "复制全部" combines all information
+- Format: `カレンダー (カレンダー) - 挂历，日历`
+- Includes structured data for easy sharing
+
+#### Part of Speech Color System
+
+```typescript
+Color Coding Schema:
+名词 (Noun)     → Blue theme   (bg-blue-50, text-blue-700)
+动词 (Verb)     → Green theme  (bg-green-50, text-green-700) 
+形容词 (Adj)    → Purple theme (bg-purple-50, text-purple-700)
+副词 (Adverb)   → Orange theme (bg-orange-50, text-orange-700)
+惯用语 (Idiom)  → Pink theme   (bg-pink-50, text-pink-700)
+其他 (Other)    → Gray theme   (bg-gray-50, text-gray-700)
+```
+
+#### Accessibility Features
+
+**Keyboard Navigation**:
+- Tab order: Header → Content → Footer
+- ESC key closes modal
+- Enter/Space activates buttons
+- Focus trapping within modal
+
+**Screen Reader Support**:
+- Semantic HTML structure
+- ARIA labels for interactive elements
+- Descriptive button text
+- Proper heading hierarchy
+
+**Touch Accessibility**:
+- Minimum 44px touch targets
+- Clear visual feedback for touches
+- Swipe-friendly scrolling areas
+- Touch-friendly button spacing
+
 ### Filter Panel Components (Localized)
 
 #### 1. 教材筛选 (Books Filter)
