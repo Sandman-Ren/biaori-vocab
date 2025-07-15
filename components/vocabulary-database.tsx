@@ -51,6 +51,13 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
   const [bookmarkedRows, setBookmarkedRows] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isFilterPanelCollapsed, setIsFilterPanelCollapsed] = useState(false);
+  const [expandedSections, setExpandedSections] = useState({
+    search: true,
+    books: true,
+    lessons: true,
+    partsOfSpeech: true,
+    conjugations: true,
+  });
   const [exportFormat, setExportFormat] = useState<'csv' | 'xlsx' | 'json' | 'pdf-practice' | 'pdf-answers'>('csv');
   const [simplifiedPDF, setSimplifiedPDF] = useState(false);
   const [isMobileFABExpanded, setIsMobileFABExpanded] = useState(false);
@@ -283,6 +290,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                       searchFields={filters.searchFields}
                       selectedConjugations={filters.selectedConjugations}
                       conjugationSource={filters.conjugationSource}
+                      expandedSections={expandedSections}
                       onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
                       onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
                       onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
@@ -290,6 +298,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                       onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
                       onSelectedConjugationsChange={handleSelectedConjugationsChange}
                       onConjugationSourceChange={handleConjugationSourceChange}
+                      onExpandedSectionsChange={setExpandedSections}
                     />
                   </SheetContent>
                 </Sheet>
@@ -403,32 +412,62 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 </>
               )}
               {/* Export Dropdown */}
-              <div className="hidden sm:flex items-center space-x-2">
-                <Select 
-                  value={exportFormat} 
-                  onValueChange={(value: 'csv' | 'xlsx' | 'json' | 'pdf-practice' | 'pdf-answers') => setExportFormat(value)}
-                  disabled={filters.selectedRows.length === 0}
+              <motion.div 
+                className="hidden sm:flex items-center space-x-2"
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.div
+                  animate={{ 
+                    scale: filters.selectedRows.length === 0 ? 0.95 : 1,
+                    opacity: filters.selectedRows.length === 0 ? 0.5 : 1 
+                  }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <SelectTrigger className="w-32 h-8 text-xs">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="csv">CSV</SelectItem>
-                    <SelectItem value="xlsx">XLSX</SelectItem>
-                    <SelectItem value="json">JSON</SelectItem>
-                    <SelectItem value="pdf-practice">PDF练习</SelectItem>
-                    <SelectItem value="pdf-answers">PDF答案</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  onClick={exportSelected}
-                  disabled={filters.selectedRows.length === 0}
+                  <Select 
+                    value={exportFormat} 
+                    onValueChange={(value: 'csv' | 'xlsx' | 'json' | 'pdf-practice' | 'pdf-answers') => setExportFormat(value)}
+                    disabled={filters.selectedRows.length === 0}
+                  >
+                    <SelectTrigger className="w-32 h-8 text-xs transition-all duration-200 hover:shadow-md">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <SelectItem value="csv">CSV</SelectItem>
+                        <SelectItem value="xlsx">XLSX</SelectItem>
+                        <SelectItem value="json">JSON</SelectItem>
+                        <SelectItem value="pdf-practice">PDF练习</SelectItem>
+                        <SelectItem value="pdf-answers">PDF答案</SelectItem>
+                      </motion.div>
+                    </SelectContent>
+                  </Select>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  animate={{ 
+                    scale: filters.selectedRows.length === 0 ? 0.95 : 1,
+                    opacity: filters.selectedRows.length === 0 ? 0.5 : 1 
+                  }}
+                  transition={{ duration: 0.2 }}
                 >
-                  导出
-                </Button>
-              </div>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={exportSelected}
+                    disabled={filters.selectedRows.length === 0}
+                    className="transition-all duration-200 hover:shadow-md"
+                  >
+                    导出
+                  </Button>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -502,6 +541,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                     searchFields={filters.searchFields}
                     selectedConjugations={filters.selectedConjugations}
                     conjugationSource={filters.conjugationSource}
+                    expandedSections={expandedSections}
                     onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
                     onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
                     onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
@@ -509,6 +549,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                     onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
                     onSelectedConjugationsChange={handleSelectedConjugationsChange}
                     onConjugationSourceChange={handleConjugationSourceChange}
+                    onExpandedSectionsChange={setExpandedSections}
                   />
                 </div>
               </div>
@@ -652,7 +693,15 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
             className={`flex flex-col space-y-2 ${!isMobileFABExpanded ? 'pointer-events-none' : ''}`}
           >
             {/* Export Format Selector */}
-            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 min-w-[120px]">
+            <motion.div 
+              className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 min-w-[120px]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ 
+                opacity: isMobileFABExpanded ? 1 : 0, 
+                scale: isMobileFABExpanded ? 1 : 0.8 
+              }}
+              transition={{ duration: 0.2, delay: isMobileFABExpanded ? 0.1 : 0 }}
+            >
               <div className="text-xs text-gray-600 mb-2 font-medium">导出格式</div>
               <Select 
                 value={exportFormat} 
@@ -662,54 +711,96 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="csv">CSV</SelectItem>
-                  <SelectItem value="xlsx">XLSX</SelectItem>
-                  <SelectItem value="json">JSON</SelectItem>
-                  <SelectItem value="pdf-practice">PDF练习</SelectItem>
-                  <SelectItem value="pdf-answers">PDF答案</SelectItem>
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <SelectItem value="csv">CSV</SelectItem>
+                    <SelectItem value="xlsx">XLSX</SelectItem>
+                    <SelectItem value="json">JSON</SelectItem>
+                    <SelectItem value="pdf-practice">PDF练习</SelectItem>
+                    <SelectItem value="pdf-answers">PDF答案</SelectItem>
+                  </motion.div>
                 </SelectContent>
               </Select>
-            </div>
+            </motion.div>
 
             {/* Export Button */}
-            <Button
-              className="bg-green-600 text-white hover:bg-green-700 shadow-lg rounded-full w-12 h-12"
-              onClick={() => {
-                exportSelected();
-                setIsMobileFABExpanded(false);
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ 
+                opacity: isMobileFABExpanded ? 1 : 0, 
+                scale: isMobileFABExpanded ? 1 : 0.8 
               }}
+              transition={{ duration: 0.2, delay: isMobileFABExpanded ? 0.2 : 0 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <Download className="w-5 h-5" />
-            </Button>
+              <Button
+                className="bg-green-600 text-white hover:bg-green-700 shadow-lg rounded-full w-12 h-12"
+                onClick={() => {
+                  exportSelected();
+                  setIsMobileFABExpanded(false);
+                }}
+              >
+                <Download className="w-5 h-5" />
+              </Button>
+            </motion.div>
             
             {/* Practice Button */}
-            <Button
-              className="bg-blue-600 text-white hover:bg-blue-700 shadow-lg rounded-full w-12 h-12"
-              onClick={() => {
-                // TODO: Implement practice mode
-                setIsMobileFABExpanded(false);
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ 
+                opacity: isMobileFABExpanded ? 1 : 0, 
+                scale: isMobileFABExpanded ? 1 : 0.8 
               }}
+              transition={{ duration: 0.2, delay: isMobileFABExpanded ? 0.3 : 0 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <Play className="w-5 h-5" />
-            </Button>
+              <Button
+                className="bg-blue-600 text-white hover:bg-blue-700 shadow-lg rounded-full w-12 h-12"
+                onClick={() => {
+                  // TODO: Implement practice mode
+                  setIsMobileFABExpanded(false);
+                }}
+              >
+                <Play className="w-5 h-5" />
+              </Button>
+            </motion.div>
           </motion.div>
 
           {/* Main FAB */}
-          <Button 
-            className="bg-black text-white hover:bg-gray-800 shadow-lg rounded-full w-14 h-14"
-            onClick={() => setIsMobileFABExpanded(!isMobileFABExpanded)}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 300, 
+              damping: 25,
+              delay: 0.1 
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <motion.div
-              animate={{ rotate: isMobileFABExpanded ? 45 : 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            <Button 
+              className="bg-black text-white hover:bg-gray-800 shadow-lg rounded-full w-14 h-14"
+              onClick={() => setIsMobileFABExpanded(!isMobileFABExpanded)}
             >
-              {isMobileFABExpanded ? (
-                <span className="text-xl font-light">×</span>
-              ) : (
-                <span className="text-sm font-medium">{filters.selectedRows.length}</span>
-              )}
-            </motion.div>
-          </Button>
+              <motion.div
+                animate={{ rotate: isMobileFABExpanded ? 45 : 0 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              >
+                {isMobileFABExpanded ? (
+                  <span className="text-xl font-light">×</span>
+                ) : (
+                  <span className="text-sm font-medium">{filters.selectedRows.length}</span>
+                )}
+              </motion.div>
+            </Button>
+          </motion.div>
         </div>
       )}
     </div>
