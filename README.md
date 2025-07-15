@@ -386,6 +386,32 @@ This project is licensed under the MIT License.
 4. Push to branch: `git push origin feature/new-feature`
 5. Submit a pull request
 
+## 📚 Documentation
+
+For comprehensive documentation, visit the [`/docs`](./docs) folder:
+
+### Quick Links
+- **[📖 Complete Documentation Index](./docs/README.md)** - Start here for all documentation
+- **[🏗️ System Design](./docs/design/system-design.md)** - Architecture and technical decisions
+- **[🔧 API Reference](./docs/api/components-api.md)** - Component and utility API documentation
+- **[📊 Data Structure](./docs/data/data-structure.md)** - Vocabulary data format and schema
+- **[🔄 Data Lifecycle](./docs/data/data-lifecycle.md)** - Complete data processing pipeline
+- **[📋 Reproduction Steps](./docs/data/reproduction-steps.md)** - How to recreate vocabulary.json
+- **[🎨 UI Design Guidelines](./docs/design/ui-design.md)** - Design system and component guidelines
+- **[⚙️ Animation System](./docs/design/animation-system.md)** - Animation architecture and best practices
+- **[📱 Responsive Design](./docs/design/responsive-design.md)** - Mobile and cross-device optimization
+- **[🚀 Deployment Guide](./docs/DEPLOYMENT.md)** - Complete deployment instructions
+- **[🤝 Contributing](./docs/CONTRIBUTING.md)** - How to contribute to the project
+- **[📋 Development Log](./docs/DEVELOPMENT_LOG.md)** - Detailed development history and decisions
+
+### Documentation Highlights
+- **Complete data pipeline documentation** from scraping to deployment
+- **Comprehensive API reference** for all components and utilities  
+- **Design system documentation** with coding standards and best practices
+- **Step-by-step reproduction guide** for recreating the vocabulary database
+- **Deployment instructions** for multiple platforms (Vercel, Netlify, self-hosted)
+- **Architecture decisions** and technical design rationale
+
 ## Support
 
 For questions or issues, please open an issue on the GitHub repository.
