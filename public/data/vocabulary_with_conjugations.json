@@ -751,23 +751,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "閉まります",
-        "polite_past": "閉まりました",
-        "polite_negative": "閉まりません",
-        "polite_past_negative": "閉まりませんでした",
-        "casual_present": "閉まる",
-        "casual_past": "閉まった",
-        "casual_negative": "閉まらない",
-        "casual_past_negative": "閉まらなかった",
-        "te_form": "閉まって",
-        "potential": "閉まえる",
-        "passive": "閉まられる",
-        "causative": "閉ませる",
-        "imperative": "閉まe",
-        "conditional": "閉まれば",
-        "volitional": "閉まおう"
       }
     }
   },
@@ -806,23 +789,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "壊します",
-        "polite_past": "壊しました",
-        "polite_negative": "壊しません",
-        "polite_past_negative": "壊しませんでした",
-        "casual_present": "壊す",
-        "casual_past": "壊した",
-        "casual_negative": "壊さない",
-        "casual_past_negative": "壊さなかった",
-        "te_form": "壊して",
-        "potential": "壊える",
-        "passive": "壊られる",
-        "causative": "壊せる",
-        "imperative": "壊e",
-        "conditional": "壊れば",
-        "volitional": "壊おう"
       }
     }
   },
@@ -1883,23 +1849,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "そろいます",
-        "polite_past": "そろいました",
-        "polite_negative": "そろいません",
-        "polite_past_negative": "そろいませんでした",
-        "casual_present": "そろいる",
-        "casual_past": "そろいった",
-        "casual_negative": "そろいらない",
-        "casual_past_negative": "そろいらなかった",
-        "te_form": "そろいって",
-        "potential": "そろいえる",
-        "passive": "そろいられる",
-        "causative": "そろいせる",
-        "imperative": "そろいe",
-        "conditional": "そろいれば",
-        "volitional": "そろいおう"
       }
     }
   },
@@ -1938,23 +1887,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "寄ります",
-        "polite_past": "寄りました",
-        "polite_negative": "寄りません",
-        "polite_past_negative": "寄りませんでした",
-        "casual_present": "寄る",
-        "casual_past": "寄った",
-        "casual_negative": "寄らない",
-        "casual_past_negative": "寄らなかった",
-        "te_form": "寄って",
-        "potential": "寄える",
-        "passive": "寄られる",
-        "causative": "寄せる",
-        "imperative": "寄e",
-        "conditional": "寄れば",
-        "volitional": "寄おう"
       }
     }
   },
@@ -1993,23 +1925,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "開きます",
-        "polite_past": "開きました",
-        "polite_negative": "開きません",
-        "polite_past_negative": "開きませんでした",
-        "casual_present": "開く",
-        "casual_past": "開いた",
-        "casual_negative": "開かない",
-        "casual_past_negative": "開かなかった",
-        "te_form": "開いて",
-        "potential": "開える",
-        "passive": "開られる",
-        "causative": "開せる",
-        "imperative": "開e",
-        "conditional": "開れば",
-        "volitional": "開おう"
       }
     }
   },
@@ -2067,23 +1982,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "引っ越します",
-        "polite_past": "引っ越しました",
-        "polite_negative": "引っ越しません",
-        "polite_past_negative": "引っ越しませんでした",
-        "casual_present": "引っ越す",
-        "casual_past": "引っ越した",
-        "casual_negative": "引っ越さない",
-        "casual_past_negative": "引っ越さなかった",
-        "te_form": "引っ越して",
-        "potential": "引っ越える",
-        "passive": "引っ越られる",
-        "causative": "引っ越せる",
-        "imperative": "引っ越e",
-        "conditional": "引っ越れば",
-        "volitional": "引っ越おう"
       }
     }
   },
@@ -2121,23 +2019,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "壊れます",
-        "polite_past": "壊れました",
-        "polite_negative": "壊れません",
-        "polite_past_negative": "壊れませんでした",
-        "casual_present": "壊れる",
-        "casual_past": "壊れた",
-        "casual_negative": "壊れない",
-        "casual_past_negative": "壊れなかった",
-        "te_form": "壊れて",
-        "potential": "壊れられる",
-        "passive": "壊れられる",
-        "causative": "壊れさせる",
-        "imperative": "壊れろ",
-        "conditional": "壊れれば",
-        "volitional": "壊れよう"
       }
     }
   },
@@ -2521,23 +2402,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "止まります",
-        "polite_past": "止まりました",
-        "polite_negative": "止まりません",
-        "polite_past_negative": "止まりませんでした",
-        "casual_present": "止まる",
-        "casual_past": "止まった",
-        "casual_negative": "止まらない",
-        "casual_past_negative": "止まらなかった",
-        "te_form": "止まって",
-        "potential": "止まえる",
-        "passive": "止まられる",
-        "causative": "止ませる",
-        "imperative": "止まe",
-        "conditional": "止まれば",
-        "volitional": "止まおう"
       }
     }
   },
@@ -2576,23 +2440,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "変わります",
-        "polite_past": "変わりました",
-        "polite_negative": "変わりません",
-        "polite_past_negative": "変わりませんでした",
-        "casual_present": "変わる",
-        "casual_past": "変わった",
-        "casual_negative": "変わらない",
-        "casual_past_negative": "変わらなかった",
-        "te_form": "変わって",
-        "potential": "変わえる",
-        "passive": "変わられる",
-        "causative": "変わせる",
-        "imperative": "変わe",
-        "conditional": "変われば",
-        "volitional": "変わおう"
       }
     }
   },
@@ -2974,23 +2821,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "拾います",
-        "polite_past": "拾いました",
-        "polite_negative": "拾いません",
-        "polite_past_negative": "拾いませんでした",
-        "casual_present": "拾いる",
-        "casual_past": "拾いった",
-        "casual_negative": "拾いらない",
-        "casual_past_negative": "拾いらなかった",
-        "te_form": "拾いって",
-        "potential": "拾いえる",
-        "passive": "拾いられる",
-        "causative": "拾いせる",
-        "imperative": "拾いe",
-        "conditional": "拾いれば",
-        "volitional": "拾いおう"
       }
     }
   },
@@ -3029,23 +2859,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "訳します",
-        "polite_past": "訳しました",
-        "polite_negative": "訳しません",
-        "polite_past_negative": "訳しませんでした",
-        "casual_present": "訳す",
-        "casual_past": "訳した",
-        "casual_negative": "訳さない",
-        "casual_past_negative": "訳さなかった",
-        "te_form": "訳して",
-        "potential": "訳える",
-        "passive": "訳られる",
-        "causative": "訳せる",
-        "imperative": "訳e",
-        "conditional": "訳れば",
-        "volitional": "訳おう"
       }
     }
   },
@@ -4165,23 +3978,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "結びます",
-        "polite_past": "結びました",
-        "polite_negative": "結びません",
-        "polite_past_negative": "結びませんでした",
-        "casual_present": "結ぶ",
-        "casual_past": "結んだ",
-        "casual_negative": "結ばない",
-        "casual_past_negative": "結ばなかった",
-        "te_form": "結んで",
-        "potential": "結える",
-        "passive": "結られる",
-        "causative": "結せる",
-        "imperative": "結e",
-        "conditional": "結れば",
-        "volitional": "結おう"
       }
     }
   },
@@ -4409,23 +4205,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "探します",
-        "polite_past": "探しました",
-        "polite_negative": "探しません",
-        "polite_past_negative": "探しませんでした",
-        "casual_present": "探す",
-        "casual_past": "探した",
-        "casual_negative": "探さない",
-        "casual_past_negative": "探さなかった",
-        "te_form": "探して",
-        "potential": "探える",
-        "passive": "探られる",
-        "causative": "探せる",
-        "imperative": "探e",
-        "conditional": "探れば",
-        "volitional": "探おう"
       }
     }
   },
@@ -4464,23 +4243,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "笑います",
-        "polite_past": "笑いました",
-        "polite_negative": "笑いません",
-        "polite_past_negative": "笑いませんでした",
-        "casual_present": "笑いる",
-        "casual_past": "笑いった",
-        "casual_negative": "笑いらない",
-        "casual_past_negative": "笑いらなかった",
-        "te_form": "笑いって",
-        "potential": "笑いえる",
-        "passive": "笑いられる",
-        "causative": "笑いせる",
-        "imperative": "笑いe",
-        "conditional": "笑いれば",
-        "volitional": "笑いおう"
       }
     }
   },
@@ -4538,23 +4300,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "決めます",
-        "polite_past": "決めました",
-        "polite_negative": "決めません",
-        "polite_past_negative": "決めませんでした",
-        "casual_present": "決める",
-        "casual_past": "決めた",
-        "casual_negative": "決めない",
-        "casual_past_negative": "決めなかった",
-        "te_form": "決めて",
-        "potential": "決められる",
-        "passive": "決められる",
-        "causative": "決めさせる",
-        "imperative": "決めろ",
-        "conditional": "決めれば",
-        "volitional": "決めよう"
       }
     }
   },
@@ -4592,23 +4337,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "寝坊します",
-        "polite_past": "寝坊しました",
-        "polite_negative": "寝坊しません",
-        "polite_past_negative": "寝坊しませんでした",
-        "casual_present": "寝坊する",
-        "casual_past": "寝坊した",
-        "casual_negative": "寝坊しない",
-        "casual_past_negative": "寝坊しなかった",
-        "te_form": "寝坊して",
-        "potential": "寝坊できる",
-        "passive": "寝坊される",
-        "causative": "寝坊させる",
-        "imperative": "寝坊しろ",
-        "conditional": "寝坊すれば",
-        "volitional": "寝坊しよう"
       }
     }
   },
@@ -4647,23 +4375,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "外出します",
-        "polite_past": "外出しました",
-        "polite_negative": "外出しません",
-        "polite_past_negative": "外出しませんでした",
-        "casual_present": "外出する",
-        "casual_past": "外出した",
-        "casual_negative": "外出しない",
-        "casual_past_negative": "外出しなかった",
-        "te_form": "外出して",
-        "potential": "外出できる",
-        "passive": "外出される",
-        "causative": "外出させる",
-        "imperative": "外出しろ",
-        "conditional": "外出すれば",
-        "volitional": "外出しよう"
       }
     }
   },
@@ -4986,23 +4697,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "違います",
-        "polite_past": "違いました",
-        "polite_negative": "違いません",
-        "polite_past_negative": "違いませんでした",
-        "casual_present": "違いる",
-        "casual_past": "違いった",
-        "casual_negative": "違いらない",
-        "casual_past_negative": "違いらなかった",
-        "te_form": "違いって",
-        "potential": "違いえる",
-        "passive": "違いられる",
-        "causative": "違いせる",
-        "imperative": "違いe",
-        "conditional": "違いれば",
-        "volitional": "違いおう"
       }
     }
   },
@@ -5041,23 +4735,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "込みます",
-        "polite_past": "込みました",
-        "polite_negative": "込みません",
-        "polite_past_negative": "込みませんでした",
-        "casual_present": "込む",
-        "casual_past": "込んだ",
-        "casual_negative": "込まない",
-        "casual_past_negative": "込まなかった",
-        "te_form": "込んで",
-        "potential": "込える",
-        "passive": "込られる",
-        "causative": "込せる",
-        "imperative": "込e",
-        "conditional": "込れば",
-        "volitional": "込おう"
       }
     }
   },
@@ -5096,23 +4773,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "決まります",
-        "polite_past": "決まりました",
-        "polite_negative": "決まりません",
-        "polite_past_negative": "決まりませんでした",
-        "casual_present": "決まる",
-        "casual_past": "決まった",
-        "casual_negative": "決まらない",
-        "casual_past_negative": "決まらなかった",
-        "te_form": "決まって",
-        "potential": "決まえる",
-        "passive": "決まられる",
-        "causative": "決ませる",
-        "imperative": "決まe",
-        "conditional": "決まれば",
-        "volitional": "決まおう"
       }
     }
   },
@@ -5151,23 +4811,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "知らせます",
-        "polite_past": "知らせました",
-        "polite_negative": "知らせません",
-        "polite_past_negative": "知らせませんでした",
-        "casual_present": "知らせる",
-        "casual_past": "知らせた",
-        "casual_negative": "知らせない",
-        "casual_past_negative": "知らせなかった",
-        "te_form": "知らせて",
-        "potential": "知らせられる",
-        "passive": "知らせられる",
-        "causative": "知らせさせる",
-        "imperative": "知らせろ",
-        "conditional": "知らせれば",
-        "volitional": "知らせよう"
       }
     }
   },
@@ -5206,23 +4849,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "確かめます",
-        "polite_past": "確かめました",
-        "polite_negative": "確かめません",
-        "polite_past_negative": "確かめませんでした",
-        "casual_present": "確かめる",
-        "casual_past": "確かめた",
-        "casual_negative": "確かめない",
-        "casual_past_negative": "確かめなかった",
-        "te_form": "確かめて",
-        "potential": "確かめられる",
-        "passive": "確かめられる",
-        "causative": "確かめさせる",
-        "imperative": "確かめろ",
-        "conditional": "確かめれば",
-        "volitional": "確かめよう"
       }
     }
   },
@@ -5640,23 +5266,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "やります",
-        "polite_past": "やりました",
-        "polite_negative": "やりません",
-        "polite_past_negative": "やりませんでした",
-        "casual_present": "やる",
-        "casual_past": "やった",
-        "casual_negative": "やらない",
-        "casual_past_negative": "やらなかった",
-        "te_form": "やって",
-        "potential": "やえる",
-        "passive": "やられる",
-        "causative": "やせる",
-        "imperative": "やe",
-        "conditional": "やれば",
-        "volitional": "やおう"
       }
     }
   },
@@ -6019,23 +5628,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "渡します",
-        "polite_past": "渡しました",
-        "polite_negative": "渡しません",
-        "polite_past_negative": "渡しませんでした",
-        "casual_present": "渡す",
-        "casual_past": "渡した",
-        "casual_negative": "渡さない",
-        "casual_past_negative": "渡さなかった",
-        "te_form": "渡して",
-        "potential": "渡える",
-        "passive": "渡られる",
-        "causative": "渡せる",
-        "imperative": "渡e",
-        "conditional": "渡れば",
-        "volitional": "渡おう"
       }
     }
   },
@@ -6074,23 +5666,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "遅れます",
-        "polite_past": "遅れました",
-        "polite_negative": "遅れません",
-        "polite_past_negative": "遅れませんでした",
-        "casual_present": "遅れる",
-        "casual_past": "遅れた",
-        "casual_negative": "遅れない",
-        "casual_past_negative": "遅れなかった",
-        "te_form": "遅れて",
-        "potential": "遅れられる",
-        "passive": "遅れられる",
-        "causative": "遅れさせる",
-        "imperative": "遅れろ",
-        "conditional": "遅れれば",
-        "volitional": "遅れよう"
       }
     }
   },
@@ -6205,23 +5780,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "感謝します",
-        "polite_past": "感謝しました",
-        "polite_negative": "感謝しません",
-        "polite_past_negative": "感謝しませんでした",
-        "casual_present": "感謝する",
-        "casual_past": "感謝した",
-        "casual_negative": "感謝しない",
-        "casual_past_negative": "感謝しなかった",
-        "te_form": "感謝して",
-        "potential": "感謝できる",
-        "passive": "感謝される",
-        "causative": "感謝させる",
-        "imperative": "感謝しろ",
-        "conditional": "感謝すれば",
-        "volitional": "感謝しよう"
       }
     }
   },
@@ -6260,23 +5818,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "運動します",
-        "polite_past": "運動しました",
-        "polite_negative": "運動しません",
-        "polite_past_negative": "運動しませんでした",
-        "casual_present": "運動する",
-        "casual_past": "運動した",
-        "casual_negative": "運動しない",
-        "casual_past_negative": "運動しなかった",
-        "te_form": "運動して",
-        "potential": "運動できる",
-        "passive": "運動される",
-        "causative": "運動させる",
-        "imperative": "運動しろ",
-        "conditional": "運動すれば",
-        "volitional": "運動しよう"
       }
     }
   },
@@ -6979,23 +6520,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "転びます",
-        "polite_past": "転びました",
-        "polite_negative": "転びません",
-        "polite_past_negative": "転びませんでした",
-        "casual_present": "転ぶ",
-        "casual_past": "転んだ",
-        "casual_negative": "転ばない",
-        "casual_past_negative": "転ばなかった",
-        "te_form": "転んで",
-        "potential": "転える",
-        "passive": "転られる",
-        "causative": "転せる",
-        "imperative": "転e",
-        "conditional": "転れば",
-        "volitional": "転おう"
       }
     }
   },
@@ -7034,23 +6558,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "渇きます",
-        "polite_past": "渇きました",
-        "polite_negative": "渇きません",
-        "polite_past_negative": "渇きませんでした",
-        "casual_present": "渇く",
-        "casual_past": "渇いた",
-        "casual_negative": "渇かない",
-        "casual_past_negative": "渇かなかった",
-        "te_form": "渇いて",
-        "potential": "渇える",
-        "passive": "渇られる",
-        "causative": "渇せる",
-        "imperative": "渇e",
-        "conditional": "渇れば",
-        "volitional": "渇おう"
       }
     }
   },
@@ -7089,23 +6596,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "治ります",
-        "polite_past": "治りました",
-        "polite_negative": "治りません",
-        "polite_past_negative": "治りませんでした",
-        "casual_present": "治る",
-        "casual_past": "治った",
-        "casual_negative": "治らない",
-        "casual_past_negative": "治らなかった",
-        "te_form": "治って",
-        "potential": "治える",
-        "passive": "治られる",
-        "causative": "治せる",
-        "imperative": "治e",
-        "conditional": "治れば",
-        "volitional": "治おう"
       }
     }
   },
@@ -7144,23 +6634,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "滑ります",
-        "polite_past": "滑りました",
-        "polite_negative": "滑りません",
-        "polite_past_negative": "滑りませんでした",
-        "casual_present": "滑る",
-        "casual_past": "滑った",
-        "casual_negative": "滑らない",
-        "casual_past_negative": "滑らなかった",
-        "te_form": "滑って",
-        "potential": "滑える",
-        "passive": "滑られる",
-        "causative": "滑せる",
-        "imperative": "滑e",
-        "conditional": "滑れば",
-        "volitional": "滑おう"
       }
     }
   },
@@ -7915,23 +7388,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "連絡します",
-        "polite_past": "連絡しました",
-        "polite_negative": "連絡しません",
-        "polite_past_negative": "連絡しませんでした",
-        "casual_present": "連絡する",
-        "casual_past": "連絡した",
-        "casual_negative": "連絡しない",
-        "casual_past_negative": "連絡しなかった",
-        "te_form": "連絡して",
-        "potential": "連絡できる",
-        "passive": "連絡される",
-        "causative": "連絡させる",
-        "imperative": "連絡しろ",
-        "conditional": "連絡すれば",
-        "volitional": "連絡しよう"
       }
     }
   },
@@ -9126,23 +8582,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "通ります",
-        "polite_past": "通りました",
-        "polite_negative": "通りません",
-        "polite_past_negative": "通りませんでした",
-        "casual_present": "通る",
-        "casual_past": "通った",
-        "casual_negative": "通らない",
-        "casual_past_negative": "通らなかった",
-        "te_form": "通って",
-        "potential": "通える",
-        "passive": "通られる",
-        "causative": "通せる",
-        "imperative": "通e",
-        "conditional": "通れば",
-        "volitional": "通おう"
       }
     }
   },
@@ -15080,23 +14519,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "作ります",
-        "polite_past": "作りました",
-        "polite_negative": "作りません",
-        "polite_past_negative": "作りませんでした",
-        "casual_present": "作る",
-        "casual_past": "作った",
-        "casual_negative": "作らない",
-        "casual_past_negative": "作らなかった",
-        "te_form": "作って",
-        "potential": "作える",
-        "passive": "作られる",
-        "causative": "作せる",
-        "imperative": "作e",
-        "conditional": "作れば",
-        "volitional": "作おう"
       }
     }
   },
@@ -15135,23 +14557,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "太ります",
-        "polite_past": "太りました",
-        "polite_negative": "太りません",
-        "polite_past_negative": "太りませんでした",
-        "casual_present": "太る",
-        "casual_past": "太った",
-        "casual_negative": "太らない",
-        "casual_past_negative": "太らなかった",
-        "te_form": "太って",
-        "potential": "太える",
-        "passive": "太られる",
-        "causative": "太せる",
-        "imperative": "太e",
-        "conditional": "太れば",
-        "volitional": "太おう"
       }
     }
   },
@@ -15209,23 +14614,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "届きます",
-        "polite_past": "届きました",
-        "polite_negative": "届きません",
-        "polite_past_negative": "届きませんでした",
-        "casual_present": "届く",
-        "casual_past": "届いた",
-        "casual_negative": "届かない",
-        "casual_past_negative": "届かなかった",
-        "te_form": "届いて",
-        "potential": "届える",
-        "passive": "届られる",
-        "causative": "届せる",
-        "imperative": "届e",
-        "conditional": "届れば",
-        "volitional": "届おう"
       }
     }
   },
@@ -15264,23 +14652,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "かきます",
-        "polite_past": "かきました",
-        "polite_negative": "かきません",
-        "polite_past_negative": "かきませんでした",
-        "casual_present": "かく",
-        "casual_past": "かいた",
-        "casual_negative": "かかない",
-        "casual_past_negative": "かかなかった",
-        "te_form": "かいて",
-        "potential": "かえる",
-        "passive": "かられる",
-        "causative": "かせる",
-        "imperative": "かe",
-        "conditional": "かれば",
-        "volitional": "かおう"
       }
     }
   },
@@ -16355,23 +15726,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "分かります",
-        "polite_past": "分かりました",
-        "polite_negative": "分かりません",
-        "polite_past_negative": "分かりませんでした",
-        "casual_present": "分かる",
-        "casual_past": "分かった",
-        "casual_negative": "分からない",
-        "casual_past_negative": "分からなかった",
-        "te_form": "分かって",
-        "potential": "分かえる",
-        "passive": "分かられる",
-        "causative": "分かせる",
-        "imperative": "分かe",
-        "conditional": "分かれば",
-        "volitional": "分かおう"
       }
     }
   },
@@ -16410,23 +15764,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "迷います",
-        "polite_past": "迷いました",
-        "polite_negative": "迷いません",
-        "polite_past_negative": "迷いませんでした",
-        "casual_present": "迷いる",
-        "casual_past": "迷いった",
-        "casual_negative": "迷いらない",
-        "casual_past_negative": "迷いらなかった",
-        "te_form": "迷いって",
-        "potential": "迷いえる",
-        "passive": "迷いられる",
-        "causative": "迷いせる",
-        "imperative": "迷いe",
-        "conditional": "迷いれば",
-        "volitional": "迷いおう"
       }
     }
   },
@@ -16824,23 +16161,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "咲きます",
-        "polite_past": "咲きました",
-        "polite_negative": "咲きません",
-        "polite_past_negative": "咲きませんでした",
-        "casual_present": "咲く",
-        "casual_past": "咲いた",
-        "casual_negative": "咲かない",
-        "casual_past_negative": "咲かなかった",
-        "te_form": "咲いて",
-        "potential": "咲える",
-        "passive": "咲られる",
-        "causative": "咲せる",
-        "imperative": "咲e",
-        "conditional": "咲れば",
-        "volitional": "咲おう"
       }
     }
   },
@@ -17031,23 +16351,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "飛びます",
-        "polite_past": "飛びました",
-        "polite_negative": "飛びません",
-        "polite_past_negative": "飛びませんでした",
-        "casual_present": "飛ぶ",
-        "casual_past": "飛んだ",
-        "casual_negative": "飛ばない",
-        "casual_past_negative": "飛ばなかった",
-        "te_form": "飛んで",
-        "potential": "飛える",
-        "passive": "飛られる",
-        "causative": "飛せる",
-        "imperative": "飛e",
-        "conditional": "飛れば",
-        "volitional": "飛おう"
       }
     }
   },
@@ -17086,23 +16389,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "死にます",
-        "polite_past": "死にました",
-        "polite_negative": "死にません",
-        "polite_past_negative": "死にませんでした",
-        "casual_present": "死ぬ",
-        "casual_past": "死んだ",
-        "casual_negative": "死なない",
-        "casual_past_negative": "死ななかった",
-        "te_form": "死んで",
-        "potential": "死える",
-        "passive": "死られる",
-        "causative": "死せる",
-        "imperative": "死e",
-        "conditional": "死れば",
-        "volitional": "死おう"
       }
     }
   },
@@ -17218,23 +16504,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "下ろします",
-        "polite_past": "下ろしました",
-        "polite_negative": "下ろしません",
-        "polite_past_negative": "下ろしませんでした",
-        "casual_present": "下ろす",
-        "casual_past": "下ろした",
-        "casual_negative": "下ろさない",
-        "casual_past_negative": "下ろさなかった",
-        "te_form": "下ろして",
-        "potential": "下ろえる",
-        "passive": "下ろられる",
-        "causative": "下ろせる",
-        "imperative": "下ろe",
-        "conditional": "下ろれば",
-        "volitional": "下ろおう"
       }
     }
   },
@@ -17273,23 +16542,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "選びます",
-        "polite_past": "選びました",
-        "polite_negative": "選びません",
-        "polite_past_negative": "選びませんでした",
-        "casual_present": "選ぶ",
-        "casual_past": "選んだ",
-        "casual_negative": "選ばない",
-        "casual_past_negative": "選ばなかった",
-        "te_form": "選んで",
-        "potential": "選える",
-        "passive": "選られる",
-        "causative": "選せる",
-        "imperative": "選e",
-        "conditional": "選れば",
-        "volitional": "選おう"
       }
     }
   },
@@ -17460,23 +16712,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "過ぎます",
-        "polite_past": "過ぎました",
-        "polite_negative": "過ぎません",
-        "polite_past_negative": "過ぎませんでした",
-        "casual_present": "過ぎる",
-        "casual_past": "過ぎた",
-        "casual_negative": "過ぎない",
-        "casual_past_negative": "過ぎなかった",
-        "te_form": "過ぎて",
-        "potential": "過ぎられる",
-        "passive": "過ぎられる",
-        "causative": "過ぎさせる",
-        "imperative": "過ぎろ",
-        "conditional": "過ぎれば",
-        "volitional": "過ぎよう"
       }
     }
   },
@@ -17629,23 +16864,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "申します",
-        "polite_past": "申しました",
-        "polite_negative": "申しません",
-        "polite_past_negative": "申しませんでした",
-        "casual_present": "申す",
-        "casual_past": "申した",
-        "casual_negative": "申さない",
-        "casual_past_negative": "申さなかった",
-        "te_form": "申して",
-        "potential": "申える",
-        "passive": "申られる",
-        "causative": "申せる",
-        "imperative": "申e",
-        "conditional": "申れば",
-        "volitional": "申おう"
       }
     }
   },
@@ -17684,23 +16902,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "とります",
-        "polite_past": "とりました",
-        "polite_negative": "とりません",
-        "polite_past_negative": "とりませんでした",
-        "casual_present": "とる",
-        "casual_past": "とった",
-        "casual_negative": "とらない",
-        "casual_past_negative": "とらなかった",
-        "te_form": "とって",
-        "potential": "とえる",
-        "passive": "とられる",
-        "causative": "とせる",
-        "imperative": "とe",
-        "conditional": "とれば",
-        "volitional": "とおう"
       }
     }
   },
@@ -17758,23 +16959,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "伝えます",
-        "polite_past": "伝えました",
-        "polite_negative": "伝えません",
-        "polite_past_negative": "伝えませんでした",
-        "casual_present": "伝える",
-        "casual_past": "伝えた",
-        "casual_negative": "伝えない",
-        "casual_past_negative": "伝えなかった",
-        "te_form": "伝えて",
-        "potential": "伝えられる",
-        "passive": "伝えられる",
-        "causative": "伝えさせる",
-        "imperative": "伝えろ",
-        "conditional": "伝えれば",
-        "volitional": "伝えよう"
       }
     }
   },
@@ -18785,23 +17969,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "開きます",
-        "polite_past": "開きました",
-        "polite_negative": "開きません",
-        "polite_past_negative": "開きませんでした",
-        "casual_present": "開く",
-        "casual_past": "開いた",
-        "casual_negative": "開かない",
-        "casual_past_negative": "開かなかった",
-        "te_form": "開いて",
-        "potential": "開える",
-        "passive": "開られる",
-        "causative": "開せる",
-        "imperative": "開e",
-        "conditional": "開れば",
-        "volitional": "開おう"
       }
     }
   },
@@ -18840,23 +18007,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "似合います",
-        "polite_past": "似合いました",
-        "polite_negative": "似合いません",
-        "polite_past_negative": "似合いませんでした",
-        "casual_present": "似合いる",
-        "casual_past": "似合いった",
-        "casual_negative": "似合いらない",
-        "casual_past_negative": "似合いらなかった",
-        "te_form": "似合いって",
-        "potential": "似合いえる",
-        "passive": "似合いられる",
-        "causative": "似合いせる",
-        "imperative": "似合いe",
-        "conditional": "似合いれば",
-        "volitional": "似合いおう"
       }
     }
   },
@@ -19086,23 +18236,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "運びます",
-        "polite_past": "運びました",
-        "polite_negative": "運びません",
-        "polite_past_negative": "運びませんでした",
-        "casual_present": "運ぶ",
-        "casual_past": "運んだ",
-        "casual_negative": "運ばない",
-        "casual_past_negative": "運ばなかった",
-        "te_form": "運んで",
-        "potential": "運える",
-        "passive": "運られる",
-        "causative": "運せる",
-        "imperative": "運e",
-        "conditional": "運れば",
-        "volitional": "運おう"
       }
     }
   },
@@ -19159,23 +18292,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "落とします",
-        "polite_past": "落としました",
-        "polite_negative": "落としません",
-        "polite_past_negative": "落としませんでした",
-        "casual_present": "落とす",
-        "casual_past": "落とした",
-        "casual_negative": "落とさない",
-        "casual_past_negative": "落とさなかった",
-        "te_form": "落として",
-        "potential": "落とえる",
-        "passive": "落とられる",
-        "causative": "落とせる",
-        "imperative": "落とe",
-        "conditional": "落とれば",
-        "volitional": "落とおう"
       }
     }
   },
@@ -19290,23 +18406,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "慌てます",
-        "polite_past": "慌てました",
-        "polite_negative": "慌てません",
-        "polite_past_negative": "慌てませんでした",
-        "casual_present": "慌てる",
-        "casual_past": "慌てた",
-        "casual_negative": "慌てない",
-        "casual_past_negative": "慌てなかった",
-        "te_form": "慌てて",
-        "potential": "慌てられる",
-        "passive": "慌てられる",
-        "causative": "慌てさせる",
-        "imperative": "慌てろ",
-        "conditional": "慌てれば",
-        "volitional": "慌てよう"
       }
     }
   },
@@ -19764,23 +18863,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "すきます",
-        "polite_past": "すきました",
-        "polite_negative": "すきません",
-        "polite_past_negative": "すきませんでした",
-        "casual_present": "すく",
-        "casual_past": "すいた",
-        "casual_negative": "すかない",
-        "casual_past_negative": "すかなかった",
-        "te_form": "すいて",
-        "potential": "すえる",
-        "passive": "すられる",
-        "causative": "すせる",
-        "imperative": "すe",
-        "conditional": "すれば",
-        "volitional": "すおう"
       }
     }
   },
@@ -19878,23 +18960,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "ごちそうします",
-        "polite_past": "ごちそうしました",
-        "polite_negative": "ごちそうしません",
-        "polite_past_negative": "ごちそうしませんでした",
-        "casual_present": "ごちそうする",
-        "casual_past": "ごちそうした",
-        "casual_negative": "ごちそうしない",
-        "casual_past_negative": "ごちそうしなかった",
-        "te_form": "ごちそうして",
-        "potential": "ごちそうできる",
-        "passive": "ごちそうされる",
-        "causative": "ごちそうさせる",
-        "imperative": "ごちそうしろ",
-        "conditional": "ごちそうすれば",
-        "volitional": "ごちそうしよう"
       }
     }
   },
@@ -19933,23 +18998,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "帰国します",
-        "polite_past": "帰国しました",
-        "polite_negative": "帰国しません",
-        "polite_past_negative": "帰国しませんでした",
-        "casual_present": "帰国する",
-        "casual_past": "帰国した",
-        "casual_negative": "帰国しない",
-        "casual_past_negative": "帰国しなかった",
-        "te_form": "帰国して",
-        "potential": "帰国できる",
-        "passive": "帰国される",
-        "causative": "帰国させる",
-        "imperative": "帰国しろ",
-        "conditional": "帰国すれば",
-        "volitional": "帰国しよう"
       }
     }
   },
@@ -20044,23 +19092,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "報告します",
-        "polite_past": "報告しました",
-        "polite_negative": "報告しません",
-        "polite_past_negative": "報告しませんでした",
-        "casual_present": "報告する",
-        "casual_past": "報告した",
-        "casual_negative": "報告しない",
-        "casual_past_negative": "報告しなかった",
-        "te_form": "報告して",
-        "potential": "報告できる",
-        "passive": "報告される",
-        "causative": "報告させる",
-        "imperative": "報告しろ",
-        "conditional": "報告すれば",
-        "volitional": "報告しよう"
       }
     }
   },
@@ -20504,23 +19535,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "倒産します",
-        "polite_past": "倒産しました",
-        "polite_negative": "倒産しません",
-        "polite_past_negative": "倒産しませんでした",
-        "casual_present": "倒産する",
-        "casual_past": "倒産した",
-        "casual_negative": "倒産しない",
-        "casual_past_negative": "倒産しなかった",
-        "te_form": "倒産して",
-        "potential": "倒産できる",
-        "passive": "倒産される",
-        "causative": "倒産させる",
-        "imperative": "倒産しろ",
-        "conditional": "倒産すれば",
-        "volitional": "倒産しよう"
       }
     }
   },
@@ -20559,23 +19573,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "渋滞します",
-        "polite_past": "渋滞しました",
-        "polite_negative": "渋滞しません",
-        "polite_past_negative": "渋滞しませんでした",
-        "casual_present": "渋滞する",
-        "casual_past": "渋滞した",
-        "casual_negative": "渋滞しない",
-        "casual_past_negative": "渋滞しなかった",
-        "te_form": "渋滞して",
-        "potential": "渋滞できる",
-        "passive": "渋滞される",
-        "causative": "渋滞させる",
-        "imperative": "渋滞しろ",
-        "conditional": "渋滞すれば",
-        "volitional": "渋滞しよう"
       }
     }
   },
@@ -20615,23 +19612,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "チェックします",
-        "polite_past": "チェックしました",
-        "polite_negative": "チェックしません",
-        "polite_past_negative": "チェックしませんでした",
-        "casual_present": "チェックする",
-        "casual_past": "チェックした",
-        "casual_negative": "チェックしない",
-        "casual_past_negative": "チェックしなかった",
-        "te_form": "チェックして",
-        "potential": "チェックできる",
-        "passive": "チェックされる",
-        "causative": "チェックさせる",
-        "imperative": "チェックしろ",
-        "conditional": "チェックすれば",
-        "volitional": "チェックしよう"
       }
     }
   },
@@ -20922,23 +19902,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "防ぎます",
-        "polite_past": "防ぎました",
-        "polite_negative": "防ぎません",
-        "polite_past_negative": "防ぎませんでした",
-        "casual_present": "防ぐ",
-        "casual_past": "防いだ",
-        "casual_negative": "防がない",
-        "casual_past_negative": "防がなかった",
-        "te_form": "防いで",
-        "potential": "防える",
-        "passive": "防られる",
-        "causative": "防せる",
-        "imperative": "防e",
-        "conditional": "防れば",
-        "volitional": "防おう"
       }
     }
   },
@@ -20977,23 +19940,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "回ります",
-        "polite_past": "回りました",
-        "polite_negative": "回りません",
-        "polite_past_negative": "回りませんでした",
-        "casual_present": "回る",
-        "casual_past": "回った",
-        "casual_negative": "回らない",
-        "casual_past_negative": "回らなかった",
-        "te_form": "回って",
-        "potential": "回える",
-        "passive": "回られる",
-        "causative": "回せる",
-        "imperative": "回e",
-        "conditional": "回れば",
-        "volitional": "回おう"
       }
     }
   },
@@ -21032,23 +19978,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "走ります",
-        "polite_past": "走りました",
-        "polite_negative": "走りません",
-        "polite_past_negative": "走りませんでした",
-        "casual_present": "走る",
-        "casual_past": "走った",
-        "casual_negative": "走らない",
-        "casual_past_negative": "走らなかった",
-        "te_form": "走って",
-        "potential": "走える",
-        "passive": "走られる",
-        "causative": "走せる",
-        "imperative": "走e",
-        "conditional": "走れば",
-        "volitional": "走おう"
       }
     }
   },
@@ -21087,23 +20016,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "吹きます",
-        "polite_past": "吹きました",
-        "polite_negative": "吹きません",
-        "polite_past_negative": "吹きませんでした",
-        "casual_present": "吹く",
-        "casual_past": "吹いた",
-        "casual_negative": "吹かない",
-        "casual_past_negative": "吹かなかった",
-        "te_form": "吹いて",
-        "potential": "吹える",
-        "passive": "吹られる",
-        "causative": "吹せる",
-        "imperative": "吹e",
-        "conditional": "吹れば",
-        "volitional": "吹おう"
       }
     }
   },
@@ -21142,23 +20054,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "挙げます",
-        "polite_past": "挙げました",
-        "polite_negative": "挙げません",
-        "polite_past_negative": "挙げませんでした",
-        "casual_present": "挙げる",
-        "casual_past": "挙げた",
-        "casual_negative": "挙げない",
-        "casual_past_negative": "挙げなかった",
-        "te_form": "挙げて",
-        "potential": "挙げられる",
-        "passive": "挙げられる",
-        "causative": "挙げさせる",
-        "imperative": "挙げろ",
-        "conditional": "挙げれば",
-        "volitional": "挙げよう"
       }
     }
   },
@@ -21216,23 +20111,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "スケッチします",
-        "polite_past": "スケッチしました",
-        "polite_negative": "スケッチしません",
-        "polite_past_negative": "スケッチしませんでした",
-        "casual_present": "スケッチする",
-        "casual_past": "スケッチした",
-        "casual_negative": "スケッチしない",
-        "casual_past_negative": "スケッチしなかった",
-        "te_form": "スケッチして",
-        "potential": "スケッチできる",
-        "passive": "スケッチされる",
-        "causative": "スケッチさせる",
-        "imperative": "スケッチしろ",
-        "conditional": "スケッチすれば",
-        "volitional": "スケッチしよう"
       }
     }
   },
@@ -21271,23 +20149,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "発言します",
-        "polite_past": "発言しました",
-        "polite_negative": "発言しません",
-        "polite_past_negative": "発言しませんでした",
-        "casual_present": "発言する",
-        "casual_past": "発言した",
-        "casual_negative": "発言しない",
-        "casual_past_negative": "発言しなかった",
-        "te_form": "発言して",
-        "potential": "発言できる",
-        "passive": "発言される",
-        "causative": "発言させる",
-        "imperative": "発言しろ",
-        "conditional": "発言すれば",
-        "volitional": "発言しよう"
       }
     }
   },
@@ -21326,23 +20187,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "優勝します",
-        "polite_past": "優勝しました",
-        "polite_negative": "優勝しません",
-        "polite_past_negative": "優勝しませんでした",
-        "casual_present": "優勝する",
-        "casual_past": "優勝した",
-        "casual_negative": "優勝しない",
-        "casual_past_negative": "優勝しなかった",
-        "te_form": "優勝して",
-        "potential": "優勝できる",
-        "passive": "優勝される",
-        "causative": "優勝させる",
-        "imperative": "優勝しろ",
-        "conditional": "優勝すれば",
-        "volitional": "優勝しよう"
       }
     }
   },
@@ -21381,23 +20225,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "合格します",
-        "polite_past": "合格しました",
-        "polite_negative": "合格しません",
-        "polite_past_negative": "合格しませんでした",
-        "casual_present": "合格する",
-        "casual_past": "合格した",
-        "casual_negative": "合格しない",
-        "casual_past_negative": "合格しなかった",
-        "te_form": "合格して",
-        "potential": "合格できる",
-        "passive": "合格される",
-        "causative": "合格させる",
-        "imperative": "合格しろ",
-        "conditional": "合格すれば",
-        "volitional": "合格しよう"
       }
     }
   },
@@ -21456,23 +20283,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "約束します",
-        "polite_past": "約束しました",
-        "polite_negative": "約束しません",
-        "polite_past_negative": "約束しませんでした",
-        "casual_present": "約束する",
-        "casual_past": "約束した",
-        "casual_negative": "約束しない",
-        "casual_past_negative": "約束しなかった",
-        "te_form": "約束して",
-        "potential": "約束できる",
-        "passive": "約束される",
-        "causative": "約束させる",
-        "imperative": "約束しろ",
-        "conditional": "約束すれば",
-        "volitional": "約束しよう"
       }
     }
   },
@@ -21851,23 +20661,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "通います",
-        "polite_past": "通いました",
-        "polite_negative": "通いません",
-        "polite_past_negative": "通いませんでした",
-        "casual_present": "通いる",
-        "casual_past": "通いった",
-        "casual_negative": "通いらない",
-        "casual_past_negative": "通いらなかった",
-        "te_form": "通いって",
-        "potential": "通いえる",
-        "passive": "通いられる",
-        "causative": "通いせる",
-        "imperative": "通いe",
-        "conditional": "通いれば",
-        "volitional": "通いおう"
       }
     }
   },
@@ -21906,23 +20699,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "集まります",
-        "polite_past": "集まりました",
-        "polite_negative": "集まりません",
-        "polite_past_negative": "集まりませんでした",
-        "casual_present": "集まる",
-        "casual_past": "集まった",
-        "casual_negative": "集まらない",
-        "casual_past_negative": "集まらなかった",
-        "te_form": "集まって",
-        "potential": "集まえる",
-        "passive": "集まられる",
-        "causative": "集ませる",
-        "imperative": "集まe",
-        "conditional": "集まれば",
-        "volitional": "集まおう"
       }
     }
   },
@@ -21961,23 +20737,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "踊ります",
-        "polite_past": "踊りました",
-        "polite_negative": "踊りません",
-        "polite_past_negative": "踊りませんでした",
-        "casual_present": "踊る",
-        "casual_past": "踊った",
-        "casual_negative": "踊らない",
-        "casual_past_negative": "踊らなかった",
-        "te_form": "踊って",
-        "potential": "踊える",
-        "passive": "踊られる",
-        "causative": "踊せる",
-        "imperative": "踊e",
-        "conditional": "踊れば",
-        "volitional": "踊おう"
       }
     }
   },
@@ -22036,23 +20795,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "困ります",
-        "polite_past": "困りました",
-        "polite_negative": "困りません",
-        "polite_past_negative": "困りませんでした",
-        "casual_present": "困る",
-        "casual_past": "困った",
-        "casual_negative": "困らない",
-        "casual_past_negative": "困らなかった",
-        "te_form": "困って",
-        "potential": "困える",
-        "passive": "困られる",
-        "causative": "困せる",
-        "imperative": "困e",
-        "conditional": "困れば",
-        "volitional": "困おう"
       }
     }
   },
@@ -22091,23 +20833,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "たたきます",
-        "polite_past": "たたきました",
-        "polite_negative": "たたきません",
-        "polite_past_negative": "たたきませんでした",
-        "casual_present": "たたく",
-        "casual_past": "たたいた",
-        "casual_negative": "たたかない",
-        "casual_past_negative": "たたかなかった",
-        "te_form": "たたいて",
-        "potential": "たたえる",
-        "passive": "たたられる",
-        "causative": "たたせる",
-        "imperative": "たたe",
-        "conditional": "たたれば",
-        "volitional": "たたおう"
       }
     }
   },
@@ -22165,23 +20890,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "看病します",
-        "polite_past": "看病しました",
-        "polite_negative": "看病しません",
-        "polite_past_negative": "看病しませんでした",
-        "casual_present": "看病する",
-        "casual_past": "看病した",
-        "casual_negative": "看病しない",
-        "casual_past_negative": "看病しなかった",
-        "te_form": "看病して",
-        "potential": "看病できる",
-        "passive": "看病される",
-        "causative": "看病させる",
-        "imperative": "看病しろ",
-        "conditional": "看病すれば",
-        "volitional": "看病しよう"
       }
     }
   },
@@ -22239,23 +20947,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "届けます",
-        "polite_past": "届けました",
-        "polite_negative": "届けません",
-        "polite_past_negative": "届けませんでした",
-        "casual_present": "届ける",
-        "casual_past": "届けた",
-        "casual_negative": "届けない",
-        "casual_past_negative": "届けなかった",
-        "te_form": "届けて",
-        "potential": "届けられる",
-        "passive": "届けられる",
-        "causative": "届けさせる",
-        "imperative": "届けろ",
-        "conditional": "届ければ",
-        "volitional": "届けよう"
       }
     }
   },
@@ -22313,23 +21004,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "交換します",
-        "polite_past": "交換しました",
-        "polite_negative": "交換しません",
-        "polite_past_negative": "交換しませんでした",
-        "casual_present": "交換する",
-        "casual_past": "交換した",
-        "casual_negative": "交換しない",
-        "casual_past_negative": "交換しなかった",
-        "te_form": "交換して",
-        "potential": "交換できる",
-        "passive": "交換される",
-        "causative": "交換させる",
-        "imperative": "交換しろ",
-        "conditional": "交換すれば",
-        "volitional": "交換しよう"
       }
     }
   },
@@ -22579,23 +21253,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "頑張ります",
-        "polite_past": "頑張りました",
-        "polite_negative": "頑張りません",
-        "polite_past_negative": "頑張りませんでした",
-        "casual_present": "頑張る",
-        "casual_past": "頑張った",
-        "casual_negative": "頑張らない",
-        "casual_past_negative": "頑張らなかった",
-        "te_form": "頑張って",
-        "potential": "頑張える",
-        "passive": "頑張られる",
-        "causative": "頑張せる",
-        "imperative": "頑張e",
-        "conditional": "頑張れば",
-        "volitional": "頑張おう"
       }
     }
   },
@@ -22633,23 +21290,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "謝ります",
-        "polite_past": "謝りました",
-        "polite_negative": "謝りません",
-        "polite_past_negative": "謝りませんでした",
-        "casual_present": "謝る",
-        "casual_past": "謝った",
-        "casual_negative": "謝らない",
-        "casual_past_negative": "謝らなかった",
-        "te_form": "謝って",
-        "potential": "謝える",
-        "passive": "謝られる",
-        "causative": "謝せる",
-        "imperative": "謝e",
-        "conditional": "謝れば",
-        "volitional": "謝おう"
       }
     }
   },
@@ -22688,23 +21328,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "サボります",
-        "polite_past": "サボりました",
-        "polite_negative": "サボりません",
-        "polite_past_negative": "サボりませんでした",
-        "casual_present": "サボる",
-        "casual_past": "サボった",
-        "casual_negative": "サボらない",
-        "casual_past_negative": "サボらなかった",
-        "te_form": "サボって",
-        "potential": "サボえる",
-        "passive": "サボられる",
-        "causative": "サボせる",
-        "imperative": "サボe",
-        "conditional": "サボれば",
-        "volitional": "サボおう"
       }
     }
   },
@@ -22743,23 +21366,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "破ります",
-        "polite_past": "破りました",
-        "polite_negative": "破りません",
-        "polite_past_negative": "破りませんでした",
-        "casual_present": "破る",
-        "casual_past": "破った",
-        "casual_negative": "破らない",
-        "casual_past_negative": "破らなかった",
-        "te_form": "破って",
-        "potential": "破える",
-        "passive": "破られる",
-        "causative": "破せる",
-        "imperative": "破e",
-        "conditional": "破れば",
-        "volitional": "破おう"
       }
     }
   },
@@ -22817,23 +21423,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "守ります",
-        "polite_past": "守りました",
-        "polite_negative": "守りません",
-        "polite_past_negative": "守りませんでした",
-        "casual_present": "守る",
-        "casual_past": "守った",
-        "casual_negative": "守らない",
-        "casual_past_negative": "守らなかった",
-        "te_form": "守って",
-        "potential": "守える",
-        "passive": "守られる",
-        "causative": "守せる",
-        "imperative": "守e",
-        "conditional": "守れば",
-        "volitional": "守おう"
       }
     }
   },
@@ -22872,23 +21461,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "答えます",
-        "polite_past": "答えました",
-        "polite_negative": "答えません",
-        "polite_past_negative": "答えませんでした",
-        "casual_present": "答える",
-        "casual_past": "答えた",
-        "casual_negative": "答えない",
-        "casual_past_negative": "答えなかった",
-        "te_form": "答えて",
-        "potential": "答えられる",
-        "passive": "答えられる",
-        "causative": "答えさせる",
-        "imperative": "答えろ",
-        "conditional": "答えれば",
-        "volitional": "答えよう"
       }
     }
   },
@@ -22927,23 +21499,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "逃げます",
-        "polite_past": "逃げました",
-        "polite_negative": "逃げません",
-        "polite_past_negative": "逃げませんでした",
-        "casual_present": "逃げる",
-        "casual_past": "逃げた",
-        "casual_negative": "逃げない",
-        "casual_past_negative": "逃げなかった",
-        "te_form": "逃げて",
-        "potential": "逃げられる",
-        "passive": "逃げられる",
-        "causative": "逃げさせる",
-        "imperative": "逃げろ",
-        "conditional": "逃げれば",
-        "volitional": "逃げよう"
       }
     }
   },
@@ -22982,23 +21537,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "助けます",
-        "polite_past": "助けました",
-        "polite_negative": "助けません",
-        "polite_past_negative": "助けませんでした",
-        "casual_present": "助ける",
-        "casual_past": "助けた",
-        "casual_negative": "助けない",
-        "casual_past_negative": "助けなかった",
-        "te_form": "助けて",
-        "potential": "助けられる",
-        "passive": "助けられる",
-        "causative": "助けさせる",
-        "imperative": "助けろ",
-        "conditional": "助ければ",
-        "volitional": "助けよう"
       }
     }
   },
@@ -23036,23 +21574,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "付けます",
-        "polite_past": "付けました",
-        "polite_negative": "付けません",
-        "polite_past_negative": "付けませんでした",
-        "casual_present": "付ける",
-        "casual_past": "付けた",
-        "casual_negative": "付けない",
-        "casual_past_negative": "付けなかった",
-        "te_form": "付けて",
-        "potential": "付けられる",
-        "passive": "付けられる",
-        "causative": "付けさせる",
-        "imperative": "付けろ",
-        "conditional": "付ければ",
-        "volitional": "付けよう"
       }
     }
   },
@@ -23110,23 +21631,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "提出します",
-        "polite_past": "提出しました",
-        "polite_negative": "提出しません",
-        "polite_past_negative": "提出しませんでした",
-        "casual_present": "提出する",
-        "casual_past": "提出した",
-        "casual_negative": "提出しない",
-        "casual_past_negative": "提出しなかった",
-        "te_form": "提出して",
-        "potential": "提出できる",
-        "passive": "提出される",
-        "causative": "提出させる",
-        "imperative": "提出しろ",
-        "conditional": "提出すれば",
-        "volitional": "提出しよう"
       }
     }
   },
@@ -23165,23 +21669,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "遠慮します",
-        "polite_past": "遠慮しました",
-        "polite_negative": "遠慮しません",
-        "polite_past_negative": "遠慮しませんでした",
-        "casual_present": "遠慮する",
-        "casual_past": "遠慮した",
-        "casual_negative": "遠慮しない",
-        "casual_past_negative": "遠慮しなかった",
-        "te_form": "遠慮して",
-        "potential": "遠慮できる",
-        "passive": "遠慮される",
-        "causative": "遠慮させる",
-        "imperative": "遠慮しろ",
-        "conditional": "遠慮すれば",
-        "volitional": "遠慮しよう"
       }
     }
   },
@@ -23220,23 +21707,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "注意します",
-        "polite_past": "注意しました",
-        "polite_negative": "注意しません",
-        "polite_past_negative": "注意しませんでした",
-        "casual_present": "注意する",
-        "casual_past": "注意した",
-        "casual_negative": "注意しない",
-        "casual_past_negative": "注意しなかった",
-        "te_form": "注意して",
-        "potential": "注意できる",
-        "passive": "注意される",
-        "causative": "注意させる",
-        "imperative": "注意しろ",
-        "conditional": "注意すれば",
-        "volitional": "注意しよう"
       }
     }
   },
@@ -23276,23 +21746,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "シュートします",
-        "polite_past": "シュートしました",
-        "polite_negative": "シュートしません",
-        "polite_past_negative": "シュートしませんでした",
-        "casual_present": "シュートする",
-        "casual_past": "シュートした",
-        "casual_negative": "シュートしない",
-        "casual_past_negative": "シュートしなかった",
-        "te_form": "シュートして",
-        "potential": "シュートできる",
-        "passive": "シュートされる",
-        "causative": "シュートさせる",
-        "imperative": "シュートしろ",
-        "conditional": "シュートすれば",
-        "volitional": "シュートしよう"
       }
     }
   },
@@ -23426,23 +21879,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "間違えます",
-        "polite_past": "間違えました",
-        "polite_negative": "間違えません",
-        "polite_past_negative": "間違えませんでした",
-        "casual_present": "間違える",
-        "casual_past": "間違えた",
-        "casual_negative": "間違えない",
-        "casual_past_negative": "間違えなかった",
-        "te_form": "間違えて",
-        "potential": "間違えられる",
-        "passive": "間違えられる",
-        "causative": "間違えさせる",
-        "imperative": "間違えろ",
-        "conditional": "間違えれば",
-        "volitional": "間違えよう"
       }
     }
   },
@@ -23481,23 +21917,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "出発します",
-        "polite_past": "出発しました",
-        "polite_negative": "出発しません",
-        "polite_past_negative": "出発しませんでした",
-        "casual_present": "出発する",
-        "casual_past": "出発した",
-        "casual_negative": "出発しない",
-        "casual_past_negative": "出発しなかった",
-        "te_form": "出発して",
-        "potential": "出発できる",
-        "passive": "出発される",
-        "causative": "出発させる",
-        "imperative": "出発しろ",
-        "conditional": "出発すれば",
-        "volitional": "出発しよう"
       }
     }
   },
@@ -23535,23 +21954,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "転職します",
-        "polite_past": "転職しました",
-        "polite_negative": "転職しません",
-        "polite_past_negative": "転職しませんでした",
-        "casual_present": "転職する",
-        "casual_past": "転職した",
-        "casual_negative": "転職しない",
-        "casual_past_negative": "転職しなかった",
-        "te_form": "転職して",
-        "potential": "転職できる",
-        "passive": "転職される",
-        "causative": "転職させる",
-        "imperative": "転職しろ",
-        "conditional": "転職すれば",
-        "volitional": "転職しよう"
       }
     }
   },
@@ -23591,23 +21993,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "パンクします",
-        "polite_past": "パンクしました",
-        "polite_negative": "パンクしません",
-        "polite_past_negative": "パンクしませんでした",
-        "casual_present": "パンクする",
-        "casual_past": "パンクした",
-        "casual_negative": "パンクしない",
-        "casual_past_negative": "パンクしなかった",
-        "te_form": "パンクして",
-        "potential": "パンクできる",
-        "passive": "パンクされる",
-        "causative": "パンクさせる",
-        "imperative": "パンクしろ",
-        "conditional": "パンクすれば",
-        "volitional": "パンクしよう"
       }
     }
   },
@@ -23860,23 +22245,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "つきます",
-        "polite_past": "つきました",
-        "polite_negative": "つきません",
-        "polite_past_negative": "つきませんでした",
-        "casual_present": "つく",
-        "casual_past": "ついた",
-        "casual_negative": "つかない",
-        "casual_past_negative": "つかなかった",
-        "te_form": "ついて",
-        "potential": "つえる",
-        "passive": "つられる",
-        "causative": "つせる",
-        "imperative": "つe",
-        "conditional": "つれば",
-        "volitional": "つおう"
       }
     }
   },
@@ -23915,23 +22283,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "下がります",
-        "polite_past": "下がりました",
-        "polite_negative": "下がりません",
-        "polite_past_negative": "下がりませんでした",
-        "casual_present": "下がる",
-        "casual_past": "下がった",
-        "casual_negative": "下がらない",
-        "casual_past_negative": "下がらなかった",
-        "te_form": "下がって",
-        "potential": "下がえる",
-        "passive": "下がられる",
-        "causative": "下がせる",
-        "imperative": "下がe",
-        "conditional": "下がれば",
-        "volitional": "下がおう"
       }
     }
   },
@@ -23970,23 +22321,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "怒ります",
-        "polite_past": "怒りました",
-        "polite_negative": "怒りません",
-        "polite_past_negative": "怒りませんでした",
-        "casual_present": "怒る",
-        "casual_past": "怒った",
-        "casual_negative": "怒らない",
-        "casual_past_negative": "怒らなかった",
-        "te_form": "怒って",
-        "potential": "怒える",
-        "passive": "怒られる",
-        "causative": "怒せる",
-        "imperative": "怒e",
-        "conditional": "怒れば",
-        "volitional": "怒おう"
       }
     }
   },
@@ -24063,23 +22397,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "生きます",
-        "polite_past": "生きました",
-        "polite_negative": "生きません",
-        "polite_past_negative": "生きませんでした",
-        "casual_present": "生きる",
-        "casual_past": "生きた",
-        "casual_negative": "生きない",
-        "casual_past_negative": "生きなかった",
-        "te_form": "生きて",
-        "potential": "生きられる",
-        "passive": "生きられる",
-        "causative": "生きさせる",
-        "imperative": "生きろ",
-        "conditional": "生きれば",
-        "volitional": "生きよう"
       }
     }
   },
@@ -24118,23 +22435,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "下ります",
-        "polite_past": "下りました",
-        "polite_negative": "下りません",
-        "polite_past_negative": "下りませんでした",
-        "casual_present": "下りる",
-        "casual_past": "下りた",
-        "casual_negative": "下りない",
-        "casual_past_negative": "下りなかった",
-        "te_form": "下りて",
-        "potential": "下りられる",
-        "passive": "下りられる",
-        "causative": "下りさせる",
-        "imperative": "下りろ",
-        "conditional": "下りれば",
-        "volitional": "下りよう"
       }
     }
   },
@@ -24174,23 +22474,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "フリーズします",
-        "polite_past": "フリーズしました",
-        "polite_negative": "フリーズしません",
-        "polite_past_negative": "フリーズしませんでした",
-        "casual_present": "フリーズする",
-        "casual_past": "フリーズした",
-        "casual_negative": "フリーズしない",
-        "casual_past_negative": "フリーズしなかった",
-        "te_form": "フリーズして",
-        "potential": "フリーズできる",
-        "passive": "フリーズされる",
-        "causative": "フリーズさせる",
-        "imperative": "フリーズしろ",
-        "conditional": "フリーズすれば",
-        "volitional": "フリーズしよう"
       }
     }
   },
@@ -24229,23 +22512,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "故障します",
-        "polite_past": "故障しました",
-        "polite_negative": "故障しません",
-        "polite_past_negative": "故障しませんでした",
-        "casual_present": "故障する",
-        "casual_past": "故障した",
-        "casual_negative": "故障しない",
-        "casual_past_negative": "故障しなかった",
-        "te_form": "故障して",
-        "potential": "故障できる",
-        "passive": "故障される",
-        "causative": "故障させる",
-        "imperative": "故障しろ",
-        "conditional": "故障すれば",
-        "volitional": "故障しよう"
       }
     }
   },
@@ -24511,23 +22777,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "行います",
-        "polite_past": "行いました",
-        "polite_negative": "行いません",
-        "polite_past_negative": "行いませんでした",
-        "casual_present": "行いる",
-        "casual_past": "行いった",
-        "casual_negative": "行いらない",
-        "casual_past_negative": "行いらなかった",
-        "te_form": "行いって",
-        "potential": "行いえる",
-        "passive": "行いられる",
-        "causative": "行いせる",
-        "imperative": "行いe",
-        "conditional": "行いれば",
-        "volitional": "行いおう"
       }
     }
   },
@@ -24565,23 +22814,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "上がります",
-        "polite_past": "上がりました",
-        "polite_negative": "上がりません",
-        "polite_past_negative": "上がりませんでした",
-        "casual_present": "上がる",
-        "casual_past": "上がった",
-        "casual_negative": "上がらない",
-        "casual_past_negative": "上がらなかった",
-        "te_form": "上がって",
-        "potential": "上がえる",
-        "passive": "上がられる",
-        "causative": "上がせる",
-        "imperative": "上がe",
-        "conditional": "上がれば",
-        "volitional": "上がおう"
       }
     }
   },
@@ -24639,23 +22871,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "辞めます",
-        "polite_past": "辞めました",
-        "polite_negative": "辞めません",
-        "polite_past_negative": "辞めませんでした",
-        "casual_present": "辞める",
-        "casual_past": "辞めた",
-        "casual_negative": "辞めない",
-        "casual_past_negative": "辞めなかった",
-        "te_form": "辞めて",
-        "potential": "辞められる",
-        "passive": "辞められる",
-        "causative": "辞めさせる",
-        "imperative": "辞めろ",
-        "conditional": "辞めれば",
-        "volitional": "辞めよう"
       }
     }
   },
@@ -24713,23 +22928,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "入学します",
-        "polite_past": "入学しました",
-        "polite_negative": "入学しません",
-        "polite_past_negative": "入学しませんでした",
-        "casual_present": "入学する",
-        "casual_past": "入学した",
-        "casual_negative": "入学しない",
-        "casual_past_negative": "入学しなかった",
-        "te_form": "入学して",
-        "potential": "入学できる",
-        "passive": "入学される",
-        "causative": "入学させる",
-        "imperative": "入学しろ",
-        "conditional": "入学すれば",
-        "volitional": "入学しよう"
       }
     }
   },
@@ -24768,23 +22966,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "流行します",
-        "polite_past": "流行しました",
-        "polite_negative": "流行しません",
-        "polite_past_negative": "流行しませんでした",
-        "casual_present": "流行する",
-        "casual_past": "流行した",
-        "casual_negative": "流行しない",
-        "casual_past_negative": "流行しなかった",
-        "te_form": "流行して",
-        "potential": "流行できる",
-        "passive": "流行される",
-        "causative": "流行させる",
-        "imperative": "流行しろ",
-        "conditional": "流行すれば",
-        "volitional": "流行しよう"
       }
     }
   },
@@ -24823,23 +23004,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "入院します",
-        "polite_past": "入院しました",
-        "polite_negative": "入院しません",
-        "polite_past_negative": "入院しませんでした",
-        "casual_present": "入院する",
-        "casual_past": "入院した",
-        "casual_negative": "入院しない",
-        "casual_past_negative": "入院しなかった",
-        "te_form": "入院して",
-        "potential": "入院できる",
-        "passive": "入院される",
-        "causative": "入院させる",
-        "imperative": "入院しろ",
-        "conditional": "入院すれば",
-        "volitional": "入院しよう"
       }
     }
   },
@@ -24879,23 +23043,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "お邪魔します",
-        "polite_past": "お邪魔しました",
-        "polite_negative": "お邪魔しません",
-        "polite_past_negative": "お邪魔しませんでした",
-        "casual_present": "お邪魔する",
-        "casual_past": "お邪魔した",
-        "casual_negative": "お邪魔しない",
-        "casual_past_negative": "お邪魔しなかった",
-        "te_form": "お邪魔して",
-        "potential": "お邪魔できる",
-        "passive": "お邪魔される",
-        "causative": "お邪魔させる",
-        "imperative": "お邪魔しろ",
-        "conditional": "お邪魔すれば",
-        "volitional": "お邪魔しよう"
       }
     }
   },
@@ -24934,23 +23081,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "担当します",
-        "polite_past": "担当しました",
-        "polite_negative": "担当しません",
-        "polite_past_negative": "担当しませんでした",
-        "casual_present": "担当する",
-        "casual_past": "担当した",
-        "casual_negative": "担当しない",
-        "casual_past_negative": "担当しなかった",
-        "te_form": "担当して",
-        "potential": "担当できる",
-        "passive": "担当される",
-        "causative": "担当させる",
-        "imperative": "担当しろ",
-        "conditional": "担当すれば",
-        "volitional": "担当しよう"
       }
     }
   },
@@ -25122,23 +23252,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "割ります",
-        "polite_past": "割りました",
-        "polite_negative": "割りません",
-        "polite_past_negative": "割りませんでした",
-        "casual_present": "割る",
-        "casual_past": "割った",
-        "casual_negative": "割らない",
-        "casual_past_negative": "割らなかった",
-        "te_form": "割って",
-        "potential": "割える",
-        "passive": "割られる",
-        "causative": "割せる",
-        "imperative": "割e",
-        "conditional": "割れば",
-        "volitional": "割おう"
       }
     }
   },
@@ -25177,23 +23290,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "付きます",
-        "polite_past": "付きました",
-        "polite_negative": "付きません",
-        "polite_past_negative": "付きませんでした",
-        "casual_present": "付く",
-        "casual_past": "付いた",
-        "casual_negative": "付かない",
-        "casual_past_negative": "付かなかった",
-        "te_form": "付いて",
-        "potential": "付える",
-        "passive": "付られる",
-        "causative": "付せる",
-        "imperative": "付e",
-        "conditional": "付れば",
-        "volitional": "付おう"
       }
     }
   },
@@ -25232,23 +23328,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "掛かります",
-        "polite_past": "掛かりました",
-        "polite_negative": "掛かりません",
-        "polite_past_negative": "掛かりませんでした",
-        "casual_present": "掛かる",
-        "casual_past": "掛かった",
-        "casual_negative": "掛からない",
-        "casual_past_negative": "掛からなかった",
-        "te_form": "掛かって",
-        "potential": "掛かえる",
-        "passive": "掛かられる",
-        "causative": "掛かせる",
-        "imperative": "掛かe",
-        "conditional": "掛かれば",
-        "volitional": "掛かおう"
       }
     }
   },
@@ -25287,23 +23366,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "汚します",
-        "polite_past": "汚しました",
-        "polite_negative": "汚しません",
-        "polite_past_negative": "汚しませんでした",
-        "casual_present": "汚す",
-        "casual_past": "汚した",
-        "casual_negative": "汚さない",
-        "casual_past_negative": "汚さなかった",
-        "te_form": "汚して",
-        "potential": "汚える",
-        "passive": "汚られる",
-        "causative": "汚せる",
-        "imperative": "汚e",
-        "conditional": "汚れば",
-        "volitional": "汚おう"
       }
     }
   },
@@ -25342,23 +23404,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "やみます",
-        "polite_past": "やみました",
-        "polite_negative": "やみません",
-        "polite_past_negative": "やみませんでした",
-        "casual_present": "やむ",
-        "casual_past": "やんだ",
-        "casual_negative": "やまない",
-        "casual_past_negative": "やまなかった",
-        "te_form": "やんで",
-        "potential": "やえる",
-        "passive": "やられる",
-        "causative": "やせる",
-        "imperative": "やe",
-        "conditional": "やれば",
-        "volitional": "やおう"
       }
     }
   },
@@ -25396,23 +23441,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "建ちます",
-        "polite_past": "建ちました",
-        "polite_negative": "建ちません",
-        "polite_past_negative": "建ちませんでした",
-        "casual_present": "建つ",
-        "casual_past": "建った",
-        "casual_negative": "建たない",
-        "casual_past_negative": "建たなかった",
-        "te_form": "建って",
-        "potential": "建える",
-        "passive": "建られる",
-        "causative": "建せる",
-        "imperative": "建e",
-        "conditional": "建れば",
-        "volitional": "建おう"
       }
     }
   },
@@ -25451,23 +23479,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "並びます",
-        "polite_past": "並びました",
-        "polite_negative": "並びません",
-        "polite_past_negative": "並びませんでした",
-        "casual_present": "並ぶ",
-        "casual_past": "並んだ",
-        "casual_negative": "並ばない",
-        "casual_past_negative": "並ばなかった",
-        "te_form": "並んで",
-        "potential": "並える",
-        "passive": "並られる",
-        "causative": "並せる",
-        "imperative": "並e",
-        "conditional": "並れば",
-        "volitional": "並おう"
       }
     }
   },
@@ -25562,23 +23573,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "飼います",
-        "polite_past": "飼いました",
-        "polite_negative": "飼いません",
-        "polite_past_negative": "飼いませんでした",
-        "casual_present": "飼いる",
-        "casual_past": "飼いった",
-        "casual_negative": "飼いらない",
-        "casual_past_negative": "飼いらなかった",
-        "te_form": "飼いって",
-        "potential": "飼いえる",
-        "passive": "飼いられる",
-        "causative": "飼いせる",
-        "imperative": "飼いe",
-        "conditional": "飼いれば",
-        "volitional": "飼いおう"
       }
     }
   },
@@ -25617,23 +23611,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "消えます",
-        "polite_past": "消えました",
-        "polite_negative": "消えません",
-        "polite_past_negative": "消えませんでした",
-        "casual_present": "消える",
-        "casual_past": "消えた",
-        "casual_negative": "消えない",
-        "casual_past_negative": "消えなかった",
-        "te_form": "消えて",
-        "potential": "消えられる",
-        "passive": "消えられる",
-        "causative": "消えさせる",
-        "imperative": "消えろ",
-        "conditional": "消えれば",
-        "volitional": "消えよう"
       }
     }
   },
@@ -25672,23 +23649,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "掛けます",
-        "polite_past": "掛けました",
-        "polite_negative": "掛けません",
-        "polite_past_negative": "掛けませんでした",
-        "casual_present": "掛ける",
-        "casual_past": "掛けた",
-        "casual_negative": "掛けない",
-        "casual_past_negative": "掛けなかった",
-        "te_form": "掛けて",
-        "potential": "掛けられる",
-        "passive": "掛けられる",
-        "causative": "掛けさせる",
-        "imperative": "掛けろ",
-        "conditional": "掛ければ",
-        "volitional": "掛けよう"
       }
     }
   },
@@ -25726,23 +23686,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "落ちます",
-        "polite_past": "落ちました",
-        "polite_negative": "落ちません",
-        "polite_past_negative": "落ちませんでした",
-        "casual_present": "落ちる",
-        "casual_past": "落ちた",
-        "casual_negative": "落ちない",
-        "casual_past_negative": "落ちなかった",
-        "te_form": "落ちて",
-        "potential": "落ちられる",
-        "passive": "落ちられる",
-        "causative": "落ちさせる",
-        "imperative": "落ちろ",
-        "conditional": "落ちれば",
-        "volitional": "落ちよう"
       }
     }
   },
@@ -25780,23 +23723,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "割れます",
-        "polite_past": "割れました",
-        "polite_negative": "割れません",
-        "polite_past_negative": "割れませんでした",
-        "casual_present": "割れる",
-        "casual_past": "割れた",
-        "casual_negative": "割れない",
-        "casual_past_negative": "割れなかった",
-        "te_form": "割れて",
-        "potential": "割れられる",
-        "passive": "割れられる",
-        "causative": "割れさせる",
-        "imperative": "割れろ",
-        "conditional": "割れれば",
-        "volitional": "割れよう"
       }
     }
   },
@@ -25835,23 +23761,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "建てます",
-        "polite_past": "建てました",
-        "polite_negative": "建てません",
-        "polite_past_negative": "建てませんでした",
-        "casual_present": "建てる",
-        "casual_past": "建てた",
-        "casual_negative": "建てない",
-        "casual_past_negative": "建てなかった",
-        "te_form": "建てて",
-        "potential": "建てられる",
-        "passive": "建てられる",
-        "causative": "建てさせる",
-        "imperative": "建てろ",
-        "conditional": "建てれば",
-        "volitional": "建てよう"
       }
     }
   },
@@ -25909,23 +23818,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "汚れます",
-        "polite_past": "汚れました",
-        "polite_negative": "汚れません",
-        "polite_past_negative": "汚れませんでした",
-        "casual_present": "汚れる",
-        "casual_past": "汚れた",
-        "casual_negative": "汚れない",
-        "casual_past_negative": "汚れなかった",
-        "te_form": "汚れて",
-        "potential": "汚れられる",
-        "passive": "汚れられる",
-        "causative": "汚れさせる",
-        "imperative": "汚れろ",
-        "conditional": "汚れれば",
-        "volitional": "汚れよう"
       }
     }
   },
@@ -26021,23 +23913,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "焼きます",
-        "polite_past": "焼きました",
-        "polite_negative": "焼きません",
-        "polite_past_negative": "焼きませんでした",
-        "casual_present": "焼く",
-        "casual_past": "焼いた",
-        "casual_negative": "焼かない",
-        "casual_past_negative": "焼かなかった",
-        "te_form": "焼いて",
-        "potential": "焼える",
-        "passive": "焼られる",
-        "causative": "焼せる",
-        "imperative": "焼e",
-        "conditional": "焼れば",
-        "volitional": "焼おう"
       }
     }
   },
@@ -26076,23 +23951,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "稼ぎます",
-        "polite_past": "稼ぎました",
-        "polite_negative": "稼ぎません",
-        "polite_past_negative": "稼ぎませんでした",
-        "casual_present": "稼ぐ",
-        "casual_past": "稼いだ",
-        "casual_negative": "稼がない",
-        "casual_past_negative": "稼がなかった",
-        "te_form": "稼いで",
-        "potential": "稼える",
-        "passive": "稼られる",
-        "causative": "稼せる",
-        "imperative": "稼e",
-        "conditional": "稼れば",
-        "volitional": "稼おう"
       }
     }
   },
@@ -26131,23 +23989,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "残ります",
-        "polite_past": "残りました",
-        "polite_negative": "残りません",
-        "polite_past_negative": "残りませんでした",
-        "casual_present": "残る",
-        "casual_past": "残った",
-        "casual_negative": "残らない",
-        "casual_past_negative": "残らなかった",
-        "te_form": "残って",
-        "potential": "残える",
-        "passive": "残られる",
-        "causative": "残せる",
-        "imperative": "残e",
-        "conditional": "残れば",
-        "volitional": "残おう"
       }
     }
   },
@@ -26186,23 +24027,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "包みます",
-        "polite_past": "包みました",
-        "polite_negative": "包みません",
-        "polite_past_negative": "包みませんでした",
-        "casual_present": "包む",
-        "casual_past": "包んだ",
-        "casual_negative": "包まない",
-        "casual_past_negative": "包まなかった",
-        "te_form": "包んで",
-        "potential": "包える",
-        "passive": "包られる",
-        "causative": "包せる",
-        "imperative": "包e",
-        "conditional": "包れば",
-        "volitional": "包おう"
       }
     }
   },
@@ -26241,23 +24065,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "頼みます",
-        "polite_past": "頼みました",
-        "polite_negative": "頼みません",
-        "polite_past_negative": "頼みませんでした",
-        "casual_present": "頼む",
-        "casual_past": "頼んだ",
-        "casual_negative": "頼まない",
-        "casual_past_negative": "頼まなかった",
-        "te_form": "頼んで",
-        "potential": "頼える",
-        "passive": "頼られる",
-        "causative": "頼せる",
-        "imperative": "頼e",
-        "conditional": "頼れば",
-        "volitional": "頼おう"
       }
     }
   },
@@ -26296,23 +24103,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "はります",
-        "polite_past": "はりました",
-        "polite_negative": "はりません",
-        "polite_past_negative": "はりませんでした",
-        "casual_present": "はる",
-        "casual_past": "はった",
-        "casual_negative": "はらない",
-        "casual_past_negative": "はらなかった",
-        "te_form": "はって",
-        "potential": "はえる",
-        "passive": "はられる",
-        "causative": "はせる",
-        "imperative": "はe",
-        "conditional": "はれば",
-        "volitional": "はおう"
       }
     }
   },
@@ -26351,23 +24141,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "飾ります",
-        "polite_past": "飾りました",
-        "polite_negative": "飾りません",
-        "polite_past_negative": "飾りませんでした",
-        "casual_present": "飾る",
-        "casual_past": "飾った",
-        "casual_negative": "飾らない",
-        "casual_past_negative": "飾らなかった",
-        "te_form": "飾って",
-        "potential": "飾える",
-        "passive": "飾られる",
-        "causative": "飾せる",
-        "imperative": "飾e",
-        "conditional": "飾れば",
-        "volitional": "飾おう"
       }
     }
   },
@@ -26407,23 +24180,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "しまいます",
-        "polite_past": "しまいました",
-        "polite_negative": "しまいません",
-        "polite_past_negative": "しまいませんでした",
-        "casual_present": "しまいる",
-        "casual_past": "しまいった",
-        "casual_negative": "しまいらない",
-        "casual_past_negative": "しまいらなかった",
-        "te_form": "しまいって",
-        "potential": "しまいえる",
-        "passive": "しまいられる",
-        "causative": "しまいせる",
-        "imperative": "しまいe",
-        "conditional": "しまいれば",
-        "volitional": "しまいおう"
       }
     }
   },
@@ -26462,23 +24218,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "合います",
-        "polite_past": "合いました",
-        "polite_negative": "合いません",
-        "polite_past_negative": "合いませんでした",
-        "casual_present": "合いる",
-        "casual_past": "合いった",
-        "casual_negative": "合いらない",
-        "casual_past_negative": "合いらなかった",
-        "te_form": "合いって",
-        "potential": "合いえる",
-        "passive": "合いられる",
-        "causative": "合いせる",
-        "imperative": "合いe",
-        "conditional": "合いれば",
-        "volitional": "合いおう"
       }
     }
   },
@@ -26517,23 +24256,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "戻します",
-        "polite_past": "戻しました",
-        "polite_negative": "戻しません",
-        "polite_past_negative": "戻しませんでした",
-        "casual_present": "戻す",
-        "casual_past": "戻した",
-        "casual_negative": "戻さない",
-        "casual_past_negative": "戻さなかった",
-        "te_form": "戻して",
-        "potential": "戻える",
-        "passive": "戻られる",
-        "causative": "戻せる",
-        "imperative": "戻e",
-        "conditional": "戻れば",
-        "volitional": "戻おう"
       }
     }
   },
@@ -26573,23 +24295,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "ためます",
-        "polite_past": "ためました",
-        "polite_negative": "ためません",
-        "polite_past_negative": "ためませんでした",
-        "casual_present": "ためる",
-        "casual_past": "ためた",
-        "casual_negative": "ためない",
-        "casual_past_negative": "ためなかった",
-        "te_form": "ためて",
-        "potential": "ためられる",
-        "passive": "ためられる",
-        "causative": "ためさせる",
-        "imperative": "ためろ",
-        "conditional": "ためれば",
-        "volitional": "ためよう"
       }
     }
   },
@@ -26628,23 +24333,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "並べます",
-        "polite_past": "並べました",
-        "polite_negative": "並べません",
-        "polite_past_negative": "並べませんでした",
-        "casual_present": "並べる",
-        "casual_past": "並べた",
-        "casual_negative": "並べない",
-        "casual_past_negative": "並べなかった",
-        "te_form": "並べて",
-        "potential": "並べられる",
-        "passive": "並べられる",
-        "causative": "並べさせる",
-        "imperative": "並べろ",
-        "conditional": "並べれば",
-        "volitional": "並べよう"
       }
     }
   },
@@ -26683,23 +24371,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "預けます",
-        "polite_past": "預けました",
-        "polite_negative": "預けません",
-        "polite_past_negative": "預けませんでした",
-        "casual_present": "預ける",
-        "casual_past": "預けた",
-        "casual_negative": "預けない",
-        "casual_past_negative": "預けなかった",
-        "te_form": "預けて",
-        "potential": "預けられる",
-        "passive": "預けられる",
-        "causative": "預けさせる",
-        "imperative": "預けろ",
-        "conditional": "預ければ",
-        "volitional": "預けよう"
       }
     }
   },
@@ -26738,23 +24409,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "続けます",
-        "polite_past": "続けました",
-        "polite_negative": "続けません",
-        "polite_past_negative": "続けませんでした",
-        "casual_present": "続ける",
-        "casual_past": "続けた",
-        "casual_negative": "続けない",
-        "casual_past_negative": "続けなかった",
-        "te_form": "続けて",
-        "potential": "続けられる",
-        "passive": "続けられる",
-        "causative": "続けさせる",
-        "imperative": "続けろ",
-        "conditional": "続ければ",
-        "volitional": "続けよう"
       }
     }
   },
@@ -26793,23 +24447,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "やせます",
-        "polite_past": "やせました",
-        "polite_negative": "やせません",
-        "polite_past_negative": "やせませんでした",
-        "casual_present": "やせる",
-        "casual_past": "やせた",
-        "casual_negative": "やせない",
-        "casual_past_negative": "やせなかった",
-        "te_form": "やせて",
-        "potential": "やせられる",
-        "passive": "やせられる",
-        "causative": "やせさせる",
-        "imperative": "やせろ",
-        "conditional": "やせれば",
-        "volitional": "やせよう"
       }
     }
   },
@@ -26848,23 +24485,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "訪問します",
-        "polite_past": "訪問しました",
-        "polite_negative": "訪問しません",
-        "polite_past_negative": "訪問しませんでした",
-        "casual_present": "訪問する",
-        "casual_past": "訪問した",
-        "casual_negative": "訪問しない",
-        "casual_past_negative": "訪問しなかった",
-        "te_form": "訪問して",
-        "potential": "訪問できる",
-        "passive": "訪問される",
-        "causative": "訪問させる",
-        "imperative": "訪問しろ",
-        "conditional": "訪問すれば",
-        "volitional": "訪問しよう"
       }
     }
   },
@@ -26903,23 +24523,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "貯金します",
-        "polite_past": "貯金しました",
-        "polite_negative": "貯金しません",
-        "polite_past_negative": "貯金しませんでした",
-        "casual_present": "貯金する",
-        "casual_past": "貯金した",
-        "casual_negative": "貯金しない",
-        "casual_past_negative": "貯金しなかった",
-        "te_form": "貯金して",
-        "potential": "貯金できる",
-        "passive": "貯金される",
-        "causative": "貯金させる",
-        "imperative": "貯金しろ",
-        "conditional": "貯金すれば",
-        "volitional": "貯金しよう"
       }
     }
   },
@@ -26958,23 +24561,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "歓迎します",
-        "polite_past": "歓迎しました",
-        "polite_negative": "歓迎しません",
-        "polite_past_negative": "歓迎しませんでした",
-        "casual_present": "歓迎する",
-        "casual_past": "歓迎した",
-        "casual_negative": "歓迎しない",
-        "casual_past_negative": "歓迎しなかった",
-        "te_form": "歓迎して",
-        "potential": "歓迎できる",
-        "passive": "歓迎される",
-        "causative": "歓迎させる",
-        "imperative": "歓迎しろ",
-        "conditional": "歓迎すれば",
-        "volitional": "歓迎しよう"
       }
     }
   },
@@ -27013,23 +24599,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "用意します",
-        "polite_past": "用意しました",
-        "polite_negative": "用意しません",
-        "polite_past_negative": "用意しませんでした",
-        "casual_present": "用意する",
-        "casual_past": "用意した",
-        "casual_negative": "用意しない",
-        "casual_past_negative": "用意しなかった",
-        "te_form": "用意して",
-        "potential": "用意できる",
-        "passive": "用意される",
-        "causative": "用意させる",
-        "imperative": "用意しろ",
-        "conditional": "用意すれば",
-        "volitional": "用意しよう"
       }
     }
   },
@@ -27585,23 +25154,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "いただきます",
-        "polite_past": "いただきました",
-        "polite_negative": "いただきません",
-        "polite_past_negative": "いただきませんでした",
-        "casual_present": "いただく",
-        "casual_past": "いただいた",
-        "casual_negative": "いただかない",
-        "casual_past_negative": "いただかなかった",
-        "te_form": "いただいて",
-        "potential": "いただえる",
-        "passive": "いただられる",
-        "causative": "いただせる",
-        "imperative": "いただe",
-        "conditional": "いただれば",
-        "volitional": "いただおう"
       }
     }
   },
@@ -28026,23 +25578,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "けんかします",
-        "polite_past": "けんかしました",
-        "polite_negative": "けんかしません",
-        "polite_past_negative": "けんかしませんでした",
-        "casual_present": "けんかする",
-        "casual_past": "けんかした",
-        "casual_negative": "けんかしない",
-        "casual_past_negative": "けんかしなかった",
-        "te_form": "けんかして",
-        "potential": "けんかできる",
-        "passive": "けんかされる",
-        "causative": "けんかさせる",
-        "imperative": "けんかしろ",
-        "conditional": "けんかすれば",
-        "volitional": "けんかしよう"
       }
     }
   },
@@ -28081,23 +25616,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "利用します",
-        "polite_past": "利用しました",
-        "polite_negative": "利用しません",
-        "polite_past_negative": "利用しませんでした",
-        "casual_present": "利用する",
-        "casual_past": "利用した",
-        "casual_negative": "利用しない",
-        "casual_past_negative": "利用しなかった",
-        "te_form": "利用して",
-        "potential": "利用できる",
-        "passive": "利用される",
-        "causative": "利用させる",
-        "imperative": "利用しろ",
-        "conditional": "利用すれば",
-        "volitional": "利用しよう"
       }
     }
   },
@@ -28136,23 +25654,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "相談します",
-        "polite_past": "相談しました",
-        "polite_negative": "相談しません",
-        "polite_past_negative": "相談しませんでした",
-        "casual_present": "相談する",
-        "casual_past": "相談した",
-        "casual_negative": "相談しない",
-        "casual_past_negative": "相談しなかった",
-        "te_form": "相談して",
-        "potential": "相談できる",
-        "passive": "相談される",
-        "causative": "相談させる",
-        "imperative": "相談しろ",
-        "conditional": "相談すれば",
-        "volitional": "相談しよう"
       }
     }
   },
@@ -28542,23 +26043,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "片づけます",
-        "polite_past": "片づけました",
-        "polite_negative": "片づけません",
-        "polite_past_negative": "片づけませんでした",
-        "casual_present": "片づける",
-        "casual_past": "片づけた",
-        "casual_negative": "片づけない",
-        "casual_past_negative": "片づけなかった",
-        "te_form": "片づけて",
-        "potential": "片づけられる",
-        "passive": "片づけられる",
-        "causative": "片づけさせる",
-        "imperative": "片づけろ",
-        "conditional": "片づければ",
-        "volitional": "片づけよう"
       }
     }
   },
@@ -28635,23 +26119,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "安心します",
-        "polite_past": "安心しました",
-        "polite_negative": "安心しません",
-        "polite_past_negative": "安心しませんでした",
-        "casual_present": "安心する",
-        "casual_past": "安心した",
-        "casual_negative": "安心しない",
-        "casual_past_negative": "安心しなかった",
-        "te_form": "安心して",
-        "potential": "安心できる",
-        "passive": "安心される",
-        "causative": "安心させる",
-        "imperative": "安心しろ",
-        "conditional": "安心すれば",
-        "volitional": "安心しよう"
       }
     }
   },
@@ -29035,23 +26502,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "卒業します",
-        "polite_past": "卒業しました",
-        "polite_negative": "卒業しません",
-        "polite_past_negative": "卒業しませんでした",
-        "casual_present": "卒業する",
-        "casual_past": "卒業した",
-        "casual_negative": "卒業しない",
-        "casual_past_negative": "卒業しなかった",
-        "te_form": "卒業して",
-        "potential": "卒業できる",
-        "passive": "卒業される",
-        "causative": "卒業させる",
-        "imperative": "卒業しろ",
-        "conditional": "卒業すれば",
-        "volitional": "卒業しよう"
       }
     }
   },
@@ -29109,23 +26559,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "整理します",
-        "polite_past": "整理しました",
-        "polite_negative": "整理しません",
-        "polite_past_negative": "整理しませんでした",
-        "casual_present": "整理する",
-        "casual_past": "整理した",
-        "casual_negative": "整理しない",
-        "casual_past_negative": "整理しなかった",
-        "te_form": "整理して",
-        "potential": "整理できる",
-        "passive": "整理される",
-        "causative": "整理させる",
-        "imperative": "整理しろ",
-        "conditional": "整理すれば",
-        "volitional": "整理しよう"
       }
     }
   },
@@ -30656,23 +28089,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "お邪魔します",
-        "polite_past": "お邪魔しました",
-        "polite_negative": "お邪魔しません",
-        "polite_past_negative": "お邪魔しませんでした",
-        "casual_present": "お邪魔する",
-        "casual_past": "お邪魔した",
-        "casual_negative": "お邪魔しない",
-        "casual_past_negative": "お邪魔しなかった",
-        "te_form": "お邪魔して",
-        "potential": "お邪魔できる",
-        "passive": "お邪魔される",
-        "causative": "お邪魔させる",
-        "imperative": "お邪魔しろ",
-        "conditional": "お邪魔すれば",
-        "volitional": "お邪魔しよう"
       }
     }
   },
@@ -30866,23 +28282,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "始まります",
-        "polite_past": "始まりました",
-        "polite_negative": "始まりません",
-        "polite_past_negative": "始まりませんでした",
-        "casual_present": "始まる",
-        "casual_past": "始まった",
-        "casual_negative": "始まらない",
-        "casual_past_negative": "始まらなかった",
-        "te_form": "始まって",
-        "potential": "始まえる",
-        "passive": "始まられる",
-        "causative": "始ませる",
-        "imperative": "始まe",
-        "conditional": "始まれば",
-        "volitional": "始まおう"
       }
     }
   },
@@ -31308,23 +28707,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "向かいます",
-        "polite_past": "向かいました",
-        "polite_negative": "向かいません",
-        "polite_past_negative": "向かいませんでした",
-        "casual_present": "向かいる",
-        "casual_past": "向かいった",
-        "casual_negative": "向かいらない",
-        "casual_past_negative": "向かいらなかった",
-        "te_form": "向かいって",
-        "potential": "向かいえる",
-        "passive": "向かいられる",
-        "causative": "向かいせる",
-        "imperative": "向かいe",
-        "conditional": "向かいれば",
-        "volitional": "向かいおう"
       }
     }
   },
@@ -31740,23 +29122,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "そろえます",
-        "polite_past": "そろえました",
-        "polite_negative": "そろえません",
-        "polite_past_negative": "そろえませんでした",
-        "casual_present": "そろえる",
-        "casual_past": "そろえた",
-        "casual_negative": "そろえない",
-        "casual_past_negative": "そろえなかった",
-        "te_form": "そろえて",
-        "potential": "そろえられる",
-        "passive": "そろえられる",
-        "causative": "そろえさせる",
-        "imperative": "そろえろ",
-        "conditional": "そろえれば",
-        "volitional": "そろえよう"
       }
     }
   },
@@ -31795,23 +29160,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "漏れます",
-        "polite_past": "漏れました",
-        "polite_negative": "漏れません",
-        "polite_past_negative": "漏れませんでした",
-        "casual_present": "漏れる",
-        "casual_past": "漏れた",
-        "casual_negative": "漏れない",
-        "casual_past_negative": "漏れなかった",
-        "te_form": "漏れて",
-        "potential": "漏れられる",
-        "passive": "漏れられる",
-        "causative": "漏れさせる",
-        "imperative": "漏れろ",
-        "conditional": "漏れれば",
-        "volitional": "漏れよう"
       }
     }
   },
@@ -31850,23 +29198,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "まとめます",
-        "polite_past": "まとめました",
-        "polite_negative": "まとめません",
-        "polite_past_negative": "まとめませんでした",
-        "casual_present": "まとめる",
-        "casual_past": "まとめた",
-        "casual_negative": "まとめない",
-        "casual_past_negative": "まとめなかった",
-        "te_form": "まとめて",
-        "potential": "まとめられる",
-        "passive": "まとめられる",
-        "causative": "まとめさせる",
-        "imperative": "まとめろ",
-        "conditional": "まとめれば",
-        "volitional": "まとめよう"
       }
     }
   },
@@ -31905,23 +29236,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "開通します",
-        "polite_past": "開通しました",
-        "polite_negative": "開通しません",
-        "polite_past_negative": "開通しませんでした",
-        "casual_present": "開通する",
-        "casual_past": "開通した",
-        "casual_negative": "開通しない",
-        "casual_past_negative": "開通しなかった",
-        "te_form": "開通して",
-        "potential": "開通できる",
-        "passive": "開通される",
-        "causative": "開通させる",
-        "imperative": "開通しろ",
-        "conditional": "開通すれば",
-        "volitional": "開通しよう"
       }
     }
   },
@@ -31960,23 +29274,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "改築します",
-        "polite_past": "改築しました",
-        "polite_negative": "改築しません",
-        "polite_past_negative": "改築しませんでした",
-        "casual_present": "改築する",
-        "casual_past": "改築した",
-        "casual_negative": "改築しない",
-        "casual_past_negative": "改築しなかった",
-        "te_form": "改築して",
-        "potential": "改築できる",
-        "passive": "改築される",
-        "causative": "改築させる",
-        "imperative": "改築しろ",
-        "conditional": "改築すれば",
-        "volitional": "改築しよう"
       }
     }
   },
@@ -32015,23 +29312,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "完成します",
-        "polite_past": "完成しました",
-        "polite_negative": "完成しません",
-        "polite_past_negative": "完成しませんでした",
-        "casual_present": "完成する",
-        "casual_past": "完成した",
-        "casual_negative": "完成しない",
-        "casual_past_negative": "完成しなかった",
-        "te_form": "完成して",
-        "potential": "完成できる",
-        "passive": "完成される",
-        "causative": "完成させる",
-        "imperative": "完成しろ",
-        "conditional": "完成すれば",
-        "volitional": "完成しよう"
       }
     }
   },
@@ -32069,23 +29349,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "入社します",
-        "polite_past": "入社しました",
-        "polite_negative": "入社しません",
-        "polite_past_negative": "入社しませんでした",
-        "casual_present": "入社する",
-        "casual_past": "入社した",
-        "casual_negative": "入社しない",
-        "casual_past_negative": "入社しなかった",
-        "te_form": "入社して",
-        "potential": "入社できる",
-        "passive": "入社される",
-        "causative": "入社させる",
-        "imperative": "入社しろ",
-        "conditional": "入社すれば",
-        "volitional": "入社しよう"
       }
     }
   },
@@ -33602,23 +30865,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "見渡します",
-        "polite_past": "見渡しました",
-        "polite_negative": "見渡しません",
-        "polite_past_negative": "見渡しませんでした",
-        "casual_present": "見渡す",
-        "casual_past": "見渡した",
-        "casual_negative": "見渡さない",
-        "casual_past_negative": "見渡さなかった",
-        "te_form": "見渡して",
-        "potential": "見渡える",
-        "passive": "見渡られる",
-        "causative": "見渡せる",
-        "imperative": "見渡e",
-        "conditional": "見渡れば",
-        "volitional": "見渡おう"
       }
     }
   },
@@ -33657,23 +30903,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "続きます",
-        "polite_past": "続きました",
-        "polite_negative": "続きません",
-        "polite_past_negative": "続きませんでした",
-        "casual_present": "続く",
-        "casual_past": "続いた",
-        "casual_negative": "続かない",
-        "casual_past_negative": "続かなかった",
-        "te_form": "続いて",
-        "potential": "続える",
-        "passive": "続られる",
-        "causative": "続せる",
-        "imperative": "続e",
-        "conditional": "続れば",
-        "volitional": "続おう"
       }
     }
   },
@@ -33711,23 +30940,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "なくなります",
-        "polite_past": "なくなりました",
-        "polite_negative": "なくなりません",
-        "polite_past_negative": "なくなりませんでした",
-        "casual_present": "なくなる",
-        "casual_past": "なくなった",
-        "casual_negative": "なくならない",
-        "casual_past_negative": "なくならなかった",
-        "te_form": "なくなって",
-        "potential": "なくなえる",
-        "passive": "なくなられる",
-        "causative": "なくなせる",
-        "imperative": "なくなe",
-        "conditional": "なくなれば",
-        "volitional": "なくなおう"
       }
     }
   },
@@ -33766,23 +30978,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "育ちます",
-        "polite_past": "育ちました",
-        "polite_negative": "育ちません",
-        "polite_past_negative": "育ちませんでした",
-        "casual_present": "育つ",
-        "casual_past": "育った",
-        "casual_negative": "育たない",
-        "casual_past_negative": "育たなかった",
-        "te_form": "育って",
-        "potential": "育える",
-        "passive": "育られる",
-        "causative": "育せる",
-        "imperative": "育e",
-        "conditional": "育れば",
-        "volitional": "育おう"
       }
     }
   },
@@ -33821,23 +31016,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "増えます",
-        "polite_past": "増えました",
-        "polite_negative": "増えません",
-        "polite_past_negative": "増えませんでした",
-        "casual_present": "増える",
-        "casual_past": "増えた",
-        "casual_negative": "増えない",
-        "casual_past_negative": "増えなかった",
-        "te_form": "増えて",
-        "potential": "増えられる",
-        "passive": "増えられる",
-        "causative": "増えさせる",
-        "imperative": "増えろ",
-        "conditional": "増えれば",
-        "volitional": "増えよう"
       }
     }
   },
@@ -33876,23 +31054,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "連れます",
-        "polite_past": "連れました",
-        "polite_negative": "連れません",
-        "polite_past_negative": "連れませんでした",
-        "casual_present": "連れる",
-        "casual_past": "連れた",
-        "casual_negative": "連れない",
-        "casual_past_negative": "連れなかった",
-        "te_form": "連れて",
-        "potential": "連れられる",
-        "passive": "連れられる",
-        "causative": "連れさせる",
-        "imperative": "連れろ",
-        "conditional": "連れれば",
-        "volitional": "連れよう"
       }
     }
   },
@@ -33931,23 +31092,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "欠席します",
-        "polite_past": "欠席しました",
-        "polite_negative": "欠席しません",
-        "polite_past_negative": "欠席しませんでした",
-        "casual_present": "欠席する",
-        "casual_past": "欠席した",
-        "casual_negative": "欠席しない",
-        "casual_past_negative": "欠席しなかった",
-        "te_form": "欠席して",
-        "potential": "欠席できる",
-        "passive": "欠席される",
-        "causative": "欠席させる",
-        "imperative": "欠席しろ",
-        "conditional": "欠席すれば",
-        "volitional": "欠席しよう"
       }
     }
   },
@@ -34062,23 +31206,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "入り組みます",
-        "polite_past": "入り組みました",
-        "polite_negative": "入り組みません",
-        "polite_past_negative": "入り組みませんでした",
-        "casual_present": "入り組む",
-        "casual_past": "入り組んだ",
-        "casual_negative": "入り組まない",
-        "casual_past_negative": "入り組まなかった",
-        "te_form": "入り組んで",
-        "potential": "入り組える",
-        "passive": "入り組られる",
-        "causative": "入り組せる",
-        "imperative": "入り組e",
-        "conditional": "入り組れば",
-        "volitional": "入り組おう"
       }
     }
   },
@@ -34117,23 +31244,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "減ります",
-        "polite_past": "減りました",
-        "polite_negative": "減りません",
-        "polite_past_negative": "減りませんでした",
-        "casual_present": "減る",
-        "casual_past": "減った",
-        "casual_negative": "減らない",
-        "casual_past_negative": "減らなかった",
-        "te_form": "減って",
-        "potential": "減える",
-        "passive": "減られる",
-        "causative": "減せる",
-        "imperative": "減e",
-        "conditional": "減れば",
-        "volitional": "減おう"
       }
     }
   },
@@ -34172,23 +31282,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "動かします",
-        "polite_past": "動かしました",
-        "polite_negative": "動かしません",
-        "polite_past_negative": "動かしませんでした",
-        "casual_present": "動かす",
-        "casual_past": "動かした",
-        "casual_negative": "動かさない",
-        "casual_past_negative": "動かさなかった",
-        "te_form": "動かして",
-        "potential": "動かえる",
-        "passive": "動かられる",
-        "causative": "動かせる",
-        "imperative": "動かe",
-        "conditional": "動かれば",
-        "volitional": "動かおう"
       }
     }
   },
@@ -34246,23 +31339,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "通り抜けます",
-        "polite_past": "通り抜けました",
-        "polite_negative": "通り抜けません",
-        "polite_past_negative": "通り抜けませんでした",
-        "casual_present": "通り抜ける",
-        "casual_past": "通り抜けた",
-        "casual_negative": "通り抜けない",
-        "casual_past_negative": "通り抜けなかった",
-        "te_form": "通り抜けて",
-        "potential": "通り抜けられる",
-        "passive": "通り抜けられる",
-        "causative": "通り抜けさせる",
-        "imperative": "通り抜けろ",
-        "conditional": "通り抜ければ",
-        "volitional": "通り抜けよう"
       }
     }
   },
@@ -34301,23 +31377,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "感じます",
-        "polite_past": "感じました",
-        "polite_negative": "感じません",
-        "polite_past_negative": "感じませんでした",
-        "casual_present": "感じる",
-        "casual_past": "感じた",
-        "casual_negative": "感じない",
-        "casual_past_negative": "感じなかった",
-        "te_form": "感じて",
-        "potential": "感じられる",
-        "passive": "感じられる",
-        "causative": "感じさせる",
-        "imperative": "感じろ",
-        "conditional": "感じれば",
-        "volitional": "感じよう"
       }
     }
   },
@@ -34356,23 +31415,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "取り替えます",
-        "polite_past": "取り替えました",
-        "polite_negative": "取り替えません",
-        "polite_past_negative": "取り替えませんでした",
-        "casual_present": "取り替える",
-        "casual_past": "取り替えた",
-        "casual_negative": "取り替えない",
-        "casual_past_negative": "取り替えなかった",
-        "te_form": "取り替えて",
-        "potential": "取り替えられる",
-        "passive": "取り替えられる",
-        "causative": "取り替えさせる",
-        "imperative": "取り替えろ",
-        "conditional": "取り替えれば",
-        "volitional": "取り替えよう"
       }
     }
   },
@@ -34411,23 +31453,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "徹夜します",
-        "polite_past": "徹夜しました",
-        "polite_negative": "徹夜しません",
-        "polite_past_negative": "徹夜しませんでした",
-        "casual_present": "徹夜する",
-        "casual_past": "徹夜した",
-        "casual_negative": "徹夜しない",
-        "casual_past_negative": "徹夜しなかった",
-        "te_form": "徹夜して",
-        "potential": "徹夜できる",
-        "passive": "徹夜される",
-        "causative": "徹夜させる",
-        "imperative": "徹夜しろ",
-        "conditional": "徹夜すれば",
-        "volitional": "徹夜しよう"
       }
     }
   },
@@ -34465,23 +31490,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "火傷します",
-        "polite_past": "火傷しました",
-        "polite_negative": "火傷しません",
-        "polite_past_negative": "火傷しませんでした",
-        "casual_present": "火傷する",
-        "casual_past": "火傷した",
-        "casual_negative": "火傷しない",
-        "casual_past_negative": "火傷しなかった",
-        "te_form": "火傷して",
-        "potential": "火傷できる",
-        "passive": "火傷される",
-        "causative": "火傷させる",
-        "imperative": "火傷しろ",
-        "conditional": "火傷すれば",
-        "volitional": "火傷しよう"
       }
     }
   },
@@ -34595,23 +31603,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "輸入します",
-        "polite_past": "輸入しました",
-        "polite_negative": "輸入しません",
-        "polite_past_negative": "輸入しませんでした",
-        "casual_present": "輸入する",
-        "casual_past": "輸入した",
-        "casual_negative": "輸入しない",
-        "casual_past_negative": "輸入しなかった",
-        "te_form": "輸入して",
-        "potential": "輸入できる",
-        "passive": "輸入される",
-        "causative": "輸入させる",
-        "imperative": "輸入しろ",
-        "conditional": "輸入すれば",
-        "volitional": "輸入しよう"
       }
     }
   },
@@ -35091,23 +32082,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "超えます",
-        "polite_past": "超えました",
-        "polite_negative": "超えません",
-        "polite_past_negative": "超えませんでした",
-        "casual_present": "超える",
-        "casual_past": "超えた",
-        "casual_negative": "超えない",
-        "casual_past_negative": "超えなかった",
-        "te_form": "超えて",
-        "potential": "超えられる",
-        "passive": "超えられる",
-        "causative": "超えさせる",
-        "imperative": "超えろ",
-        "conditional": "超えれば",
-        "volitional": "超えよう"
       }
     }
   },
@@ -35522,23 +32496,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "出場します",
-        "polite_past": "出場しました",
-        "polite_negative": "出場しません",
-        "polite_past_negative": "出場しませんでした",
-        "casual_present": "出場する",
-        "casual_past": "出場した",
-        "casual_negative": "出場しない",
-        "casual_past_negative": "出場しなかった",
-        "te_form": "出場して",
-        "potential": "出場できる",
-        "passive": "出場される",
-        "causative": "出場させる",
-        "imperative": "出場しろ",
-        "conditional": "出場すれば",
-        "volitional": "出場しよう"
       }
     }
   },
@@ -35578,23 +32535,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "つまみ食いします",
-        "polite_past": "つまみ食いしました",
-        "polite_negative": "つまみ食いしません",
-        "polite_past_negative": "つまみ食いしませんでした",
-        "casual_present": "つまみ食いする",
-        "casual_past": "つまみ食いした",
-        "casual_negative": "つまみ食いしない",
-        "casual_past_negative": "つまみ食いしなかった",
-        "te_form": "つまみ食いして",
-        "potential": "つまみ食いできる",
-        "passive": "つまみ食いされる",
-        "causative": "つまみ食いさせる",
-        "imperative": "つまみ食いしろ",
-        "conditional": "つまみ食いすれば",
-        "volitional": "つまみ食いしよう"
       }
     }
   },
@@ -35633,23 +32573,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "換算します",
-        "polite_past": "換算しました",
-        "polite_negative": "換算しません",
-        "polite_past_negative": "換算しませんでした",
-        "casual_present": "換算する",
-        "casual_past": "換算した",
-        "casual_negative": "換算しない",
-        "casual_past_negative": "換算しなかった",
-        "te_form": "換算して",
-        "potential": "換算できる",
-        "passive": "換算される",
-        "causative": "換算させる",
-        "imperative": "換算しろ",
-        "conditional": "換算すれば",
-        "volitional": "換算しよう"
       }
     }
   },
@@ -35688,23 +32611,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "復習します",
-        "polite_past": "復習しました",
-        "polite_negative": "復習しません",
-        "polite_past_negative": "復習しませんでした",
-        "casual_present": "復習する",
-        "casual_past": "復習した",
-        "casual_negative": "復習しない",
-        "casual_past_negative": "復習しなかった",
-        "te_form": "復習して",
-        "potential": "復習できる",
-        "passive": "復習される",
-        "causative": "復習させる",
-        "imperative": "復習しろ",
-        "conditional": "復習すれば",
-        "volitional": "復習しよう"
       }
     }
   },
@@ -35743,23 +32649,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "成功します",
-        "polite_past": "成功しました",
-        "polite_negative": "成功しません",
-        "polite_past_negative": "成功しませんでした",
-        "casual_present": "成功する",
-        "casual_past": "成功した",
-        "casual_negative": "成功しない",
-        "casual_past_negative": "成功しなかった",
-        "te_form": "成功して",
-        "potential": "成功できる",
-        "passive": "成功される",
-        "causative": "成功させる",
-        "imperative": "成功しろ",
-        "conditional": "成功すれば",
-        "volitional": "成功しよう"
       }
     }
   },
@@ -35973,23 +32862,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "持ち歩きます",
-        "polite_past": "持ち歩きました",
-        "polite_negative": "持ち歩きません",
-        "polite_past_negative": "持ち歩きませんでした",
-        "casual_present": "持ち歩く",
-        "casual_past": "持ち歩いた",
-        "casual_negative": "持ち歩かない",
-        "casual_past_negative": "持ち歩かなかった",
-        "te_form": "持ち歩いて",
-        "potential": "持ち歩える",
-        "passive": "持ち歩られる",
-        "causative": "持ち歩せる",
-        "imperative": "持ち歩e",
-        "conditional": "持ち歩れば",
-        "volitional": "持ち歩おう"
       }
     }
   },
@@ -36028,23 +32900,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "繰り返します",
-        "polite_past": "繰り返しました",
-        "polite_negative": "繰り返しません",
-        "polite_past_negative": "繰り返しませんでした",
-        "casual_present": "繰り返す",
-        "casual_past": "繰り返した",
-        "casual_negative": "繰り返さない",
-        "casual_past_negative": "繰り返さなかった",
-        "te_form": "繰り返して",
-        "potential": "繰り返える",
-        "passive": "繰り返られる",
-        "causative": "繰り返せる",
-        "imperative": "繰り返e",
-        "conditional": "繰り返れば",
-        "volitional": "繰り返おう"
       }
     }
   },
@@ -36083,23 +32938,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "騒ぎます",
-        "polite_past": "騒ぎました",
-        "polite_negative": "騒ぎません",
-        "polite_past_negative": "騒ぎませんでした",
-        "casual_present": "騒ぐ",
-        "casual_past": "騒いだ",
-        "casual_negative": "騒がない",
-        "casual_past_negative": "騒がなかった",
-        "te_form": "騒いで",
-        "potential": "騒える",
-        "passive": "騒られる",
-        "causative": "騒せる",
-        "imperative": "騒e",
-        "conditional": "騒れば",
-        "volitional": "騒おう"
       }
     }
   },
@@ -36138,23 +32976,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "間に合います",
-        "polite_past": "間に合いました",
-        "polite_negative": "間に合いません",
-        "polite_past_negative": "間に合いませんでした",
-        "casual_present": "間に合いる",
-        "casual_past": "間に合いった",
-        "casual_negative": "間に合いらない",
-        "casual_past_negative": "間に合いらなかった",
-        "te_form": "間に合いって",
-        "potential": "間に合いえる",
-        "passive": "間に合いられる",
-        "causative": "間に合いせる",
-        "imperative": "間に合いe",
-        "conditional": "間に合いれば",
-        "volitional": "間に合いおう"
       }
     }
   },
@@ -36192,23 +33013,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "鳴きます",
-        "polite_past": "鳴きました",
-        "polite_negative": "鳴きません",
-        "polite_past_negative": "鳴きませんでした",
-        "casual_present": "鳴く",
-        "casual_past": "鳴いた",
-        "casual_negative": "鳴かない",
-        "casual_past_negative": "鳴かなかった",
-        "te_form": "鳴いて",
-        "potential": "鳴える",
-        "passive": "鳴られる",
-        "causative": "鳴せる",
-        "imperative": "鳴e",
-        "conditional": "鳴れば",
-        "volitional": "鳴おう"
       }
     }
   },
@@ -36247,23 +33051,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "眠ります",
-        "polite_past": "眠りました",
-        "polite_negative": "眠りません",
-        "polite_past_negative": "眠りませんでした",
-        "casual_present": "眠る",
-        "casual_past": "眠った",
-        "casual_negative": "眠らない",
-        "casual_past_negative": "眠らなかった",
-        "te_form": "眠って",
-        "potential": "眠える",
-        "passive": "眠られる",
-        "causative": "眠せる",
-        "imperative": "眠e",
-        "conditional": "眠れば",
-        "volitional": "眠おう"
       }
     }
   },
@@ -36302,23 +33089,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "鳴ります",
-        "polite_past": "鳴りました",
-        "polite_negative": "鳴りません",
-        "polite_past_negative": "鳴りませんでした",
-        "casual_present": "鳴る",
-        "casual_past": "鳴った",
-        "casual_negative": "鳴らない",
-        "casual_past_negative": "鳴らなかった",
-        "te_form": "鳴って",
-        "potential": "鳴える",
-        "passive": "鳴られる",
-        "causative": "鳴せる",
-        "imperative": "鳴e",
-        "conditional": "鳴れば",
-        "volitional": "鳴おう"
       }
     }
   },
@@ -36357,23 +33127,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "喜びます",
-        "polite_past": "喜びました",
-        "polite_negative": "喜びません",
-        "polite_past_negative": "喜びませんでした",
-        "casual_present": "喜ぶ",
-        "casual_past": "喜んだ",
-        "casual_negative": "喜ばない",
-        "casual_past_negative": "喜ばなかった",
-        "te_form": "喜んで",
-        "potential": "喜える",
-        "passive": "喜られる",
-        "causative": "喜せる",
-        "imperative": "喜e",
-        "conditional": "喜れば",
-        "volitional": "喜おう"
       }
     }
   },
@@ -36412,23 +33165,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "役立ちます",
-        "polite_past": "役立ちました",
-        "polite_negative": "役立ちません",
-        "polite_past_negative": "役立ちませんでした",
-        "casual_present": "役立つ",
-        "casual_past": "役立った",
-        "casual_negative": "役立たない",
-        "casual_past_negative": "役立たなかった",
-        "te_form": "役立って",
-        "potential": "役立える",
-        "passive": "役立られる",
-        "causative": "役立せる",
-        "imperative": "役立e",
-        "conditional": "役立れば",
-        "volitional": "役立おう"
       }
     }
   },
@@ -36467,23 +33203,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "雇います",
-        "polite_past": "雇いました",
-        "polite_negative": "雇いません",
-        "polite_past_negative": "雇いませんでした",
-        "casual_present": "雇いる",
-        "casual_past": "雇いった",
-        "casual_negative": "雇いらない",
-        "casual_past_negative": "雇いらなかった",
-        "te_form": "雇いって",
-        "potential": "雇いえる",
-        "passive": "雇いられる",
-        "causative": "雇いせる",
-        "imperative": "雇いe",
-        "conditional": "雇いれば",
-        "volitional": "雇いおう"
       }
     }
   },
@@ -36522,23 +33241,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "泣きます",
-        "polite_past": "泣きました",
-        "polite_negative": "泣きません",
-        "polite_past_negative": "泣きませんでした",
-        "casual_present": "泣く",
-        "casual_past": "泣いた",
-        "casual_negative": "泣かない",
-        "casual_past_negative": "泣かなかった",
-        "te_form": "泣いて",
-        "potential": "泣える",
-        "passive": "泣られる",
-        "causative": "泣せる",
-        "imperative": "泣e",
-        "conditional": "泣れば",
-        "volitional": "泣おう"
       }
     }
   },
@@ -36577,23 +33279,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "振ります",
-        "polite_past": "振りました",
-        "polite_negative": "振りません",
-        "polite_past_negative": "振りませんでした",
-        "casual_present": "振る",
-        "casual_past": "振った",
-        "casual_negative": "振らない",
-        "casual_past_negative": "振らなかった",
-        "te_form": "振って",
-        "potential": "振える",
-        "passive": "振られる",
-        "causative": "振せる",
-        "imperative": "振e",
-        "conditional": "振れば",
-        "volitional": "振おう"
       }
     }
   },
@@ -36632,23 +33317,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "見えます",
-        "polite_past": "見えました",
-        "polite_negative": "見えません",
-        "polite_past_negative": "見えませんでした",
-        "casual_present": "見える",
-        "casual_past": "見えた",
-        "casual_negative": "見えない",
-        "casual_past_negative": "見えなかった",
-        "te_form": "見えて",
-        "potential": "見えられる",
-        "passive": "見えられる",
-        "causative": "見えさせる",
-        "imperative": "見えろ",
-        "conditional": "見えれば",
-        "volitional": "見えよう"
       }
     }
   },
@@ -36687,23 +33355,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "聞こえます",
-        "polite_past": "聞こえました",
-        "polite_negative": "聞こえません",
-        "polite_past_negative": "聞こえませんでした",
-        "casual_present": "聞こえる",
-        "casual_past": "聞こえた",
-        "casual_negative": "聞こえない",
-        "casual_past_negative": "聞こえなかった",
-        "te_form": "聞こえて",
-        "potential": "聞こえられる",
-        "passive": "聞こえられる",
-        "causative": "聞こえさせる",
-        "imperative": "聞こえろ",
-        "conditional": "聞こえれば",
-        "volitional": "聞こえよう"
       }
     }
   },
@@ -36742,23 +33393,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "通じます",
-        "polite_past": "通じました",
-        "polite_negative": "通じません",
-        "polite_past_negative": "通じませんでした",
-        "casual_present": "通じる",
-        "casual_past": "通じた",
-        "casual_negative": "通じない",
-        "casual_past_negative": "通じなかった",
-        "te_form": "通じて",
-        "potential": "通じられる",
-        "passive": "通じられる",
-        "causative": "通じさせる",
-        "imperative": "通じろ",
-        "conditional": "通じれば",
-        "volitional": "通じよう"
       }
     }
   },
@@ -36797,23 +33431,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "揚げます",
-        "polite_past": "揚げました",
-        "polite_negative": "揚げません",
-        "polite_past_negative": "揚げませんでした",
-        "casual_present": "揚げる",
-        "casual_past": "揚げた",
-        "casual_negative": "揚げない",
-        "casual_past_negative": "揚げなかった",
-        "te_form": "揚げて",
-        "potential": "揚げられる",
-        "passive": "揚げられる",
-        "causative": "揚げさせる",
-        "imperative": "揚げろ",
-        "conditional": "揚げれば",
-        "volitional": "揚げよう"
       }
     }
   },
@@ -36852,23 +33469,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "慣れます",
-        "polite_past": "慣れました",
-        "polite_negative": "慣れません",
-        "polite_past_negative": "慣れませんでした",
-        "casual_present": "慣れる",
-        "casual_past": "慣れた",
-        "casual_negative": "慣れない",
-        "casual_past_negative": "慣れなかった",
-        "te_form": "慣れて",
-        "potential": "慣れられる",
-        "passive": "慣れられる",
-        "causative": "慣れさせる",
-        "imperative": "慣れろ",
-        "conditional": "慣れれば",
-        "volitional": "慣れよう"
       }
     }
   },
@@ -36907,23 +33507,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "ぬれます",
-        "polite_past": "ぬれました",
-        "polite_negative": "ぬれません",
-        "polite_past_negative": "ぬれませんでした",
-        "casual_present": "ぬれる",
-        "casual_past": "ぬれた",
-        "casual_negative": "ぬれない",
-        "casual_past_negative": "ぬれなかった",
-        "te_form": "ぬれて",
-        "potential": "ぬれられる",
-        "passive": "ぬれられる",
-        "causative": "ぬれさせる",
-        "imperative": "ぬれろ",
-        "conditional": "ぬれれば",
-        "volitional": "ぬれよう"
       }
     }
   },
@@ -36962,23 +33545,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "焼けます",
-        "polite_past": "焼けました",
-        "polite_negative": "焼けません",
-        "polite_past_negative": "焼けませんでした",
-        "casual_present": "焼ける",
-        "casual_past": "焼けた",
-        "casual_negative": "焼けない",
-        "casual_past_negative": "焼けなかった",
-        "te_form": "焼けて",
-        "potential": "焼けられる",
-        "passive": "焼けられる",
-        "causative": "焼けさせる",
-        "imperative": "焼けろ",
-        "conditional": "焼ければ",
-        "volitional": "焼けよう"
       }
     }
   },
@@ -37017,23 +33583,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "下げます",
-        "polite_past": "下げました",
-        "polite_negative": "下げません",
-        "polite_past_negative": "下げませんでした",
-        "casual_present": "下げる",
-        "casual_past": "下げた",
-        "casual_negative": "下げない",
-        "casual_past_negative": "下げなかった",
-        "te_form": "下げて",
-        "potential": "下げられる",
-        "passive": "下げられる",
-        "causative": "下げさせる",
-        "imperative": "下げろ",
-        "conditional": "下げれば",
-        "volitional": "下げよう"
       }
     }
   },
@@ -37457,23 +34006,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "失敗します",
-        "polite_past": "失敗しました",
-        "polite_negative": "失敗しません",
-        "polite_past_negative": "失敗しませんでした",
-        "casual_present": "失敗する",
-        "casual_past": "失敗した",
-        "casual_negative": "失敗しない",
-        "casual_past_negative": "失敗しなかった",
-        "te_form": "失敗して",
-        "potential": "失敗できる",
-        "passive": "失敗される",
-        "causative": "失敗させる",
-        "imperative": "失敗しろ",
-        "conditional": "失敗すれば",
-        "volitional": "失敗しよう"
       }
     }
   },
@@ -37512,23 +34044,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "苦労します",
-        "polite_past": "苦労しました",
-        "polite_negative": "苦労しません",
-        "polite_past_negative": "苦労しませんでした",
-        "casual_present": "苦労する",
-        "casual_past": "苦労した",
-        "casual_negative": "苦労しない",
-        "casual_past_negative": "苦労しなかった",
-        "te_form": "苦労して",
-        "potential": "苦労できる",
-        "passive": "苦労される",
-        "causative": "苦労させる",
-        "imperative": "苦労しろ",
-        "conditional": "苦労すれば",
-        "volitional": "苦労しよう"
       }
     }
   },
@@ -37568,23 +34083,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "びっくりします",
-        "polite_past": "びっくりしました",
-        "polite_negative": "びっくりしません",
-        "polite_past_negative": "びっくりしませんでした",
-        "casual_present": "びっくりする",
-        "casual_past": "びっくりした",
-        "casual_negative": "びっくりしない",
-        "casual_past_negative": "びっくりしなかった",
-        "te_form": "びっくりして",
-        "potential": "びっくりできる",
-        "passive": "びっくりされる",
-        "causative": "びっくりさせる",
-        "imperative": "びっくりしろ",
-        "conditional": "びっくりすれば",
-        "volitional": "びっくりしよう"
       }
     }
   },
@@ -37623,23 +34121,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "出席します",
-        "polite_past": "出席しました",
-        "polite_negative": "出席しません",
-        "polite_past_negative": "出席しませんでした",
-        "casual_present": "出席する",
-        "casual_past": "出席した",
-        "casual_negative": "出席しない",
-        "casual_past_negative": "出席しなかった",
-        "te_form": "出席して",
-        "potential": "出席できる",
-        "passive": "出席される",
-        "causative": "出席させる",
-        "imperative": "出席しろ",
-        "conditional": "出席すれば",
-        "volitional": "出席しよう"
       }
     }
   },
@@ -37979,23 +34460,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "効きます",
-        "polite_past": "効きました",
-        "polite_negative": "効きません",
-        "polite_past_negative": "効きませんでした",
-        "casual_present": "効く",
-        "casual_past": "効いた",
-        "casual_negative": "効かない",
-        "casual_past_negative": "効かなかった",
-        "te_form": "効いて",
-        "potential": "効える",
-        "passive": "効られる",
-        "causative": "効せる",
-        "imperative": "効e",
-        "conditional": "効れば",
-        "volitional": "効おう"
       }
     }
   },
@@ -38034,23 +34498,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "祝います",
-        "polite_past": "祝いました",
-        "polite_negative": "祝いません",
-        "polite_past_negative": "祝いませんでした",
-        "casual_present": "祝いる",
-        "casual_past": "祝いった",
-        "casual_negative": "祝いらない",
-        "casual_past_negative": "祝いらなかった",
-        "te_form": "祝いって",
-        "potential": "祝いえる",
-        "passive": "祝いられる",
-        "causative": "祝いせる",
-        "imperative": "祝いe",
-        "conditional": "祝いれば",
-        "volitional": "祝いおう"
       }
     }
   },
@@ -38089,23 +34536,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "当たります",
-        "polite_past": "当たりました",
-        "polite_negative": "当たりません",
-        "polite_past_negative": "当たりませんでした",
-        "casual_present": "当たる",
-        "casual_past": "当たった",
-        "casual_negative": "当たらない",
-        "casual_past_negative": "当たらなかった",
-        "te_form": "当たって",
-        "potential": "当たえる",
-        "passive": "当たられる",
-        "causative": "当たせる",
-        "imperative": "当たe",
-        "conditional": "当たれば",
-        "volitional": "当たおう"
       }
     }
   },
@@ -38144,23 +34574,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "空きます",
-        "polite_past": "空きました",
-        "polite_negative": "空きません",
-        "polite_past_negative": "空きませんでした",
-        "casual_present": "空く",
-        "casual_past": "空いた",
-        "casual_negative": "空かない",
-        "casual_past_negative": "空かなかった",
-        "te_form": "空いて",
-        "potential": "空える",
-        "passive": "空られる",
-        "causative": "空せる",
-        "imperative": "空e",
-        "conditional": "空れば",
-        "volitional": "空おう"
       }
     }
   },
@@ -38199,23 +34612,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "腐ります",
-        "polite_past": "腐りました",
-        "polite_negative": "腐りません",
-        "polite_past_negative": "腐りませんでした",
-        "casual_present": "腐る",
-        "casual_past": "腐った",
-        "casual_negative": "腐らない",
-        "casual_past_negative": "腐らなかった",
-        "te_form": "腐って",
-        "potential": "腐える",
-        "passive": "腐られる",
-        "causative": "腐せる",
-        "imperative": "腐e",
-        "conditional": "腐れば",
-        "volitional": "腐おう"
       }
     }
   },
@@ -38254,23 +34650,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "見つけます",
-        "polite_past": "見つけました",
-        "polite_negative": "見つけません",
-        "polite_past_negative": "見つけませんでした",
-        "casual_present": "見つける",
-        "casual_past": "見つけた",
-        "casual_negative": "見つけない",
-        "casual_past_negative": "見つけなかった",
-        "te_form": "見つけて",
-        "potential": "見つけられる",
-        "passive": "見つけられる",
-        "causative": "見つけさせる",
-        "imperative": "見つけろ",
-        "conditional": "見つければ",
-        "volitional": "見つけよう"
       }
     }
   },
@@ -38309,23 +34688,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "晴れます",
-        "polite_past": "晴れました",
-        "polite_negative": "晴れません",
-        "polite_past_negative": "晴れませんでした",
-        "casual_present": "晴れる",
-        "casual_past": "晴れた",
-        "casual_negative": "晴れない",
-        "casual_past_negative": "晴れなかった",
-        "te_form": "晴れて",
-        "potential": "晴れられる",
-        "passive": "晴れられる",
-        "causative": "晴れさせる",
-        "imperative": "晴れろ",
-        "conditional": "晴れれば",
-        "volitional": "晴れよう"
       }
     }
   },
@@ -38364,23 +34726,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "訪ねます",
-        "polite_past": "訪ねました",
-        "polite_negative": "訪ねません",
-        "polite_past_negative": "訪ねませんでした",
-        "casual_present": "訪ねる",
-        "casual_past": "訪ねた",
-        "casual_negative": "訪ねない",
-        "casual_past_negative": "訪ねなかった",
-        "te_form": "訪ねて",
-        "potential": "訪ねられる",
-        "passive": "訪ねられる",
-        "causative": "訪ねさせる",
-        "imperative": "訪ねろ",
-        "conditional": "訪ねれば",
-        "volitional": "訪ねよう"
       }
     }
   },
@@ -38419,23 +34764,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "滞在します",
-        "polite_past": "滞在しました",
-        "polite_negative": "滞在しません",
-        "polite_past_negative": "滞在しませんでした",
-        "casual_present": "滞在する",
-        "casual_past": "滞在した",
-        "casual_negative": "滞在しない",
-        "casual_past_negative": "滞在しなかった",
-        "te_form": "滞在して",
-        "potential": "滞在できる",
-        "passive": "滞在される",
-        "causative": "滞在させる",
-        "imperative": "滞在しろ",
-        "conditional": "滞在すれば",
-        "volitional": "滞在しよう"
       }
     }
   },
@@ -38474,23 +34802,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "休憩します",
-        "polite_past": "休憩しました",
-        "polite_negative": "休憩しません",
-        "polite_past_negative": "休憩しませんでした",
-        "casual_present": "休憩する",
-        "casual_past": "休憩した",
-        "casual_negative": "休憩しない",
-        "casual_past_negative": "休憩しなかった",
-        "te_form": "休憩して",
-        "potential": "休憩できる",
-        "passive": "休憩される",
-        "causative": "休憩させる",
-        "imperative": "休憩しろ",
-        "conditional": "休憩すれば",
-        "volitional": "休憩しよう"
       }
     }
   },
@@ -38529,23 +34840,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "参加します",
-        "polite_past": "参加しました",
-        "polite_negative": "参加しません",
-        "polite_past_negative": "参加しませんでした",
-        "casual_present": "参加する",
-        "casual_past": "参加した",
-        "casual_negative": "参加しない",
-        "casual_past_negative": "参加しなかった",
-        "te_form": "参加して",
-        "potential": "参加できる",
-        "passive": "参加される",
-        "causative": "参加させる",
-        "imperative": "参加しろ",
-        "conditional": "参加すれば",
-        "volitional": "参加しよう"
       }
     }
   },
@@ -38584,23 +34878,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "乾杯します",
-        "polite_past": "乾杯しました",
-        "polite_negative": "乾杯しません",
-        "polite_past_negative": "乾杯しませんでした",
-        "casual_present": "乾杯する",
-        "casual_past": "乾杯した",
-        "casual_negative": "乾杯しない",
-        "casual_past_negative": "乾杯しなかった",
-        "te_form": "乾杯して",
-        "potential": "乾杯できる",
-        "passive": "乾杯される",
-        "causative": "乾杯させる",
-        "imperative": "乾杯しろ",
-        "conditional": "乾杯すれば",
-        "volitional": "乾杯しよう"
       }
     }
   },
@@ -40519,23 +36796,6 @@
         "conditional": null,
         "volitional": null,
         "imperative": null
-      },
-      "precomputed": {
-        "polite_present": "中国",
-        "polite_past": "中国しました",
-        "polite_negative": "中国しません",
-        "polite_past_negative": "中国しませんでした",
-        "casual_present": "中国する",
-        "casual_past": "中国した",
-        "casual_negative": "中国しない",
-        "casual_past_negative": "中国しなかった",
-        "te_form": "中国して",
-        "potential": "中国できる",
-        "passive": "中国される",
-        "causative": "中国させる",
-        "imperative": "中国しろ",
-        "conditional": "中国すれば",
-        "volitional": "中国しよう"
       }
     }
   },

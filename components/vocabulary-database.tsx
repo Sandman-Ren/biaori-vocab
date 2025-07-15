@@ -45,6 +45,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
     currentPage: 1,
     pageSize: 50,
     selectedConjugations: ['polite_present', 'polite_past', 'polite_negative', 'casual_present'],
+    conjugationSource: 'precomputed',
   });
 
   const [bookmarkedRows, setBookmarkedRows] = useState<string[]>([]);
@@ -159,6 +160,13 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
     }));
   };
 
+  const handleConjugationSourceChange = (source: import('@/lib/types').ConjugationSource) => {
+    setFilters(prev => ({
+      ...prev,
+      conjugationSource: source
+    }));
+  };
+
   const clearSelection = () => {
     setFilters(prev => ({ ...prev, selectedRows: [] }));
   };
@@ -180,7 +188,8 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
           selectedConjugations: filters.selectedConjugations,
           includeExamples: true,
           includeAnswers: false,
-          simplifiedLayout: simplifiedPDF
+          simplifiedLayout: simplifiedPDF,
+          conjugationSource: filters.conjugationSource
         });
         return;
         
@@ -190,7 +199,8 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
           selectedConjugations: filters.selectedConjugations,
           includeExamples: true,
           includeAnswers: true,
-          simplifiedLayout: simplifiedPDF
+          simplifiedLayout: simplifiedPDF,
+          conjugationSource: filters.conjugationSource
         });
         return;
         
@@ -272,12 +282,14 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                       textSearch={filters.textSearch}
                       searchFields={filters.searchFields}
                       selectedConjugations={filters.selectedConjugations}
+                      conjugationSource={filters.conjugationSource}
                       onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
                       onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
                       onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
                       onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
                       onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
                       onSelectedConjugationsChange={handleSelectedConjugationsChange}
+                      onConjugationSourceChange={handleConjugationSourceChange}
                     />
                   </SheetContent>
                 </Sheet>
@@ -489,12 +501,14 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                     textSearch={filters.textSearch}
                     searchFields={filters.searchFields}
                     selectedConjugations={filters.selectedConjugations}
+                    conjugationSource={filters.conjugationSource}
                     onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
                     onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
                     onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
                     onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
                     onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
                     onSelectedConjugationsChange={handleSelectedConjugationsChange}
+                    onConjugationSourceChange={handleConjugationSourceChange}
                   />
                 </div>
               </div>
@@ -594,6 +608,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               sortColumn={filters.sortColumn}
               sortDirection={filters.sortDirection}
               selectedConjugations={filters.selectedConjugations}
+              conjugationSource={filters.conjugationSource}
               onRowSelect={handleRowSelect}
               onSelectAll={handleSelectAll}
               onSort={handleSort}

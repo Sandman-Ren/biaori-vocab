@@ -1,17 +1,19 @@
 'use client';
 
-import { VocabularyItem, VerbConjugations } from '@/lib/types';
+import { VocabularyItem, VerbConjugations, ConjugationSource, getBestConjugations } from '@/lib/types';
 import { CONJUGATION_FORMS, generateSampleConjugations, getVerbGroup, ConjugationForm } from '@/lib/conjugation-utils';
 import { Badge } from '@/components/ui/badge';
 
 interface VerbConjugationDisplayProps {
   vocabulary: VocabularyItem;
   selectedConjugations: (keyof VerbConjugations)[];
+  conjugationSource?: ConjugationSource;
 }
 
 export default function VerbConjugationDisplay({ 
   vocabulary, 
-  selectedConjugations 
+  selectedConjugations,
+  conjugationSource = 'precomputed' 
 }: VerbConjugationDisplayProps) {
   const verbGroup = getVerbGroup(vocabulary.part_of_speech);
   
@@ -19,8 +21,8 @@ export default function VerbConjugationDisplay({
     return null;
   }
 
-  // Use existing conjugations or generate sample ones
-  const conjugations = vocabulary.conjugations || 
+  // Get conjugations from the selected source, with fallback to generated ones
+  const conjugations = getBestConjugations(vocabulary.conjugations, conjugationSource) || 
     generateSampleConjugations(vocabulary.japanese_word, verbGroup);
   
   const formsToShow = CONJUGATION_FORMS.filter(form => 

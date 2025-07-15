@@ -6,8 +6,9 @@ import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import { BookInfo, LessonInfo, PartOfSpeechInfo, VerbConjugations, ConjugationLevel } from '@/lib/types';
+import { BookInfo, LessonInfo, PartOfSpeechInfo, VerbConjugations, ConjugationLevel, ConjugationSource } from '@/lib/types';
 import { CONJUGATION_FORMS, getConjugationsByLevel, detectCurrentLevel } from '@/lib/conjugation-utils';
 
 interface FilterPanelProps {
@@ -20,12 +21,14 @@ interface FilterPanelProps {
   textSearch: string;
   searchFields: string[];
   selectedConjugations: (keyof VerbConjugations)[];
+  conjugationSource: ConjugationSource;
   onBooksChange: (books: string[]) => void;
   onLessonsChange: (lessons: string[]) => void;
   onPartsOfSpeechChange: (partsOfSpeech: string[]) => void;
   onTextSearchChange: (search: string) => void;
   onSearchFieldsChange: (fields: string[]) => void;
   onSelectedConjugationsChange: (conjugations: (keyof VerbConjugations)[]) => void;
+  onConjugationSourceChange: (source: ConjugationSource) => void;
 }
 
 export default function FilterPanel({
@@ -38,12 +41,14 @@ export default function FilterPanel({
   textSearch,
   searchFields,
   selectedConjugations,
+  conjugationSource,
   onBooksChange,
   onLessonsChange,
   onPartsOfSpeechChange,
   onTextSearchChange,
   onSearchFieldsChange,
   onSelectedConjugationsChange,
+  onConjugationSourceChange,
 }: FilterPanelProps) {
   const [lessonSearch, setLessonSearch] = useState('');
   const [showAllLessons, setShowAllLessons] = useState(false);
@@ -398,6 +403,23 @@ export default function FilterPanel({
         </CollapsibleTrigger>
         <CollapsibleContent className="mt-4">
           <div className="space-y-4">
+            {/* Conjugation Source Selector */}
+            <div className="space-y-2">
+              <Label className="text-xs text-gray-600">变位数据源：</Label>
+              <Select value={conjugationSource} onValueChange={onConjugationSourceChange}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="选择变位数据源" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="precomputed">预计算 (默认)</SelectItem>
+                  <SelectItem value="jmdict">JMDict 词典</SelectItem>
+                </SelectContent>
+              </Select>
+              <p className="text-xs text-gray-500">
+                {conjugationSource === 'precomputed' ? '使用预先计算的动词变位' : '使用 JMDict 词典的实时变位'}
+              </p>
+            </div>
+            
             {/* Preset Buttons */}
             <div className="space-y-2">
               <Label className="text-xs text-gray-600">快速预设：</Label>

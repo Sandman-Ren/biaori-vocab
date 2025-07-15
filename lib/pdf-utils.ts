@@ -1,4 +1,4 @@
-import { VocabularyItem, VerbConjugations } from '@/lib/types';
+import { VocabularyItem, VerbConjugations, ConjugationSource, getBestConjugations } from '@/lib/types';
 import { generateSampleConjugations } from '@/lib/conjugation-utils';
 
 interface PDFGenerationOptions {
@@ -7,6 +7,7 @@ interface PDFGenerationOptions {
   includeExamples?: boolean;
   includeAnswers?: boolean;
   simplifiedLayout?: boolean; // New option for stripped-down formatting
+  conjugationSource?: ConjugationSource;
 }
 
 // Conjugation form labels in Chinese
@@ -48,15 +49,20 @@ const CONJUGATION_LEVELS: Record<keyof VerbConjugations, string> = {
 };
 
 export function generateVerbConjugationPDF(options: PDFGenerationOptions): void {
-  const { selectedVocabulary, selectedConjugations, includeExamples = true, includeAnswers = true, simplifiedLayout = false } = options;
+  const { selectedVocabulary, selectedConjugations, includeExamples = true, includeAnswers = true, simplifiedLayout = false, conjugationSource = 'precomputed' } = options;
   
   // Filter verbs and generate conjugations if needed
   const verbsWithConjugations: (VocabularyItem & { conjugations: VerbConjugations })[] = selectedVocabulary
     .filter(item => item.part_of_speech.includes('动'))
     .map(verb => {
-      // If verb already has conjugations, use them; otherwise generate them
-      if (verb.conjugations) {
-        return verb as VocabularyItem & { conjugations: VerbConjugations };
+      // Get conjugations from the selected source, with fallback to generated ones
+      const existingConjugations = getBestConjugations(verb.conjugations, conjugationSource);
+      
+      if (existingConjugations) {
+        return {
+          ...verb,
+          conjugations: existingConjugations
+        } as VocabularyItem & { conjugations: VerbConjugations };
       } else {
         // Extract verb group from part_of_speech (动1, 动2, 动3)
         const verbGroup = verb.part_of_speech.includes('动1') ? '1' : 

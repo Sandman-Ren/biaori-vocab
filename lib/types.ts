@@ -13,7 +13,7 @@ export interface VocabularyItem {
   example_sentences: string[];
   page_url: string;
   scraped_at: string;
-  conjugations?: VerbConjugations;
+  conjugations?: ConjugationSourceMap;
 }
 
 export interface VerbConjugations {
@@ -46,6 +46,7 @@ export interface FilterState {
   currentPage: number;
   pageSize: number;
   selectedConjugations: (keyof VerbConjugations)[];
+  conjugationSource: ConjugationSource;
 }
 
 export type ConjugationLevel = 'beginner' | 'intermediate' | 'advanced' | 'complete' | 'custom';
@@ -65,4 +66,36 @@ export interface LessonInfo {
 export interface PartOfSpeechInfo {
   name: string;
   count: number;
+}
+
+// Conjugation source types
+export type ConjugationSource = 'precomputed' | 'jmdict';
+
+export interface ConjugationSourceMap {
+  precomputed?: VerbConjugations;
+  jmdict?: VerbConjugations;
+}
+
+// Utility function to get conjugations from a specific source
+export function getConjugationsFromSource(
+  conjugationMap: ConjugationSourceMap | undefined,
+  source: ConjugationSource
+): VerbConjugations | undefined {
+  return conjugationMap?.[source];
+}
+
+// Utility function to get the best available conjugations (with fallback)
+export function getBestConjugations(
+  conjugationMap: ConjugationSourceMap | undefined,
+  preferredSource: ConjugationSource = 'precomputed'
+): VerbConjugations | undefined {
+  if (!conjugationMap) return undefined;
+  
+  // Try preferred source first
+  if (conjugationMap[preferredSource]) {
+    return conjugationMap[preferredSource];
+  }
+  
+  // Fallback to precomputed first, then jmdict
+  return conjugationMap.precomputed || conjugationMap.jmdict;
 }

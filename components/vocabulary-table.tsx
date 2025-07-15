@@ -14,7 +14,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ChevronUp, ChevronDown, Star, ChevronRight } from 'lucide-react';
-import { VocabularyItem, VerbConjugations } from '@/lib/types';
+import { VocabularyItem, VerbConjugations, ConjugationSource } from '@/lib/types';
 import { getPartOfSpeechColor } from '@/lib/vocabulary-utils';
 import { isVerb } from '@/lib/conjugation-utils';
 import VerbConjugationDisplay from './verb-conjugation-display';
@@ -25,6 +25,7 @@ interface VocabularyTableProps {
   sortColumn: string;
   sortDirection: 'asc' | 'desc';
   selectedConjugations: (keyof VerbConjugations)[];
+  conjugationSource: ConjugationSource;
   onRowSelect: (rowId: string, selected: boolean) => void;
   onSelectAll: (selected: boolean) => void;
   onSort: (column: string) => void;
@@ -39,6 +40,7 @@ export default function VocabularyTable({
   sortColumn,
   sortDirection,
   selectedConjugations,
+  conjugationSource,
   onRowSelect,
   onSelectAll,
   onSort,
@@ -257,6 +259,7 @@ export default function VocabularyTable({
                         <VerbConjugationDisplay 
                           vocabulary={item} 
                           selectedConjugations={selectedConjugations}
+                          conjugationSource={conjugationSource}
                         />
                       </motion.div>
                     </motion.div>
@@ -466,6 +469,7 @@ export default function VocabularyTable({
                             <VerbConjugationDisplay 
                               vocabulary={item} 
                               selectedConjugations={selectedConjugations}
+                              conjugationSource={conjugationSource}
                             />
                           </motion.div>
                         </TableCell>
