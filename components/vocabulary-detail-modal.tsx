@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { X, Star, Copy, Volume2, BookOpen, Tag, Clock } from 'lucide-react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
@@ -92,35 +92,15 @@ export default function VocabularyDetailModal({
     }
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-    } else {
-      window.removeEventListener('keydown', handleKeyDown);
-    }
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isOpen, onClose]);
-
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-6 sm:p-8 bg-black/50 backdrop-blur-sm"
-          onClick={handleBackdropClick}
-        >
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-6 sm:p-8 bg-black/50 backdrop-blur-sm"
+      onClick={handleBackdropClick}
+    >
           <motion.div
             ref={modalRef}
             tabIndex={-1}
@@ -409,7 +389,5 @@ export default function VocabularyDetailModal({
             </div>
           </motion.div>
         </motion.div>
-      )}
-    </AnimatePresence>
   );
 }

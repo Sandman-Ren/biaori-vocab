@@ -507,15 +507,18 @@ export default function VocabularyTable({
       )}
 
       {/* Vocabulary Detail Modal - Always rendered, controlled by state */}
-      {selectedVocabulary && (
-        <VocabularyDetailModal 
-          isOpen={isModalOpen} 
-          onClose={handleCloseModal}
-          vocabulary={selectedVocabulary}
-          isBookmarked={bookmarkedRows.includes(selectedVocabulary._id)}
-          onBookmark={onBookmark}
-        />
-      )}
+      <AnimatePresence mode="wait">
+        {isModalOpen && selectedVocabulary && (
+          <VocabularyDetailModal 
+            key={selectedVocabulary._id}
+            isOpen={isModalOpen} 
+            onClose={handleCloseModal}
+            vocabulary={selectedVocabulary}
+            isBookmarked={bookmarkedRows.includes(selectedVocabulary._id)}
+            onBookmark={onBookmark}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
