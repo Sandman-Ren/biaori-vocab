@@ -18,6 +18,7 @@ import { VocabularyItem, VerbConjugations, ConjugationSource } from '@/lib/types
 import { getPartOfSpeechColor } from '@/lib/vocabulary-utils';
 import { isVerb } from '@/lib/conjugation-utils';
 import VerbConjugationDisplay from './verb-conjugation-display';
+import VocabularyDetailModal from './vocabulary-detail-modal';
 
 interface VocabularyTableProps {
   vocabulary: VocabularyItem[];
@@ -50,6 +51,8 @@ export default function VocabularyTable({
 }: VocabularyTableProps) {
   const [hoveredRow, setHoveredRow] = useState<string | null>(null);
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
+  const [selectedVocabulary, setSelectedVocabulary] = useState<VocabularyItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const allSelected = vocabulary.length > 0 && 
     vocabulary.every(item => selectedRows.includes(getRowId(item)));
@@ -68,6 +71,17 @@ export default function VocabularyTable({
     const rowId = getRowId(item);
     const isSelected = selectedRows.includes(rowId);
     onRowSelect(rowId, !isSelected);
+  };
+
+  const handleViewDetails = (item: VocabularyItem, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedVocabulary(item);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedVocabulary(null);
   };
 
   const toggleRowExpansion = (item: VocabularyItem, e: React.MouseEvent) => {
@@ -189,6 +203,14 @@ export default function VocabularyTable({
                           </Button>
                         </motion.div>
                       )}
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={(e) => handleViewDetails(item, e)}
+                        className="px-2 text-gray-600 hover:text-gray-900 text-xs"
+                      >
+                        查看
+                      </Button>
                       <Button
                         variant="ghost"
                         size="sm"
@@ -418,6 +440,7 @@ export default function VocabularyTable({
                         <Button
                           variant="ghost"
                           size="sm"
+                          onClick={(e) => handleViewDetails(item, e)}
                           className="text-gray-600 hover:text-gray-900 px-2"
                         >
                           查看
@@ -481,6 +504,17 @@ export default function VocabularyTable({
             })}
           </TableBody>
         </Table>
+      )}
+
+      {/* Vocabulary Detail Modal - Always rendered, controlled by state */}
+      {selectedVocabulary && (
+        <VocabularyDetailModal 
+          isOpen={isModalOpen} 
+          onClose={handleCloseModal}
+          vocabulary={selectedVocabulary}
+          isBookmarked={bookmarkedRows.includes(selectedVocabulary._id)}
+          onBookmark={onBookmark}
+        />
       )}
     </div>
   );

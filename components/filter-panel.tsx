@@ -30,6 +30,7 @@ interface FilterPanelProps {
     partsOfSpeech: boolean;
     conjugations: boolean;
   };
+  animationsEnabled?: boolean;
   onBooksChange: (books: string[]) => void;
   onLessonsChange: (lessons: string[]) => void;
   onPartsOfSpeechChange: (partsOfSpeech: string[]) => void;
@@ -58,6 +59,7 @@ export default function FilterPanel({
   selectedConjugations,
   conjugationSource,
   expandedSections,
+  animationsEnabled = true,
   onBooksChange,
   onLessonsChange,
   onPartsOfSpeechChange,
@@ -214,7 +216,7 @@ export default function FilterPanel({
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.search ? 0 : -90 }}
-            transition={{ duration: 0.2 }}
+            transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
             <ChevronDown className="w-4 h-4 text-gray-500" />
           </motion.div>
@@ -223,10 +225,10 @@ export default function FilterPanel({
           <AnimatePresence>
             {safeExpandedSections.search && (
               <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
+                initial={animationsEnabled ? { height: 0, opacity: 0 } : false}
+                animate={animationsEnabled ? { height: 'auto', opacity: 1 } : { height: 'auto', opacity: 1 }}
+                exit={animationsEnabled ? { height: 0, opacity: 0 } : { height: 'auto', opacity: 1 }}
+                transition={animationsEnabled ? { duration: 0.3, ease: 'easeOut' } : { duration: 0 }}
                 className="overflow-hidden"
               >
                 <div className="mt-4">
@@ -306,7 +308,7 @@ export default function FilterPanel({
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.books ? 0 : -90 }}
-            transition={{ duration: 0.2 }}
+            transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
             <ChevronDown className="w-4 h-4 text-gray-500" />
           </motion.div>
@@ -315,10 +317,10 @@ export default function FilterPanel({
           <AnimatePresence>
             {safeExpandedSections.books && (
               <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
+                initial={animationsEnabled ? { height: 0, opacity: 0 } : false}
+                animate={animationsEnabled ? { height: 'auto', opacity: 1 } : { height: 'auto', opacity: 1 }}
+                exit={animationsEnabled ? { height: 0, opacity: 0 } : { height: 'auto', opacity: 1 }}
+                transition={animationsEnabled ? { duration: 0.3, ease: 'easeOut' } : { duration: 0 }}
                 className="overflow-hidden"
               >
                 <div className="mt-4 space-y-3">
@@ -381,7 +383,7 @@ export default function FilterPanel({
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.lessons ? 0 : -90 }}
-            transition={{ duration: 0.2 }}
+            transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
             <ChevronDown className="w-4 h-4 text-gray-500" />
           </motion.div>
@@ -390,10 +392,10 @@ export default function FilterPanel({
           <AnimatePresence>
             {safeExpandedSections.lessons && (
               <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
+                initial={animationsEnabled ? { height: 0, opacity: 0 } : false}
+                animate={animationsEnabled ? { height: 'auto', opacity: 1 } : { height: 'auto', opacity: 1 }}
+                exit={animationsEnabled ? { height: 0, opacity: 0 } : { height: 'auto', opacity: 1 }}
+                transition={animationsEnabled ? { duration: 0.3, ease: 'easeOut' } : { duration: 0 }}
                 className="overflow-hidden"
               >
                 <div className="mt-4">
@@ -474,7 +476,7 @@ export default function FilterPanel({
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.partsOfSpeech ? 0 : -90 }}
-            transition={{ duration: 0.2 }}
+            transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
             <ChevronDown className="w-4 h-4 text-gray-500" />
           </motion.div>
@@ -483,10 +485,10 @@ export default function FilterPanel({
           <AnimatePresence>
             {safeExpandedSections.partsOfSpeech && (
               <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
+                initial={animationsEnabled ? { height: 0, opacity: 0 } : false}
+                animate={animationsEnabled ? { height: 'auto', opacity: 1 } : { height: 'auto', opacity: 1 }}
+                exit={animationsEnabled ? { height: 0, opacity: 0 } : { height: 'auto', opacity: 1 }}
+                transition={animationsEnabled ? { duration: 0.3, ease: 'easeOut' } : { duration: 0 }}
                 className="overflow-hidden"
               >
                 <div className="mt-4 space-y-3">
@@ -549,7 +551,7 @@ export default function FilterPanel({
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.conjugations ? 0 : -90 }}
-            transition={{ duration: 0.2 }}
+            transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
             <ChevronDown className="w-4 h-4 text-gray-500" />
           </motion.div>
@@ -558,10 +560,10 @@ export default function FilterPanel({
           <AnimatePresence>
             {safeExpandedSections.conjugations && (
               <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
+                initial={animationsEnabled ? { height: 0, opacity: 0 } : false}
+                animate={animationsEnabled ? { height: 'auto', opacity: 1 } : { height: 'auto', opacity: 1 }}
+                exit={animationsEnabled ? { height: 0, opacity: 0 } : { height: 'auto', opacity: 1 }}
+                transition={animationsEnabled ? { duration: 0.3, ease: 'easeOut' } : { duration: 0 }}
                 className="overflow-hidden"
               >
                 <div className="mt-4 space-y-4">

@@ -58,6 +58,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
     partsOfSpeech: true,
     conjugations: true,
   });
+  const [sectionAnimationsEnabled, setSectionAnimationsEnabled] = useState(true);
   const [exportFormat, setExportFormat] = useState<'csv' | 'xlsx' | 'json' | 'pdf-practice' | 'pdf-answers'>('csv');
   const [simplifiedPDF, setSimplifiedPDF] = useState(false);
   const [isMobileFABExpanded, setIsMobileFABExpanded] = useState(false);
@@ -113,6 +114,21 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
   useEffect(() => {
     setFilters(prev => ({ ...prev, currentPage: 1 }));
   }, [filters.books, filters.lessons, filters.partsOfSpeech, filters.textSearch, filters.searchFields]);
+
+  // Helper functions to control filter panel collapse/expand with animation control
+  const handleFilterPanelExpand = () => {
+    setSectionAnimationsEnabled(false);
+    setIsFilterPanelCollapsed(false);
+    // Re-enable animations after the panel transition completes
+    setTimeout(() => setSectionAnimationsEnabled(true), 300);
+  };
+
+  const handleFilterPanelCollapse = () => {
+    setSectionAnimationsEnabled(false);
+    setIsFilterPanelCollapsed(true);
+    // Re-enable animations after the panel transition completes
+    setTimeout(() => setSectionAnimationsEnabled(true), 300);
+  };
 
   const handleRowSelect = (rowId: string, selected: boolean) => {
     if (selected) {
@@ -291,6 +307,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                       selectedConjugations={filters.selectedConjugations}
                       conjugationSource={filters.conjugationSource}
                       expandedSections={expandedSections}
+                      animationsEnabled={sectionAnimationsEnabled}
                       onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
                       onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
                       onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
@@ -493,7 +510,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
             {isFilterPanelCollapsed ? (
               <div className="bg-gray-50 h-full flex flex-col items-center justify-start">
                 <motion.button
-                  onClick={() => setIsFilterPanelCollapsed(false)}
+                  onClick={handleFilterPanelExpand}
                   className="text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 rounded mt-4 mb-2 transition-colors duration-200"
                   title="显示筛选"
                   whileHover={{ scale: 1.05 }}
@@ -517,7 +534,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 <div className="flex items-center justify-between p-4 border-b border-gray-100">
                   <h2 className="text-sm font-medium text-gray-900">筛选</h2>
                   <motion.button
-                    onClick={() => setIsFilterPanelCollapsed(true)}
+                    onClick={handleFilterPanelCollapse}
                     className="text-gray-500 hover:text-gray-700 p-1 rounded transition-colors duration-200"
                     title="隐藏筛选"
                     whileHover={{ scale: 1.05 }}
@@ -542,6 +559,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                     selectedConjugations={filters.selectedConjugations}
                     conjugationSource={filters.conjugationSource}
                     expandedSections={expandedSections}
+                    animationsEnabled={sectionAnimationsEnabled}
                     onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
                     onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
                     onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}

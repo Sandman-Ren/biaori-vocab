@@ -179,3 +179,163 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Japanese text styling for better readability */
+.japanese-text {
+  font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", "Takao", "IPAexGothic", "IPAPGothic", "VL PGothic", "Noto Sans CJK JP", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  line-height: 1.4;
+}
+
+/* Modal and overlay fixes for mobile */
+.modal-overlay {
+  /* Use dynamic viewport height for better mobile support */
+  height: 100dvh;
+  min-height: 100vh;
+  /* Fixed positioning - no scrolling of modal container */
+  position: fixed;
+  /* Adequate padding to prevent rounded corner clipping */
+  padding: 1.5rem;
+}
+
+.modal-content {
+  /* Conservative height calculation to ensure rounded corners are visible */
+  max-height: calc(100vh - 3rem);
+  max-height: calc(100dvh - 3rem);
+  /* Ensure modal stays centered and fixed */
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .modal-overlay {
+    /* More generous padding on desktop */
+    padding: 2rem;
+  }
+  
+  .modal-content {
+    /* More conservative height on desktop for better appearance */
+    max-height: calc(100vh - 4rem);
+    max-height: calc(100dvh - 4rem);
+  }
+}
+
+/* Remove problematic spacing classes that caused scrolling */
+.modal-safe-spacing {
+  /* Remove previous margin settings that caused issues */
+  margin: 0 auto;
+}
+
+/* Ensure modal is never clipped - simplified approach */
+@media (max-height: 600px) {
+  .modal-overlay {
+    padding: 1rem;
+  }
+  
+  .modal-content {
+    /* On very short screens, use minimal padding but ensure corners visible */
+    max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
+  }
+}
+
+/* Better scrolling behavior in modals */
+.modal-scroll {
+  /* Enable smooth scrolling */
+  scroll-behavior: smooth;
+  /* Hide scrollbar on mobile for cleaner look but keep functionality */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure modal content is never clipped */
+.modal-safe-area {
+  /* Add extra padding on very small screens */
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
+/* Modal footer button alignment - updated for block-level padding */
+.modal-footer {
+  /* Ensure buttons are vertically centered in footer space */
+  align-items: center;
+  /* Remove justify-content: center to allow proper layout flow */
+}
+
+.modal-footer .modal-actions {
+  /* Consistent spacing for action buttons */
+  gap: 0.75rem;
+  /* Ensure action buttons are vertically centered */
+  align-items: center;
+}
+
+.modal-footer button {
+  /* Ensure consistent button sizing and centering */
+  min-height: 2.5rem;
+  transition: all 0.2s ease;
+  /* Center content within buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .modal-footer .modal-actions {
+    /* Better spacing on desktop */
+    gap: 1rem;
+  }
+  
+  .modal-footer button {
+    /* Slightly larger buttons on desktop */
+    min-height: 2.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Mobile button centering - enhanced for block padding */
+@media (max-width: 639px) {
+  .modal-footer > div {
+    /* Ensure proper centering with block padding */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Ensure modal rounded corners are always visible */
+.modal-rounded {
+  border-radius: 0.75rem; /* 12px - equivalent to rounded-xl */
+  /* Add a small inset shadow to emphasize the rounded corners */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  /* Ensure the border radius is preserved */
+  overflow: hidden;
+}
+
+/* Prevent modal from touching viewport edges */
+.modal-safe-spacing {
+  margin: clamp(0.5rem, 2vh, 1.5rem) auto;
+}
+
+@media (max-height: 500px) {
+  .modal-safe-spacing {
+    /* On very small screens, minimal spacing */
+    margin: 0.25rem auto;
+  }
+}
