@@ -69,6 +69,14 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
     setIsClient(true);
   }, []);
 
+  // Reset filter panel state when switching between mobile/desktop
+  useEffect(() => {
+    if (isMobile) {
+      // When switching to mobile, ensure the desktop filter panel state doesn't interfere
+      setIsFilterPanelCollapsed(false);
+    }
+  }, [isMobile]);
+
   // Load bookmarks from localStorage only on client-side
   useEffect(() => {
     if (!isClient) return;
@@ -710,44 +718,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
         )}
       </div>
 
-      {/* Mobile Filter Panel - Sheet Component */}
-      {isMobile && (
-        <Sheet open={isFilterPanelCollapsed} onOpenChange={setIsFilterPanelCollapsed}>
-          <SheetContent className="p-4 sm:p-6">
-            <SheetHeader>
-              <SheetTitle className="text-lg font-semibold text-foreground">
-                筛选
-              </SheetTitle>
-            </SheetHeader>
-            
-            {/* Filter Panel Content */}
-            <div className="mt-4">
-              <FilterPanel
-                books={bookInfo}
-                lessons={lessonInfo}
-                partsOfSpeech={partOfSpeechInfo}
-                selectedBooks={filters.books}
-                selectedLessons={filters.lessons}
-                selectedPartsOfSpeech={filters.partsOfSpeech}
-                textSearch={filters.textSearch}
-                searchFields={filters.searchFields}
-                selectedConjugations={filters.selectedConjugations}
-                conjugationSource={filters.conjugationSource}
-                expandedSections={expandedSections}
-                animationsEnabled={sectionAnimationsEnabled}
-                onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
-                onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
-                onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
-                onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
-                onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
-                onSelectedConjugationsChange={handleSelectedConjugationsChange}
-                onConjugationSourceChange={handleConjugationSourceChange}
-                onExpandedSectionsChange={setExpandedSections}
-              />
-            </div>
-          </SheetContent>
-        </Sheet>
-      )}
+
     </div>
   );
 }
