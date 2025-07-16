@@ -47,8 +47,8 @@ export default function Pagination({
   const canGoNext = currentPage < totalPages;
 
   return (
-    <div className={`flex items-center justify-between px-4 sm:px-6 py-4 border-t border-gray-100 ${isMobile ? 'flex-col space-y-4' : ''}`}>
-      <div className="text-sm text-gray-500 order-2 sm:order-1">
+    <div className={`flex items-center justify-between px-4 sm:px-6 py-4 border-t border-border ${isMobile ? 'flex-col space-y-4' : ''}`}>
+      <div className="text-sm text-muted-foreground order-2 sm:order-1">
         {totalItems > 0 ? (
           <>
             {isMobile ? (
@@ -64,7 +64,7 @@ export default function Pagination({
 
       <div className={`flex items-center space-x-4 order-1 sm:order-2 ${isMobile ? 'w-full justify-between' : ''}`}>
         {/* Page size selector */}
-        <div className="flex items-center space-x-2 text-sm text-gray-500">
+        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
           <span className={isMobile ? 'hidden' : ''}>每页：</span>
           <Select value={pageSize.toString()} onValueChange={(value) => onPageSizeChange(parseInt(value))}>
             <SelectTrigger className="w-20 h-8">
@@ -94,7 +94,7 @@ export default function Pagination({
 
             <div className="flex items-center space-x-1 text-sm">
               {isMobile ? (
-                <span className="text-gray-600 min-w-[4rem] text-center">
+                <span className="text-foreground min-w-[4rem] text-center">
                   {currentPage} / {totalPages}
                 </span>
               ) : (
@@ -108,7 +108,7 @@ export default function Pagination({
                     min={1}
                     max={totalPages}
                   />
-                  <span className="text-gray-400">共 {totalPages} 页</span>
+                  <span className="text-muted-foreground">共 {totalPages} 页</span>
                 </>
               )}
             </div>

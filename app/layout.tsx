@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,11 +37,6 @@ export const metadata: Metadata = {
   applicationName: "中日交流标准日本语 词汇学习系统",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
-  colorScheme: "light",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" }
-  ],
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -118,7 +114,7 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#000000" }
   ],
-  colorScheme: "light"
+  colorScheme: "light dark"
 };
 
 export default function RootLayout({
@@ -213,7 +209,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="zh-CN" className="h-full">
+    <html lang="zh-CN" className="h-full" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -224,9 +220,26 @@ export default function RootLayout({
       </head>
       <body
         className={`${inter.variable} font-sans antialiased h-full overflow-hidden`}
+        suppressHydrationWarning
       >
-        {children}
-        <Toaster />
+        {/* Skip to content link for accessibility */}
+        <a
+          href="#main-content"
+          className="skip-to-content"
+        >
+          跳转到主要内容
+        </a>
+        
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange={true}
+          storageKey="biaori-vocab-theme"
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

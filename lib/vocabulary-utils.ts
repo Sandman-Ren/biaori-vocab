@@ -109,13 +109,18 @@ export function getBookName(bookId: string): string {
 
 export function getPartOfSpeechColor(partOfSpeech: string): string {
   const colorMap: Record<string, string> = {
-    '名词': 'bg-slate-50 text-slate-700 border-slate-200',
-    '动词': 'bg-gray-50 text-gray-700 border-gray-200',
-    '形容词': 'bg-zinc-50 text-zinc-700 border-zinc-200',
-    '惯用语': 'bg-neutral-50 text-neutral-700 border-neutral-200',
-    '副词': 'bg-stone-50 text-stone-700 border-stone-200',
+    '名词': 'bg-slate-100 text-slate-800 border-slate-300 dark:bg-slate-900/50 dark:text-slate-200 dark:border-slate-700',
+    '动词': 'bg-blue-100 text-blue-800 border-blue-300 dark:bg-blue-900/50 dark:text-blue-200 dark:border-blue-700',
+    '形容词': 'bg-green-100 text-green-800 border-green-300 dark:bg-green-900/50 dark:text-green-200 dark:border-green-700',
+    '惯用语': 'bg-purple-100 text-purple-800 border-purple-300 dark:bg-purple-900/50 dark:text-purple-200 dark:border-purple-700',
+    '副词': 'bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900/50 dark:text-orange-200 dark:border-orange-700',
+    '动1': 'bg-blue-100 text-blue-800 border-blue-300 dark:bg-blue-900/50 dark:text-blue-200 dark:border-blue-700',
+    '动2': 'bg-cyan-100 text-cyan-800 border-cyan-300 dark:bg-cyan-900/50 dark:text-cyan-200 dark:border-cyan-700',
+    '动3': 'bg-indigo-100 text-indigo-800 border-indigo-300 dark:bg-indigo-900/50 dark:text-indigo-200 dark:border-indigo-700',
+    'い形': 'bg-emerald-100 text-emerald-800 border-emerald-300 dark:bg-emerald-900/50 dark:text-emerald-200 dark:border-emerald-700',
+    'な形': 'bg-teal-100 text-teal-800 border-teal-300 dark:bg-teal-900/50 dark:text-teal-200 dark:border-teal-700',
   };
-  return colorMap[partOfSpeech] || 'bg-gray-50 text-gray-700 border-gray-200';
+  return colorMap[partOfSpeech] || 'bg-muted text-muted-foreground border-border';
 }
 
 export function filterVocabulary(

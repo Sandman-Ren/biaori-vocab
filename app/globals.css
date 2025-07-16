@@ -115,10 +115,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+  
+  html {
+    transition: color-scheme 0.3s ease;
+  }
+  
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   /* Vertical writing mode for collapsed filter handle */
@@ -186,6 +192,13 @@
   font-weight: 500;
   letter-spacing: 0.025em;
   line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+/* Dark mode adjustments for Japanese text */
+.dark .japanese-text {
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
 /* Modal and overlay fixes for mobile */
@@ -337,5 +350,326 @@
   .modal-safe-spacing {
     /* On very small screens, minimal spacing */
     margin: 0.25rem auto;
+  }
+}
+
+/* Enhanced Accessibility & Focus Indicators */
+
+/* High contrast focus rings for better accessibility */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring)) !important;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Enhanced focus for interactive elements */
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px hsla(var(--ring), 0.15);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Skip to content link for screen readers */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 6px;
+}
+
+/* Enhanced keyboard navigation indicators */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Ensure interactive elements have proper focus */
+.interactive-focus:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  background-color: hsla(var(--accent), 0.1);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --foreground: oklch(0 0 0);
+    --background: oklch(1 0 0);
+    --border: oklch(0.3 0 0);
+    --ring: oklch(0.2 0 0);
+  }
+  
+  .dark {
+    --foreground: oklch(1 0 0);
+    --background: oklch(0 0 0);
+    --border: oklch(0.7 0 0);
+    --ring: oklch(0.8 0 0);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Screen reader only content that becomes visible on focus */
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Enhanced Theme Transitions & Animations */
+
+/* Only apply transitions after hydration to prevent hydration mismatches */
+.hydrated * {
+  transition: 
+    background-color 200ms ease-in-out,
+    border-color 200ms ease-in-out,
+    color 200ms ease-in-out,
+    box-shadow 200ms ease-in-out,
+    opacity 200ms ease-in-out;
+}
+
+/* Preserve user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hydrated * {
+    transition: none !important;
+  }
+}
+
+/* Enhanced hover animations */
+.hover-lift {
+  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px hsla(var(--foreground), 0.15);
+}
+
+/* Table row hover enhancement */
+.table-row-hover {
+  transition: all 200ms ease-in-out;
+  position: relative;
+}
+
+.table-row-hover:hover {
+  background-color: hsla(var(--accent), 0.5);
+  transform: scale(1.002);
+}
+
+/* Button press animation */
+.button-press {
+  transition: transform 100ms ease-in-out;
+}
+
+.button-press:active {
+  transform: scale(0.98);
+}
+
+/* Modal entrance animations */
+.modal-backdrop {
+  animation: fadeIn 200ms ease-out;
+}
+
+.modal-content {
+  animation: slideInScale 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Theme toggle icon animations */
+.theme-icon {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-icon.rotating {
+  transform: rotate(180deg);
+}
+
+/* Loading state animations */
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsla(var(--muted), 0.3) 0%,
+    hsla(var(--muted), 0.5) 50%,
+    hsla(var(--muted), 0.3) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Enhanced card animations */
+.card-hover {
+  transition: all 200ms ease-in-out;
+}
+
+.card-hover:hover {
+  box-shadow: 0 12px 24px hsla(var(--foreground), 0.1);
+  border-color: hsla(var(--border), 0.8);
+}
+
+/* Badge animations */
+.badge-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Filter panel animations */
+.filter-slide {
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-slide.collapsed {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.filter-slide.expanded {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Search highlight animation */
+.search-highlight {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsla(var(--accent), 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: highlightSweep 0.6s ease-out;
+}
+
+@keyframes highlightSweep {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Theme transition utilities */
+.theme-transition {
+  transition: 
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    fill 0.2s ease-in-out,
+    stroke 0.2s ease-in-out;
+}
+
+/* Theme-aware component classes */
+.theme-bg-card {
+  background-color: hsl(var(--card));
+}
+
+.theme-text-foreground {
+  color: hsl(var(--foreground));
+}
+
+.theme-text-muted {
+  color: hsl(var(--muted-foreground));
+}
+
+.theme-border {
+  border-color: hsl(var(--border));
+}
+
+/* Accessible focus indicators that work in both themes */
+.focus-ring {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-transition {
+    transition-duration: 0.2s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition {
+    transition: none;
   }
 }

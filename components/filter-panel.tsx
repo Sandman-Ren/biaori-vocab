@@ -188,17 +188,17 @@ export default function FilterPanel({
     selectedPartsOfSpeech.length > 0 || textSearch.length > 0;
 
   return (
-    <div className="w-full px-6 py-6 bg-white force-pointer-events">
+    <div className="w-full px-6 py-6 bg-card text-card-foreground force-pointer-events">
       {/* Header - Mobile only */}
-      <div className="lg:hidden mb-6 pb-4 border-b border-gray-100">
+      <div className="lg:hidden mb-6 pb-4 border-b border-border">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-medium text-gray-900">筛选</h2>
+          <h2 className="text-lg font-medium text-foreground">筛选</h2>
           {hasActiveFilters && (
             <button
               onClick={clearAllFilters}
-              className="text-sm text-blue-600 hover:text-blue-700"
+              className="text-sm text-muted-foreground hover:text-foreground underline"
             >
-              清除全部
+              清除所有
             </button>
           )}
         </div>
@@ -211,14 +211,14 @@ export default function FilterPanel({
         className="mb-6"
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-          <Label className="text-sm font-medium text-gray-900">
+          <Label className="text-sm font-medium text-foreground">
             搜索 {textSearch && '(生效中)'}
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.search ? 0 : -90 }}
             transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
-            <ChevronDown className="w-4 h-4 text-gray-500" />
+            <ChevronDown className="w-4 h-4 text-muted-foreground" />
           </motion.div>
         </CollapsibleTrigger>
         <CollapsibleContent forceMount>
@@ -239,8 +239,8 @@ export default function FilterPanel({
                     onChange={(e) => onTextSearchChange(e.target.value)}
                     className="mb-4 text-sm"
                   />
-                  <details className="text-sm text-gray-500">
-                    <summary className="cursor-pointer hover:text-gray-700 mb-2">
+                  <details className="text-sm text-muted-foreground">
+                    <summary className="cursor-pointer hover:text-foreground mb-2">
                       搜索选项
                     </summary>
                     
@@ -303,14 +303,14 @@ export default function FilterPanel({
         className="mb-6"
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-          <Label className="text-sm font-medium text-gray-900">
+          <Label className="text-sm font-medium text-foreground">
             教材 {selectedBooks.length > 0 && `(${selectedBooks.length})`}
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.books ? 0 : -90 }}
             transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
-            <ChevronDown className="w-4 h-4 text-gray-500" />
+            <ChevronDown className="w-4 h-4 text-muted-foreground" />
           </motion.div>
         </CollapsibleTrigger>
         <CollapsibleContent forceMount>
@@ -356,12 +356,12 @@ export default function FilterPanel({
                         />
                         <Label
                           htmlFor={`book-${book.id}`}
-                          className="text-gray-700 cursor-pointer text-sm"
+                          className="text-foreground cursor-pointer text-sm"
                         >
                           {book.name} (Book {book.id})
                         </Label>
                       </div>
-                      <span className="text-xs text-gray-400">{book.count.toLocaleString()}</span>
+                      <span className="text-xs text-muted-foreground">{book.count.toLocaleString()}</span>
                     </div>
                   ))}
                 </div>
@@ -378,14 +378,14 @@ export default function FilterPanel({
         className="mb-6"
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-          <Label className="text-sm font-medium text-gray-900">
+          <Label className="text-sm font-medium text-foreground">
             课程 {selectedLessons.length > 0 && `(${selectedLessons.length})`}
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.lessons ? 0 : -90 }}
             transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
-            <ChevronDown className="w-4 h-4 text-gray-500" />
+            <ChevronDown className="w-4 h-4 text-muted-foreground" />
           </motion.div>
         </CollapsibleTrigger>
         <CollapsibleContent forceMount>
@@ -440,18 +440,18 @@ export default function FilterPanel({
                           />
                           <Label
                             htmlFor={`lesson-${lesson.id}`}
-                            className="text-gray-700 cursor-pointer text-sm"
+                            className="text-foreground cursor-pointer text-sm"
                           >
                             {lesson.name}
                           </Label>
                         </div>
-                        <span className="text-xs text-gray-400">{lesson.count}</span>
+                        <span className="text-xs text-muted-foreground">{lesson.count}</span>
                       </div>
                     ))}
                     {filteredLessons.length > 10 && !showAllLessons && (
                       <button
                         onClick={() => setShowAllLessons(true)}
-                        className="text-sm text-gray-500 hover:text-gray-700"
+                        className="text-sm text-muted-foreground hover:text-foreground"
                       >
                         显示更多...
                       </button>
@@ -471,14 +471,14 @@ export default function FilterPanel({
         className="mb-6"
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-          <Label className="text-sm font-medium text-gray-900">
+          <Label className="text-sm font-medium text-foreground">
             词性 {selectedPartsOfSpeech.length > 0 && `(${selectedPartsOfSpeech.length})`}
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.partsOfSpeech ? 0 : -90 }}
             transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
-            <ChevronDown className="w-4 h-4 text-gray-500" />
+            <ChevronDown className="w-4 h-4 text-muted-foreground" />
           </motion.div>
         </CollapsibleTrigger>
         <CollapsibleContent forceMount>
@@ -524,12 +524,12 @@ export default function FilterPanel({
                         />
                         <Label
                           htmlFor={`pos-${pos.name}`}
-                          className="text-gray-700 cursor-pointer text-sm"
+                          className="text-foreground cursor-pointer text-sm"
                         >
                           {pos.name}
                         </Label>
                       </div>
-                      <span className="text-xs text-gray-400">{pos.count.toLocaleString()}</span>
+                      <span className="text-xs text-muted-foreground">{pos.count.toLocaleString()}</span>
                     </div>
                   ))}
                 </div>
@@ -546,14 +546,14 @@ export default function FilterPanel({
         className="mb-6"
       >
         <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-          <Label className="text-sm font-medium text-gray-900">
+          <Label className="text-sm font-medium text-foreground">
             动词变位 {selectedConjugations.length > 0 && `(已选择 ${selectedConjugations.length} 个)`}
           </Label>
           <motion.div
             animate={{ rotate: safeExpandedSections.conjugations ? 0 : -90 }}
             transition={animationsEnabled ? { duration: 0.2 } : { duration: 0 }}
           >
-            <ChevronDown className="w-4 h-4 text-gray-500" />
+            <ChevronDown className="w-4 h-4 text-muted-foreground" />
           </motion.div>
         </CollapsibleTrigger>
         <CollapsibleContent forceMount>
@@ -569,7 +569,7 @@ export default function FilterPanel({
                 <div className="mt-4 space-y-4">
                   {/* Conjugation Source Selector */}
                   <div className="space-y-2">
-                    <Label className="text-xs text-gray-600">变位数据源：</Label>
+                    <Label className="text-xs text-muted-foreground">变位数据源：</Label>
                     <Select value={conjugationSource} onValueChange={onConjugationSourceChange}>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="选择变位数据源" />
@@ -579,14 +579,14 @@ export default function FilterPanel({
                         <SelectItem value="jmdict">JMDict 词典</SelectItem>
                       </SelectContent>
                     </Select>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">
                       {conjugationSource === 'precomputed' ? '使用预先计算的动词变位' : '使用 JMDict 词典的实时变位'}
                     </p>
                   </div>
                   
                   {/* Preset Buttons */}
                   <div className="space-y-2">
-                    <Label className="text-xs text-gray-600">快速预设：</Label>
+                    <Label className="text-xs text-muted-foreground">快速预设：</Label>
                     <div className="flex flex-wrap gap-2">
                       {[
                         { key: 'beginner', label: '初级', count: 6 },
@@ -631,7 +631,7 @@ export default function FilterPanel({
 
                   {/* Individual Form Checkboxes */}
                   <div className="space-y-3">
-                    <Label className="text-xs text-gray-600">单独形式：</Label>
+                    <Label className="text-xs text-muted-foreground">单独形式：</Label>
                     
                     {/* Basic Forms */}
                     <div className="space-y-3">
@@ -651,7 +651,7 @@ export default function FilterPanel({
                             >
                               <div className="space-y-1">
                                 <div className="font-medium">{form.label}</div>
-                                <div className="text-xs text-gray-500">{form.description}</div>
+                                <div className="text-xs text-muted-foreground">{form.description}</div>
                               </div>
                             </Label>
                           </div>
@@ -677,7 +677,7 @@ export default function FilterPanel({
                             >
                               <div className="space-y-1">
                                 <div className="font-medium">{form.label}</div>
-                                <div className="text-xs text-gray-500">{form.description}</div>
+                                <div className="text-xs text-muted-foreground">{form.description}</div>
                               </div>
                             </Label>
                           </div>
@@ -703,7 +703,7 @@ export default function FilterPanel({
                             >
                               <div className="space-y-1">
                                 <div className="font-medium">{form.label}</div>
-                                <div className="text-xs text-gray-500">{form.description}</div>
+                                <div className="text-xs text-muted-foreground">{form.description}</div>
                               </div>
                             </Label>
                           </div>
