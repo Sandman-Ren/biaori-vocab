@@ -14,7 +14,7 @@ import VocabularyTable from '@/components/vocabulary-table';
 import Pagination from '@/components/pagination';
 import { VocabularyItem, FilterState } from '@/lib/types';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { ChevronLeft, ChevronRight, Download, Play, Info, Star, Filter } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Download, Play, Info, Filter } from 'lucide-react';
 import { 
   getBookInfo, 
   getLessonInfo, 
@@ -295,19 +295,6 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
               </span>
             </div>
             <div className="flex items-center space-x-4">
-              {/* Enhanced stats with animations */}
-              <div className="hidden md:flex items-center space-x-6 text-sm text-muted-foreground">
-                <div className="flex items-center space-x-2 hover-lift">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  <span>总计: {filteredVocabulary.length.toLocaleString()} 词</span>
-                </div>
-                {bookmarkedRows.length > 0 && (
-                  <div className="flex items-center space-x-2 hover-lift">
-                    <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                    <span>已收藏: {bookmarkedRows.length}</span>
-                  </div>
-                )}
-              </div>
               <ThemeToggle />
             </div>
           </div>
@@ -374,7 +361,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   </div>
                   
                   {/* Scrollable Filter Content */}
-                  <div className="flex-1 overflow-y-auto force-pointer-events">
+                  <div className="flex-1 overflow-y-auto scrollbar-theme force-pointer-events">
                     <FilterPanel
                       books={bookInfo}
                       lessons={lessonInfo}
@@ -463,7 +450,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                       <SheetHeader>
                         <SheetTitle>筛选条件</SheetTitle>
                       </SheetHeader>
-                      <div className="mt-6 h-full overflow-y-auto">
+                      <div className="mt-6 h-full overflow-y-auto scrollbar-theme">
                         <FilterPanel
                           books={bookInfo}
                           lessons={lessonInfo}
@@ -560,7 +547,7 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
             </div>
 
             {/* Scrollable Table Container */}
-            <div className="flex-1 overflow-auto">
+            <div className="flex-1 overflow-auto scrollbar-theme">
               <VocabularyTable
                 vocabulary={paginatedVocabulary}
                 selectedRows={filters.selectedRows}

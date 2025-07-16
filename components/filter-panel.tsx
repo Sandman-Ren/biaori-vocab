@@ -429,7 +429,7 @@ export default function FilterPanel({
                     </Button>
                   </div>
                   
-                  <div className="space-y-3 max-h-48 scrollbar-hide">
+                  <div className="space-y-3 max-h-48 overflow-y-auto scrollbar-theme">
                     {displayedLessons.map((lesson) => (
                       <div key={`filter-panel-lesson-${lesson.id}`} className="flex items-center justify-between text-sm">
                         <div className="flex items-center space-x-2 sm:space-x-3">

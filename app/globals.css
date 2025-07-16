@@ -75,6 +75,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Scroll bar theme variables */
+  --scrollbar-track: oklch(0.97 0 0);
+  --scrollbar-thumb: oklch(0.8 0 0);
+  --scrollbar-thumb-hover: oklch(0.7 0 0);
 }
 
 .dark {
@@ -109,6 +114,11 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  
+  /* Scroll bar theme variables for dark mode */
+  --scrollbar-track: oklch(0.269 0 0);
+  --scrollbar-thumb: oklch(0.5 0 0);
+  --scrollbar-thumb-hover: oklch(0.6 0 0);
 }
 
 @layer base {
@@ -276,6 +286,37 @@
 
 .modal-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.3);
+}
+
+/* Theme-aware scroll bar utilities */
+.scrollbar-theme {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.scrollbar-theme::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-theme::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+.scrollbar-theme::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+  border: 1px solid var(--scrollbar-track);
+}
+
+.scrollbar-theme::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+.scrollbar-theme::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
 }
 
 /* Ensure modal content is never clipped */
