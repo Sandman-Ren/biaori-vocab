@@ -127,28 +127,53 @@
   }
   
   html {
-    transition: color-scheme 1s ease;
+    transition: color-scheme 1s ease !important;
   }
   
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 1s ease, color 1s ease;
+    transition: background-color 1s ease !important, color 1s ease !important;
   }
   
-  /* Simple theme transitions */
-  * {
-    transition: background-color 1s ease, border-color 1s ease, color 1s ease, fill 1s ease, stroke 1s ease, box-shadow 1s ease;
+  /* Force theme transitions on all elements */
+  html *,
+  html *::before,
+  html *::after {
+    transition: 
+      background-color 1s cubic-bezier(0.4, 0, 0.2, 1) !important,
+      border-color 1s cubic-bezier(0.4, 0, 0.2, 1) !important,
+      color 1s cubic-bezier(0.4, 0, 0.2, 1) !important,
+      fill 1s cubic-bezier(0.4, 0, 0.2, 1) !important,
+      stroke 1s cubic-bezier(0.4, 0, 0.2, 1) !important,
+      box-shadow 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
   
-  /* Respect user's motion preferences */
+  /* Specific override for theme changes */
+  .dark *,
+  .light * {
+    transition: 
+      background-color 1s ease !important,
+      border-color 1s ease !important,
+      color 1s ease !important,
+      fill 1s ease !important,
+      stroke 1s ease !important,
+      box-shadow 1s ease !important;
+  }
+  
+  /* Respect user's motion preferences - TEMPORARILY DISABLED FOR TESTING */
+  /*
   @media (prefers-reduced-motion: reduce) {
-    html, body, * {
+    html, body,
+    *,
+    *::before,
+    *::after {
       transition: none !important;
       animation: none !important;
     }
   }
+  */
   
   /* Vertical writing mode for collapsed filter handle */
   .writing-mode-vertical {
@@ -728,3 +753,12 @@ textarea:focus-visible {
   }
 }
 
+/* Test transition for debugging */
+.test-transition {
+  background-color: red !important;
+  transition: background-color 2s ease !important;
+}
+
+.test-transition.active {
+  background-color: blue !important;
+}

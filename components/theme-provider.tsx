@@ -9,7 +9,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
       attribute="class"
       defaultTheme="system"
       enableSystem
-      disableTransitionOnChange={true}
+      disableTransitionOnChange={false}
       storageKey="biaori-vocab-theme"
       enableColorScheme={false}
       {...props}
