@@ -127,19 +127,19 @@
   }
   
   html {
-    transition: color-scheme 1s ease;
+    transition: color-scheme 0.2s ease;
   }
   
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 1s ease, color 1s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
   
-  /* Simple theme transitions */
+  /* Theme transitions for all elements */
   * {
-    transition: background-color 1s ease, border-color 1s ease, color 1s ease, fill 1s ease, stroke 1s ease, box-shadow 1s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, fill 0.2s ease, stroke 0.2s ease, box-shadow 0.2s ease;
   }
   
   /* Respect user's motion preferences */
@@ -514,24 +514,7 @@ textarea:focus-visible {
   white-space: normal;
 }
 
-/* Enhanced Theme Transitions & Animations */
 
-/* Only apply transitions after hydration to prevent hydration mismatches */
-.hydrated * {
-  transition: 
-    background-color 200ms ease-in-out,
-    border-color 200ms ease-in-out,
-    color 200ms ease-in-out,
-    box-shadow 200ms ease-in-out,
-    opacity 200ms ease-in-out;
-}
-
-/* Preserve user motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .hydrated * {
-    transition: none !important;
-  }
-}
 
 /* Enhanced hover animations */
 .hover-lift {
@@ -683,48 +666,5 @@ textarea:focus-visible {
   }
 }
 
-/* Theme transition utilities */
-.theme-transition {
-  transition: 
-    background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out,
-    color 0.2s ease-in-out,
-    fill 0.2s ease-in-out,
-    stroke 0.2s ease-in-out;
-}
 
-/* Theme-aware component classes */
-.theme-bg-card {
-  background-color: hsl(var(--card));
-}
-
-.theme-text-foreground {
-  color: hsl(var(--foreground));
-}
-
-.theme-text-muted {
-  color: hsl(var(--muted-foreground));
-}
-
-.theme-border {
-  border-color: hsl(var(--border));
-}
-
-/* Accessible focus indicators that work in both themes */
-.focus-ring {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .theme-transition {
-    transition-duration: 0.2s;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .theme-transition {
-    transition: none;
-  }
-}
 
