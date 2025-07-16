@@ -382,10 +382,10 @@ export default function VocabularyTable({
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     className={`
-                      cursor-pointer group
+                      cursor-pointer group border-l-2
                       ${isSelected 
-                        ? 'bg-accent border-l-2 border-l-primary' 
-                        : isHovered ? 'bg-muted/50' : ''
+                        ? 'bg-accent border-l-primary' 
+                        : isHovered ? 'bg-muted/50 border-l-transparent' : 'border-l-transparent'
                       }
                     `}
                     onMouseEnter={() => setHoveredRow(rowId)}
