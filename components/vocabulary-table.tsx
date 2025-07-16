@@ -362,7 +362,7 @@ export default function VocabularyTable({
             </TableRow>
           </TableHeader>
           <TableBody>
-            {vocabulary.map((item, index) => {
+            {vocabulary.map((item) => {
               const rowId = getRowId(item);
               const isSelected = selectedRows.includes(rowId);
               const isBookmarked = bookmarkedRows.includes(rowId);
