@@ -62,6 +62,52 @@ The theme system uses CSS custom properties for seamless switching:
 - Letter spacing optimization
 - Contrast ratio compliance (WCAG AA)
 
+### 4. Scrollbar Theming
+
+#### Cross-Browser Scrollbar Support
+The application includes comprehensive scrollbar theming that works across all browsers:
+
+**CSS Variables for Scrollbar Colors**
+```css
+/* Light theme */
+--scrollbar-track: oklch(0.97 0 0);
+--scrollbar-thumb: oklch(0.8 0 0);
+--scrollbar-thumb-hover: oklch(0.7 0 0);
+
+/* Dark theme */
+--scrollbar-track: oklch(0.269 0 0);
+--scrollbar-thumb: oklch(0.5 0 0);
+--scrollbar-thumb-hover: oklch(0.6 0 0);
+```
+
+**Safari-Specific Dark Mode Support**
+- Uses `@media (prefers-color-scheme: dark)` for system preference detection
+- Includes `.dark` class overrides with `!important` for manual theme switching
+- Supports webkit scrollbar properties: `::-webkit-scrollbar`, `::-webkit-scrollbar-track`, `::-webkit-scrollbar-thumb`
+
+**Implementation**
+- `.scrollbar-theme` utility class applies to all scrollable containers
+- Firefox support via `scrollbar-width` and `scrollbar-color`
+- Webkit browsers support via `::-webkit-scrollbar-*` selectors
+- Consistent 8px width and 4px border radius across themes
+
+### 5. Theme Transitions
+
+#### Smooth Theme Switching
+All theme changes include smooth transitions for better UX:
+
+**Transition Properties**
+- Background color: 200ms ease
+- Text color: 200ms ease  
+- Border color: 200ms ease
+- Component-specific transitions: 300ms-500ms ease
+
+**Components with Enhanced Transitions**
+- Theme toggle button (icon rotation and color)
+- Table rows (background and border changes)
+- Cards and modals (background and shadow transitions)
+- Filter panels and dropdowns
+
 ## Implementation Plan
 
 ### Phase 1: Core Theme Infrastructure

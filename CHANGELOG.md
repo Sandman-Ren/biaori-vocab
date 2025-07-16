@@ -8,6 +8,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Complete Theme System Implementation**
+  - Comprehensive light/dark/system theme support
+  - Safari-specific dark mode scrollbar compatibility
+  - Theme-aware scrollbars across all browsers (Firefox, Webkit)
+  - Smooth theme transition animations (200ms optimized)
+  - Cross-platform scrollbar consistency (8px width, 4px radius)
+- **Enhanced UX and Animations**
+  - Fixed table row selection border width changes
+  - Optimized table row hover and selection animations
+  - Restored previous export controls and mobile filter UX
+  - Fixed filter panel state sync between desktop and mobile
+  - Removed duplicate mobile filter sheet implementation
+- **Accessibility and Polish**
+  - All UI elements now theme-aware with semantic color classes
+  - Enhanced Japanese text rendering for both themes
+  - Improved focus indicators and keyboard navigation
+  - WCAG AA compliant contrast ratios
 - Vocabulary Detail Modal with comprehensive information display
 - Copy-to-clipboard functionality for all vocabulary elements
 - Bookmark management within the modal interface
@@ -20,16 +37,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Accessibility features including keyboard navigation
 
 ### Changed
+- **Theme System Overhaul**
+  - Replaced all hardcoded color classes with semantic theme classes
+  - Updated all components to use CSS custom properties
+  - Implemented reliable theme transitions across all elements
+  - Enhanced scrollbar theming with cross-browser support
+- **Component Improvements**
+  - Fixed filter panel open/close state management
+  - Optimized table animations and selection indicators
+  - Restored previous export controls layout and functionality
+  - Cleaned up CSS build errors and simplified transition rules
 - Enhanced vocabulary table with functional "查看" (View) buttons
 - Improved animation system for modal lifecycle management
-- Updated documentation with comprehensive modal information
+- Updated documentation with comprehensive modal and theme information
+
+### Fixed
+- **Critical Bug Fixes**
+  - Table row selection border width changes (prevented layout shifts)
+  - Filter panel state sync bug between desktop and mobile viewports
+  - CSS build errors from malformed transition rules
+  - Theme transition reliability issues
+- **Cross-Browser Compatibility**
+  - Safari dark mode scrollbar support with webkit properties
+  - Firefox scrollbar theming with scrollbar-width and scrollbar-color
+  - Consistent scrollbar appearance across all platforms
 
 ### Technical Changes
+- **Theme Implementation**
+  - Enhanced `app/globals.css` with comprehensive theme variables and utilities
+  - Updated all components to use semantic color classes
+  - Added Safari-specific webkit scrollbar dark mode support
+  - Implemented `.scrollbar-theme` utility class for consistent theming
+- **Component Updates**
+  - `VocabularyDatabase`: Fixed export controls, filter panel state, scrollbar theming
+  - `VocabularyTable`: Fixed animations, selection borders, theme compatibility
+  - `FilterPanel`: Enhanced theme support, scrollbar styling, lessons list
+  - `VocabularyDetailModal`: Complete theme integration and scrollbar support
 - Created `VocabularyDetailModal` component (394 lines)
 - Integrated modal state management into `VocabularyTable` component
 - Added modal-specific CSS utilities in `globals.css`
 - Implemented proper AnimatePresence patterns for smooth animations
 - Added TypeScript interfaces for modal props
+- **Documentation Updates**
+  - Updated theme system documentation with Safari scrollbar details
+  - Enhanced implementation status with scrollbar theming information
+  - Added comprehensive changelog entry documenting all improvements
 
 ## [1.0.0] - 2024-XX-XX (Baseline)
 
