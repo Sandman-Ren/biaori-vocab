@@ -450,6 +450,47 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
             {/* Table Controls */}
             <div className="px-4 sm:px-6 py-4 border-b border-border flex items-center justify-between flex-shrink-0 min-h-[64px]">
               <div className="flex items-center space-x-4">
+                {/* Mobile Filter Button - Left side */}
+                {isMobile && (
+                  <Sheet>
+                    <SheetTrigger asChild>
+                      <Button variant="outline" size="sm">
+                        <Filter className="w-4 h-4 mr-2" />
+                        筛选
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+                      <SheetHeader>
+                        <SheetTitle>筛选条件</SheetTitle>
+                      </SheetHeader>
+                      <div className="mt-6 h-full overflow-y-auto">
+                        <FilterPanel
+                          books={bookInfo}
+                          lessons={lessonInfo}
+                          partsOfSpeech={partOfSpeechInfo}
+                          selectedBooks={filters.books}
+                          selectedLessons={filters.lessons}
+                          selectedPartsOfSpeech={filters.partsOfSpeech}
+                          textSearch={filters.textSearch}
+                          searchFields={filters.searchFields}
+                          selectedConjugations={filters.selectedConjugations}
+                          conjugationSource={filters.conjugationSource}
+                          expandedSections={expandedSections}
+                          animationsEnabled={sectionAnimationsEnabled}
+                          onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
+                          onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
+                          onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
+                          onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
+                          onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
+                          onSelectedConjugationsChange={handleSelectedConjugationsChange}
+                          onConjugationSourceChange={handleConjugationSourceChange}
+                          onExpandedSectionsChange={setExpandedSections}
+                        />
+                      </div>
+                    </SheetContent>
+                  </Sheet>
+                )}
+
                 <div className="flex items-center space-x-2 sm:space-x-3">
                   <Checkbox
                     checked={paginatedVocabulary.length > 0 && 
@@ -480,8 +521,8 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 </div>
               </div>
               
-              {/* Desktop Export Controls */}
-              {!isMobile && filters.selectedRows.length > 0 && (
+              {/* Desktop Export Controls - Always visible */}
+              {!isMobile && (
                 <div className="flex items-center space-x-3">
                   <Select 
                     value={exportFormat} 
@@ -500,11 +541,12 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                   </Select>
                   <Button
                     onClick={exportSelected}
-                    className="bg-primary text-primary-foreground hover:bg-primary/90"
+                    disabled={filters.selectedRows.length === 0}
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
                     size="sm"
                   >
                     <Download className="w-4 h-4 mr-2" />
-                    导出
+                    导出 {filters.selectedRows.length > 0 ? `(${filters.selectedRows.length})` : ''}
                   </Button>
                 </div>
               )}
@@ -514,47 +556,6 @@ export default function VocabularyDatabase({ vocabulary }: VocabularyDatabasePro
                 <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded">
                   已筛选
                 </span>
-              )}
-              
-              {/* Mobile Filter Sheet */}
-              {isMobile && (
-                <Sheet>
-                  <SheetTrigger asChild>
-                    <Button variant="outline" size="sm">
-                      <Filter className="w-4 h-4 mr-2" />
-                      筛选
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                    <SheetHeader>
-                      <SheetTitle>筛选条件</SheetTitle>
-                    </SheetHeader>
-                    <div className="mt-6 h-full overflow-y-auto">
-                      <FilterPanel
-                        books={bookInfo}
-                        lessons={lessonInfo}
-                        partsOfSpeech={partOfSpeechInfo}
-                        selectedBooks={filters.books}
-                        selectedLessons={filters.lessons}
-                        selectedPartsOfSpeech={filters.partsOfSpeech}
-                        textSearch={filters.textSearch}
-                        searchFields={filters.searchFields}
-                        selectedConjugations={filters.selectedConjugations}
-                        conjugationSource={filters.conjugationSource}
-                        expandedSections={expandedSections}
-                        animationsEnabled={sectionAnimationsEnabled}
-                        onBooksChange={(books) => setFilters(prev => ({ ...prev, books }))}
-                        onLessonsChange={(lessons) => setFilters(prev => ({ ...prev, lessons }))}
-                        onPartsOfSpeechChange={(partsOfSpeech) => setFilters(prev => ({ ...prev, partsOfSpeech }))}
-                        onTextSearchChange={(textSearch) => setFilters(prev => ({ ...prev, textSearch }))}
-                        onSearchFieldsChange={(searchFields) => setFilters(prev => ({ ...prev, searchFields }))}
-                        onSelectedConjugationsChange={handleSelectedConjugationsChange}
-                        onConjugationSourceChange={handleConjugationSourceChange}
-                        onExpandedSectionsChange={setExpandedSections}
-                      />
-                    </div>
-                  </SheetContent>
-                </Sheet>
               )}
             </div>
 
